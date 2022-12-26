@@ -15,7 +15,7 @@ const Container = styled.div`
   display: flex;
   width: 100vw;
   height: 100vh;
-  padding: 0 17vw;
+  padding: 0 20vw;
 `;
 
 export default Home;
