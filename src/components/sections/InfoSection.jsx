@@ -1,10 +1,12 @@
 import styled from "styled-components";
 import Profile from "../modules/Profile";
+import NavBar from "../modules/NavBar";
 
 function InfoSection() {
   return (
     <Container>
       <Profile />
+      <NavBar />
     </Container>
   );
 }
