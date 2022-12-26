@@ -7,6 +7,7 @@ const GlobalStyles = createGlobalStyle`
     padding: 0;
     margin: 0;
     font: 300 18px "Spoqa Han Sans Neo", sans-serif;
+    user-select: none;
   }
 
   a {
