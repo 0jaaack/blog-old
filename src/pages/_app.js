@@ -2,7 +2,7 @@ import GlobalStyles from "../styles/GlobalStyles";
 import GlobalFonts from "../styles/GlobalFonts";
 import GlobalThemes from "../styles/GlobalThemes";
 
-export default function App({ Component, pageProps }) {
+function App({ Component, pageProps }) {
   return (
     <GlobalThemes>
       <GlobalFonts />
@@ -11,3 +11,5 @@ export default function App({ Component, pageProps }) {
     </GlobalThemes>
   );
 }
+
+export default App;
