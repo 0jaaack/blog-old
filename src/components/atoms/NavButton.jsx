@@ -14,7 +14,7 @@ function NavButton({ page, isCurrentPage }) {
 }
 
 const NavLink = styled(Link)`
-  border-bottom: ${(ishighligted) => ishighligted ? "1px solid black" : "none"};
+  border-bottom: ${({ ishighligted, theme }) => ishighligted ? `1px solid ${theme.color}` : "none"};
   font-size: 0.9rem;
   font-weight: 300;
   text-transform: capitalize;

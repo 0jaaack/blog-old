@@ -9,7 +9,7 @@ function ProfileDescription({ children }) {
 }
 
 const ProfileDescriptionText = styled.p`
-  color: grey;
+  color: ${({ theme }) => theme.colors.grey};
   font-size: 0.8rem;
   line-height: 1.3rem;
   white-space: pre-line;

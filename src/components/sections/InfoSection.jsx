@@ -16,7 +16,6 @@ const Container = styled.div`
   width: 100%;
   height: 100%;
   padding-top: 1rem;
-  border: 1px solid black;
 `;
 
 export default InfoSection;
