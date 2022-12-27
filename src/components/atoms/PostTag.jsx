@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const PostTag = styled.span`
-  color: #F7A047;
+  color: ${(({ theme }) => theme.colors.orange)};
   font-size: 0.8rem;
   font-weight: 500;
   text-transform: uppercase;

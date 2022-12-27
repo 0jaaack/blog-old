@@ -16,7 +16,7 @@ const InfoSectionContainer = styled.div`
   flex-direction: column;
   gap: 2rem;
   width: 20rem;
-  border-right: 1px solid rgba(255, 255, 255, 0.2);
+  border-right: .1px solid ${({ theme }) => theme.colors.grey};
   padding: 2rem;
 `;
 
