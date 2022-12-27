@@ -6,6 +6,7 @@ const commonTheme = {
   colors: {
     grey: "#888888",
     blue: "#0070F3",
+    orange: "#F7A047",
   }
 }
 
