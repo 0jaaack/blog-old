@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import SectionHeader from "../atoms/SectionHeader";
 import Post from "../modules/Post";
-
+import PagenationButton from "../atoms/PagenationButton";
 const posts = [
   {
     title: "Upgraded to Gatsby v2",
@@ -45,6 +45,14 @@ function MainSection() {
           />
         ))}
       </PostList>
+      <PagenationConsole>
+        <PagenationButton>
+          &larr; Page 0
+        </PagenationButton>
+        <PagenationButton>
+          Page 2 &rarr;
+        </PagenationButton>
+      </PagenationConsole>
     </PostSectionContainer>
   );
 }
@@ -62,6 +70,11 @@ const PostList = styled.ul`
   display: flex;
   flex-direction: column;
   gap: 2.5rem 0;
+`;
+
+const PagenationConsole = styled.div`
+  display: flex;
+  justify-content: space-between;
 `;
 
 export default MainSection;
