@@ -1,14 +1,6 @@
 import styled from "styled-components";
 
-function ProfileName({ children }) {
-  return (
-    <ProfileNameText>
-      {children}
-    </ProfileNameText>
-  );
-}
-
-const ProfileNameText = styled.span`
+const ProfileName = styled.span`
   font-weight: 500;
   font-size: 0.9rem;
 `;

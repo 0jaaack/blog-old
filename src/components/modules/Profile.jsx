@@ -6,7 +6,7 @@ import ProfileDescription from "../atoms/ProfileDescription";
 
 function Profile() {
   return (
-    <Container>
+    <ProfileContainer>
       <ProfileImage
         src="/images/profile.png"
       />
@@ -14,18 +14,17 @@ function Profile() {
         ponjaehyeok
       </ProfileName>
       <ProfileDescription>
-        최대한 깊게 개념을 탐구해보고, 기록하기 위한 블로그. 파고 또 파고..
+        {`최대한 깊게 개념을 탐구해보고, 기록하기 위한 블로그
+        파고 또 파고..`}
       </ProfileDescription>
-    </Container>
+    </ProfileContainer>
   );
 }
 
-const Container = styled.div`
+const ProfileContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  padding: 2rem;
-  padding-left: 0;
 `;
 
 export default Profile;

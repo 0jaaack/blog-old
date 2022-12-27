@@ -1,21 +1,21 @@
 import styled from "styled-components";
 import InfoSection from "../components/sections/InfoSection";
-import MainSection from "../components/sections/MainSection";
+import PostSection from "../components/sections/PostSection";
 
 function Home() {
   return (
-    <Container>
+    <HomeContainer>
       <InfoSection />
-      <MainSection />
-    </Container>
+      <PostSection />
+    </HomeContainer>
   );
 }
 
-const Container = styled.div`
+const HomeContainer = styled.div`
   display: flex;
   width: 100vw;
   height: 100vh;
-  padding: 0 20vw;
+  padding: 2rem 15vw;
 `;
 
 export default Home;

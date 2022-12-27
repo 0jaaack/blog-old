@@ -6,7 +6,7 @@ function NavBar() {
   const currentPage = "posts";
 
   return (
-    <Container>
+    <NavBarContainer>
       {navs.map((nav) => (
         <NavBarItem
           key={nav}
@@ -17,11 +17,11 @@ function NavBar() {
           />
         </NavBarItem>
       ))}
-    </Container>
+    </NavBarContainer>
   );
 }
 
-const Container = styled.div`
+const NavBarContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 0.9rem;
