@@ -5,6 +5,7 @@ import THEME from "../configs/theme";
 const commonTheme = {
   colors: {
     grey: "#888888",
+    lightgrey: "#D3D3D3",
     blue: "#0070F3",
     orange: "#F7A047",
   }
