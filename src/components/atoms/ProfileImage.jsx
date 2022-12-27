@@ -1,19 +1,18 @@
 import Image from "next/image";
 import styled from "styled-components";
 
-function ProfileImage({ src }) {
+function ProfileImage({ src, size }) {
   return (
     <ProfileMainImage
       src={src}
-      height={84}
-      width={84}
+      height={size}
+      width={size}
       alt="ponjaehyeok-profile"
     />
   );
 }
 
 const ProfileMainImage = styled(Image)`
-  border: 0.5px solid black;
   border-radius: 50%;
 `;
 

@@ -1,13 +1,14 @@
 import styled from "styled-components";
-import InfoSection from "../components/sections/InfoSection";
+
+import BlogInfoSection from "../components/sections/BlogInfoSection";
 import PostSection from "../components/sections/PostSection";
 import Provider from "../components/atoms/Provider";
 
 function Home() {
   return (
     <HomeContainer>
-      <InfoSection />
-      <Provider />
+      <BlogInfoSection />
+      <Provider type="vertical"/>
       <PostSection />
     </HomeContainer>
   );

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import NavButton from "../atoms/NavButton";
+import LinkButton from "../atoms/LinkButton";
 
 function NavBar() {
   const navs = ["posts", "tags", "light mode", "about me"];
@@ -11,10 +11,13 @@ function NavBar() {
         <NavBarItem
           key={nav}
         >
-          <NavButton
-            page={nav}
-            isCurrentPage={nav === currentPage}
-          />
+          <LinkButton
+            href={"/"}
+            size={9}
+            underlined={nav === currentPage}
+          >
+            {nav}
+          </LinkButton>
         </NavBarItem>
       ))}
     </NavBarContainer>

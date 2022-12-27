@@ -2,16 +2,16 @@ import styled from "styled-components";
 import Profile from "../modules/Profile";
 import NavBar from "../modules/NavBar";
 
-function InfoSection() {
+function BlogInfoSection() {
   return (
-    <InfoSectionContainer>
+    <BlogInfoSectionContainer>
       <Profile />
       <NavBar />
-    </InfoSectionContainer>
+    </BlogInfoSectionContainer>
   );
 }
 
-const InfoSectionContainer = styled.div`
+const BlogInfoSectionContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 2rem;
@@ -19,4 +19,4 @@ const InfoSectionContainer = styled.div`
   padding: 2rem;
 `;
 
-export default InfoSection;
+export default BlogInfoSection;

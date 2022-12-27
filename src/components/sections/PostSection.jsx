@@ -1,7 +1,8 @@
 import styled from "styled-components";
 import SectionHeader from "../atoms/SectionHeader";
-import Post from "../modules/Post";
-import PagenationButton from "../atoms/PagenationButton";
+import PostCell from "../modules/PostCell";
+import LinkButton from "../atoms/LinkButton";
+
 const posts = [
   {
     title: "Upgraded to Gatsby v2",
@@ -37,7 +38,7 @@ function MainSection() {
       </SectionHeader>
       <PostList>
         {posts.map(({ title, description, tags, published }) => (
-          <Post
+          <PostCell
             title={title}
             description={description}
             tags={tags}
@@ -46,12 +47,20 @@ function MainSection() {
         ))}
       </PostList>
       <PagenationConsole>
-        <PagenationButton>
+        <LinkButton
+          href="/"
+          size={9}
+          color="blue"
+        >
           &larr; Page 0
-        </PagenationButton>
-        <PagenationButton>
+        </LinkButton>
+        <LinkButton
+          href="/"
+          size={9}
+          color="blue"
+        >
           Page 2 &rarr;
-        </PagenationButton>
+        </LinkButton>
       </PagenationConsole>
     </PostSectionContainer>
   );

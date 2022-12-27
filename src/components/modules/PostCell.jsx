@@ -1,40 +1,40 @@
 import styled from "styled-components";
 
 import PostTitle from "../atoms/PostTitle";
-import PostDescription from "../atoms/PostDescription";
-import PostDateInfo from "../atoms/PostDateInfo";
-import PostTag from "../atoms/PostTag";
+import Description from "../atoms/Description";
+import PostCellDate from "../atoms/PostCellDate";
+import TagLabel from "../atoms/TagLabel";
 
-function Post({ title, description, tags, published }) {
+function PostCell({ title, description, tags, published }) {
   return (
-    <PostContainer>
+    <PostCellContainer>
       <InfoLayout>
-        <PostDateInfo>
+        <PostCellDate>
           {published}
-        </PostDateInfo>
+        </PostCellDate>
         <TagList>
           {tags.map((tag) => (
-            <PostTag>
+            <TagLabel size={8}>
               {tag}
-            </PostTag>
+            </TagLabel>
           ))}
         </TagList>
       </InfoLayout>
       <HeadLayout>
-        <PostTitle>
+        <PostTitle size={14}>
           {title}
         </PostTitle>
       </HeadLayout>
       <BodyLayout>
-        <PostDescription>
+        <PostDescription size={9}>
           {description}
         </PostDescription>
       </BodyLayout>
-    </PostContainer>
+    </PostCellContainer>
   );
 }
 
-const PostContainer = styled.div`
+const PostCellContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
@@ -44,6 +44,12 @@ const HeadLayout = styled.div``;
 
 const BodyLayout = styled.div`
   margin: 0.5rem 0;
+`;
+
+const PostDescription = styled(Description)`
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 `;
 
 const InfoLayout = styled.div`
@@ -56,4 +62,4 @@ const TagList = styled.div`
   gap: 0.5rem;
 `;
 
-export default Post;
+export default PostCell;
