@@ -1,24 +1,32 @@
 import styled from "styled-components";
 import LinkButton from "../atoms/LinkButton";
+import { useRouter } from "next/router";
 
 function NavBar() {
-  const navs = ["posts", "tags", "light mode", "about me"];
-  const currentPage = "posts";
+  const { pathname } = useRouter();
+  const navPages = [
+    {
+      page: "posts",
+      path: "/",
+    },
+    {
+      page: "tags",
+      path: "/tags",
+    }
+  ];
 
   return (
     <NavBarContainer>
-      {navs.map((nav) => (
-        <NavBarItem
-          key={nav}
-        >
+      {navPages.map((nav) => (
+        <div key={nav.page}>
           <LinkButton
-            href={"/"}
-            size={9}
-            underlined={nav === currentPage}
+            href={nav.path}
+            size={10}
+            underlined={pathname === nav.path}
           >
-            {nav}
+            {nav.page}
           </LinkButton>
-        </NavBarItem>
+        </div>
       ))}
     </NavBarContainer>
   );
@@ -29,7 +37,5 @@ const NavBarContainer = styled.div`
   flex-direction: column;
   gap: 0.9rem;
 `;
-
-const NavBarItem = styled.div``
 
 export default NavBar;
