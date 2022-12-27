@@ -8,28 +8,28 @@ import PostTag from "../atoms/PostTag";
 function Post({ title, description, tags, published }) {
   return (
     <PostContainer>
-      <PostInfo>
+      <InfoLayout>
         <PostDateInfo>
           {published}
         </PostDateInfo>
-        <PostTagList>
+        <TagList>
           {tags.map((tag) => (
             <PostTag>
               {tag}
             </PostTag>
           ))}
-        </PostTagList>
-      </PostInfo>
-      <PostHead>
+        </TagList>
+      </InfoLayout>
+      <HeadLayout>
         <PostTitle>
           {title}
         </PostTitle>
-      </PostHead>
-      <PostBody>
+      </HeadLayout>
+      <BodyLayout>
         <PostDescription>
           {description}
         </PostDescription>
-      </PostBody>
+      </BodyLayout>
     </PostContainer>
   );
 }
@@ -40,18 +40,18 @@ const PostContainer = styled.div`
   gap: 0.5rem;
 `;
 
-const PostHead = styled.div``;
+const HeadLayout = styled.div``;
 
-const PostBody = styled.div`
+const BodyLayout = styled.div`
   margin: 0.5rem 0;
 `;
 
-const PostInfo = styled.div`
+const InfoLayout = styled.div`
   display: flex;
   gap: 0.7rem;
 `;
 
-const PostTagList = styled.div`
+const TagList = styled.div`
   display: flex;
   gap: 0.5rem;
 `;
