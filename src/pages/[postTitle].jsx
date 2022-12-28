@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import PostInfo from "../../components/modules/PostInfo";
-import Provider from "../../components/atoms/Provider";
+import PostInfo from "../components/modules/PostInfo";
+import Provider from "../components/atoms/Provider";
 
 function Post() {
   return (
