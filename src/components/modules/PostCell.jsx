@@ -21,7 +21,10 @@ function PostCell({ title, description, tags, published }) {
         </TagList>
       </InfoLayout>
       <HeadLayout>
-        <PostTitle size={14}>
+        <PostTitle
+          size={14}
+          href={`/${title.replaceAll(" ", "-")}`}
+        >
           {title}
         </PostTitle>
       </HeadLayout>
