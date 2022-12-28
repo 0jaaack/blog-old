@@ -11,6 +11,7 @@ function TagSection({ tags }) {
       <TagList>
         {tags.map(([tagName, postCount]) => (
           <TagCountLabel
+            key={tagName}
             size={8}
             count={postCount}
           >{tagName}&nbsp;</TagCountLabel>

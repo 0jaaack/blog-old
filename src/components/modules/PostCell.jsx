@@ -13,8 +13,8 @@ function PostCell({ title, description, tags, published }) {
           {published}
         </PostCellDate>
         <TagList>
-          {tags.map((tag) => (
-            <TagLabel size={8}>
+          {tags.map((tag, idx) => (
+            <TagLabel key={tag + idx} size={8}>
               {tag}
             </TagLabel>
           ))}
