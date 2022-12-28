@@ -25,6 +25,37 @@ class PostCollection {
     return this.queue;
   }
 
+  getTags() {
+    this.chain(async () => {
+      const files = await this._getAllPosts();
+      const tagList = await Promise.all(
+        files.map(async (post) => {
+          const file = await fs.readFile(
+            path.join(process.cwd(), "posts", post),
+            { encoding: "utf8" },
+          );
+
+          return fm(file).attributes.tags;
+        })
+      );
+      const tagData = tagList
+        .reduce((acc, cur) => acc.concat(cur), [])
+        .reduce((acc, cur) => {
+          if (!!acc[cur]) {
+            return Object.assign(acc, { [cur]: acc[cur] + 1 });
+          }
+
+          return Object.assign(acc, { [cur]: 1 });
+        }, {});
+
+      return Object.keys(tagData)
+        .sort((a, b) => tagData[b] - tagData[a])
+        .map((key) => [key, tagData[key]]);
+    });
+
+    return this;
+  }
+
   getPage(pageIndex) {
     this.chain(async () => {
       const files = await this._getAllPosts();
@@ -38,7 +69,7 @@ class PostCollection {
 
   read(...attributes) {
     this.chain(async () => {
-      this.posts = Promise.all(
+      this.posts = await Promise.all(
         this.posts.map(async (post) => {
           const file = await fs.readFile(
             path.join(process.cwd(), "posts", post),
@@ -55,7 +86,6 @@ class PostCollection {
 
             return Object.assign(acc, { [cur]: currentAttr });
           }, {});
-          return content;
         })
       );
     });
