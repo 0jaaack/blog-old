@@ -3,16 +3,17 @@ import styled from "styled-components";
 import BlogInfoSection from "../components/sections/BlogInfoSection";
 import PostSection from "../components/sections/PostSection";
 import Provider from "../components/atoms/Provider";
-import { getPage } from "../services/postService";
+import { getPage, getAllPostNames } from "../services/postService";
 
 export async function getStaticProps() {
   try {
     const latestPosts = getPage(1);
+    const hasNextPage = getAllPostNames().length > 4;
 
     return {
       props: {
         latestPosts,
-        hasNextPage: false,
+        hasNextPage,
       },
     };
   } catch {
