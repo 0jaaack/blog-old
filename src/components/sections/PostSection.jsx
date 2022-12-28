@@ -20,20 +20,26 @@ function PostSection({ posts, hasPrevPage, hasNextPage }) {
         ))}
       </PostList>
       <PagenationConsole>
-        <LinkButton
-          href="/"
-          size={9}
-          color="blue"
-        >
-          &larr; Page 0
-        </LinkButton>
-        <LinkButton
-          href="/"
-          size={9}
-          color="blue"
-        >
-          Page 2 &rarr;
-        </LinkButton>
+        {hasPrevPage && (
+          <PageLinkButton
+            href="/"
+            size={9}
+            color="blue"
+            float="left"
+          >
+            &larr; Page 0
+          </PageLinkButton>
+        )}
+        {hasNextPage && (
+          <PageLinkButton
+            href="/"
+            size={9}
+            color="blue"
+            float="right"
+          >
+            Page 2 &rarr;
+          </PageLinkButton>
+        )}
       </PagenationConsole>
     </PostSectionContainer>
   );
@@ -56,7 +62,11 @@ const PostList = styled.ul`
 
 const PagenationConsole = styled.div`
   display: flex;
-  justify-content: space-between;
+`;
+
+const PageLinkButton = styled(LinkButton)`
+  margin-left: ${({ float }) => float === "right" ? "auto" : 0};
+  margin-right: ${({ float }) => float === "left" ? "auto" : 0};
 `;
 
 export default PostSection;
