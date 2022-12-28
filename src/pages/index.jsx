@@ -3,21 +3,16 @@ import styled from "styled-components";
 import BlogInfoSection from "../components/sections/BlogInfoSection";
 import PostSection from "../components/sections/PostSection";
 import Provider from "../components/atoms/Provider";
-import PostCollection from "../services/postCollection";
+import { getPage } from "../services/postService";
 
 export async function getStaticProps() {
   try {
-    const posts = new PostCollection();
-    const latestPosts = await posts
-      .getPage(1)
-      .read("title", "description", "tags", "date")
-      .getPosts();
-    const hasNextPage = false;
+    const latestPosts = getPage(1);
 
     return {
       props: {
         latestPosts,
-        hasNextPage,
+        hasNextPage: false,
       },
     };
   } catch {

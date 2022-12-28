@@ -3,12 +3,11 @@ import styled from "styled-components";
 import BlogInfoSection from "../../components/sections/BlogInfoSection";
 import TagSection from "../../components/sections/TagSection";
 import Provider from "../../components/atoms/Provider";
-import PostCollection from "../../services/postCollection";
+import { getPostTags } from "../../services/postService";
 
 export async function getStaticProps() {
   try {
-    const posts = new PostCollection();
-    const tagData = await posts.getTags();
+    const tagData = getPostTags();
 
     return {
       props: {
