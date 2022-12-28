@@ -33,8 +33,8 @@ export function getPage(pageIndex) {
 
   return getAllPostNames()
     .map((post) => getPostDetails(post))
-    .sort((a, b) => b.date - a.date)
-    .slice(pageIndex - 1, pageIndex + POST.DEFAULT_NUMBER_OF_POSTS);
+    .sort((a, b) => new Date(b.date) - new Date(a.date))
+    .slice((pageIndex - 1) * POST.DEFAULT_NUMBER_OF_POSTS, pageIndex * POST.DEFAULT_NUMBER_OF_POSTS);
 }
 
 export function getPostTags() {
