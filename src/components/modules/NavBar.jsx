@@ -4,14 +4,17 @@ import { useRouter } from "next/router";
 
 function NavBar() {
   const { pathname } = useRouter();
+  const currentPath = pathname.split("/")[1];
   const navPages = [
     {
       page: "posts",
-      path: "/",
+      href: "/",
+      path: ["", "pages"],
     },
     {
       page: "tags",
-      path: "/tags",
+      href: "/tags",
+      path: ["tags"],
     }
   ];
 
@@ -20,9 +23,9 @@ function NavBar() {
       {navPages.map((nav) => (
         <div key={nav.page}>
           <LinkButton
-            href={nav.path}
+            href={nav.href}
             size={10}
-            underlined={pathname === nav.path}
+            underlined={nav.path.some((path) => path === currentPath) ? "true" : undefined}
           >
             {nav.page}
           </LinkButton>
