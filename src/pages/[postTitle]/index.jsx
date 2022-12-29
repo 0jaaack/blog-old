@@ -1,8 +1,37 @@
 import styled from "styled-components";
-import PostInfo from "../components/modules/PostInfo";
-import Provider from "../components/atoms/Provider";
+import PostInfo from "../../components/modules/PostInfo";
+import Provider from "../../components/atoms/Provider";
+import { getPage, getAllPostNames } from "../../services/postService";
 
-function Post() {
+export async function getStaticPaths() {
+  return {
+    paths: Array.from(
+      new Array(1),
+      (v, i) => ({ params: { postTitle: "홍합-술찜-레시피" }})
+    ),
+    fallback: false,
+  };
+}
+
+export async function getStaticProps() {
+  try {
+    const latestPosts = getPage(1);
+    const hasNextPage = getAllPostNames().length > 4;
+
+    return {
+      props: {
+        latestPosts,
+        hasNextPage,
+      },
+    };
+  } catch {
+    return {
+      notFound: true,
+    };
+  }
+}
+
+function Post({ title, date, tags }) {
   return (
     <PostContainer>
       <PostInfo
@@ -26,8 +55,9 @@ function Post() {
 }
 
 const PostContainer = styled.div`
-  width: 100vw;
-  padding: 3rem 23vw;
+  width: 50vw;
+  margin: 0 auto;
+  padding: 3rem;
 `;
 
 export default Post;
