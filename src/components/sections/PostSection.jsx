@@ -3,11 +3,10 @@ import styled from "styled-components";
 
 import SectionHeader from "../atoms/SectionHeader";
 import PostCell from "../modules/PostCell";
-import LinkButton from "../atoms/LinkButton";
+import PagenationConsole from "../modules/PagenationConsole";
 
 function PostSection({ posts, hasPrevPage, hasNextPage }) {
   const { query: { pageIndex } } = useRouter();
-  const currentIndex = pageIndex ?? "1";
 
   return (
     <PostSectionContainer>
@@ -25,28 +24,10 @@ function PostSection({ posts, hasPrevPage, hasNextPage }) {
           />
         ))}
       </PostList>
-      <PagenationConsole>
-        {hasPrevPage && (
-          <PageLinkButton
-            href={`/pages/${Number(currentIndex) - 1}`}
-            size={9}
-            color="blue"
-            float="left"
-          >
-            &larr; Page {Number(currentIndex) - 1}
-          </PageLinkButton>
-        )}
-        {hasNextPage && (
-          <PageLinkButton
-            href={`/pages/${Number(currentIndex) + 1}`}
-            size={9}
-            color="blue"
-            float="right"
-          >
-            Page {Number(currentIndex) + 1} &rarr;
-          </PageLinkButton>
-        )}
-      </PagenationConsole>
+      <PagenationConsole
+        hasPrevPage={hasPrevPage}
+        hasNextPage={hasNextPage}
+      />
     </PostSectionContainer>
   );
 }
@@ -54,25 +35,16 @@ function PostSection({ posts, hasPrevPage, hasNextPage }) {
 const PostSectionContainer = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 2rem;
-  width: 40rem;
-  padding: 1rem 3rem;
+  gap: 3rem;
+  width: 40vw;
+  padding: 2rem 3rem;
 `;
 
 const PostList = styled.ul`
   padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 2.5rem 0;
-`;
-
-const PagenationConsole = styled.div`
-  display: flex;
-`;
-
-const PageLinkButton = styled(LinkButton)`
-  margin-left: ${({ float }) => float === "right" ? "auto" : 0};
-  margin-right: ${({ float }) => float === "left" ? "auto" : 0};
+  gap: 3rem 0;
 `;
 
 export default PostSection;
