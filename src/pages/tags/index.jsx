@@ -4,6 +4,7 @@ import BlogInfoSection from "../../components/sections/BlogInfoSection";
 import TagSection from "../../components/sections/TagSection";
 import Provider from "../../components/atoms/Provider";
 import { getPostTags } from "../../services/postService";
+import MainLayout from "../../components/atoms/MainLayout";
 
 export async function getStaticProps() {
   try {
@@ -23,21 +24,14 @@ export async function getStaticProps() {
 
 function Tags({ tagData }) {
   return (
-    <TagsContainer>
+    <MainLayout>
       <BlogInfoSection />
       <Provider type="vertical" />
       <TagSection
         tags={tagData}
       />
-    </TagsContainer>
+    </MainLayout>
   );
 }
-
-const TagsContainer = styled.div`
-  display: flex;
-  width: 100vw;
-  height: 100vh;
-  padding: 2rem 15vw;
-`;
 
 export default Tags;

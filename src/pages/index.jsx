@@ -1,8 +1,7 @@
-import styled from "styled-components";
-
 import BlogInfoSection from "../components/sections/BlogInfoSection";
 import PostSection from "../components/sections/PostSection";
 import Provider from "../components/atoms/Provider";
+import MainLayout from "../components/atoms/MainLayout";
 import { getPage, getAllPostNames } from "../services/postService";
 
 export async function getStaticProps() {
@@ -25,7 +24,7 @@ export async function getStaticProps() {
 
 function Home({ latestPosts, hasNextPage }) {
   return (
-    <HomeContainer>
+    <MainLayout>
       <BlogInfoSection />
       <Provider type="vertical"/>
       <PostSection
@@ -33,15 +32,8 @@ function Home({ latestPosts, hasNextPage }) {
         hasPrevPage={false}
         hasNextPage={hasNextPage}
       />
-    </HomeContainer>
+    </MainLayout>
   );
 }
-
-const HomeContainer = styled.div`
-  display: flex;
-  width: 100vw;
-  height: 100vh;
-  padding: 2rem 15vw;
-`;
 
 export default Home;

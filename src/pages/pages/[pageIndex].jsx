@@ -5,6 +5,7 @@ import PostSection from "../../components/sections/PostSection";
 import Provider from "../../components/atoms/Provider";
 import { getPage, getAllPostNames } from "../../services/postService";
 import POST from "../../configs/post";
+import MainLayout from "../../components/atoms/MainLayout";
 
 const maxPage = Math.ceil(getAllPostNames().length / POST.DEFAULT_NUMBER_OF_POSTS);
 
@@ -47,7 +48,7 @@ export async function getStaticProps({ params }) {
 
 function Page({ posts, hasPrevPage, hasNextPage }) {
   return (
-    <PageContainer>
+    <MainLayout>
       <BlogInfoSection />
       <Provider type="vertical"/>
       <PostSection
@@ -55,15 +56,8 @@ function Page({ posts, hasPrevPage, hasNextPage }) {
         hasPrevPage={hasPrevPage}
         hasNextPage={hasNextPage}
       />
-    </PageContainer>
+    </MainLayout>
   );
 }
-
-const PageContainer = styled.div`
-  display: flex;
-  width: 100vw;
-  height: 100vh;
-  padding: 2rem 15vw;
-`;
 
 export default Page;
