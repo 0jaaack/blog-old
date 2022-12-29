@@ -25,8 +25,8 @@ const TagSectionContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  width: 40rem;
-  padding: 1rem 3rem;
+  width: 40vw;
+  padding: 2rem 3rem;
 `;
 
 const TagList = styled.div`

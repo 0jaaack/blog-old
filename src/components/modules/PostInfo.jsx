@@ -6,12 +6,12 @@ import Description from "../atoms/Description";
 function PostInfo({ title, published, tags }) {
   return (
     <PostInfoContainer>
-      <Description size={9}>
-        {published}
-      </Description>
       <PostTitle size={25}>
         {title}
       </PostTitle>
+      <Description size={9}>
+        {published}
+      </Description>
       <TagList>
         {tags.map((tag) => (
           <TagLabel size={10}>
@@ -25,15 +25,17 @@ function PostInfo({ title, published, tags }) {
 
 const PostInfoContainer = styled.div`
   display: flex;
-  align-items: center;
   flex-direction: column;
-  gap: 0.3rem;
+  justify-content: center;
+  gap: 0.5rem;
+  height: 10rem;
 `;
 
 const TagList = styled.span`
   display: inline-flex;
   gap: 0.4rem;
-  line-height: 3rem;
+  margin-top: 1rem;
+  padding: 0;
 `;
 
 export default PostInfo;
