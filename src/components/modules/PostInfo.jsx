@@ -14,7 +14,7 @@ function PostInfo({ title, published, tags }) {
       </Description>
       <TagList>
         {tags.map((tag) => (
-          <TagLabel size={10}>
+          <TagLabel key={tag} size={10}>
             {tag}
           </TagLabel>
         ))}
