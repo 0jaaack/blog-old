@@ -14,6 +14,7 @@ const Markdown = styled.div`
     position: relative;
     font-size: 1.8rem;
     line-height: 5rem;
+    margin-top: 1rem;
 
     &::before {
       content: "";
@@ -30,16 +31,32 @@ const Markdown = styled.div`
   h2 {
     font-size: 1.3rem;
     line-height: 3rem;
+    margin-top: 1rem;
   }
 
   h3 {
     font-size: 1rem;
     font-weight: 500;
     line-height: 2.5rem;
+    margin-top: 1rem;
   }
 
   a {
     color: ${({ theme }) => theme.colors.blue};
+  }
+
+  blockquote > p {
+    color: #b4b0b0;
+    margin: 1rem 0;
+
+    &::before {
+      content: "|";
+      color: #333942;
+      background: #333942;
+      width: 1rem;
+      height: 5rem;
+      margin-right: 1rem;
+    }
   }
 
   /* inline code Blocks */
