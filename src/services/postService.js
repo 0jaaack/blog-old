@@ -19,6 +19,16 @@ export function getPostDetails(postTitle) {
   return result;
 }
 
+export function getPostContent(postTitle) {
+  const file = fs.readFileSync(
+    path.join(process.cwd(), "posts", postTitle),
+    { encoding: "utf8" },
+  );
+  const { body } = fm(file);
+
+  return body;
+}
+
 export function getAllPostNames() {
   return fs.readdirSync(
     path.join(process.cwd(), "posts"),
