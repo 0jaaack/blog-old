@@ -8,7 +8,7 @@ function Profile() {
   return (
     <ProfileModuleContainer>
       <ProfileImage
-        src="/images/profile.png"
+        src="/images/profile.PNG"
         size={84}
       />
       <ProfileName>
