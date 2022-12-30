@@ -1,7 +1,7 @@
 {
   "name": "ponjaehyeok-blog",
   "packageManager": "yarn@3.3.0",
-  "version": "0.1.0",
+  "version": "0.8.0",
   "description": "예에 나도 블로그",
   "homepage": "",
   "repository": "",
@@ -16,7 +16,10 @@
     "start": "next start"
   },
   "dependencies": {
+    "@mapbox/rehype-prism": "^0.8.0",
+    "front-matter": "^4.0.2",
     "next": "^13.1.0",
+    "next-mdx-remote": "^4.2.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-is": "^18.2.0",

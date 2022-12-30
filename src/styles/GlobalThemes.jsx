@@ -1,16 +1,42 @@
+import { createContext, useState } from "react";
 import { ThemeProvider } from "styled-components";
+import THEME from "../configs/theme";
 
-const theme = {
+const commonTheme = {
   colors: {
-    primary: "#111",
-    secondary: "#0070f3",
-  },
+    grey: "#888888",
+    lightgrey: "#D3D3D3",
+    blue: "#0070F3",
+    orange: "#F7A047",
+  }
+}
+
+const lightModeTheme = {
+  background: "#E5E5E5",
+  color: "#111111",
 };
 
+const darkModeTheme = {
+  background: "#111827",
+  color: "#F2F4F6",
+};
+
+export const ThemeActionContext = createContext();
+
 function GlobalThemes({ children }) {
+  const [currentTheme, setCurrentTheme] = useState(THEME.DARK);
+  const theme = Object.assign({},
+    commonTheme,
+    currentTheme === THEME.DARK
+      ? darkModeTheme
+      : lightModeTheme
+  );
+
   return (
     <ThemeProvider theme={theme}>
-      {children}
+      <ThemeActionContext.Provider value={setCurrentTheme}>
+        {children}
+      </ThemeActionContext.Provider>
     </ThemeProvider>
   );
 }
