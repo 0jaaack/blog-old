@@ -42,6 +42,10 @@ export async function getStaticProps({ params }) {
   }
 }
 
+const components = {
+  a: (props) => <a target="_blank" {...props} />
+};
+
 function Post({ title, date, tags, markdown }) {
   return (
     <PostContainer>
@@ -52,14 +56,15 @@ function Post({ title, date, tags, markdown }) {
       />
       <Provider type="horizon"/>
       <Markdown>
-        <MDXRemote {...markdown} />
+        <MDXRemote components={components} {...markdown} />
       </Markdown>
     </PostContainer>
   );
 }
 
 const PostContainer = styled.div`
-  width: 50vw;
+  width: 60rem;
+  min-width: 30rem;
   margin: 0 auto;
   padding: 3rem;
   -ms-overflow-style: none;
