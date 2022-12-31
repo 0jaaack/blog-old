@@ -59,6 +59,15 @@ const Markdown = styled.div`
     }
   }
 
+  th {
+    border-bottom: 1px solid #D1D5DB;
+    padding-right: 1rem;
+  }
+
+  td {
+    padding-right: 1rem;
+  }
+
   /* inline code Blocks */
   code {
     padding: 0.2em 0.4em;
