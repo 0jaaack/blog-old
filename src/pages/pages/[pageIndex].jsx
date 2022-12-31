@@ -1,13 +1,11 @@
-import styled from "styled-components";
-
 import BlogInfoSection from "../../components/sections/BlogInfoSection";
 import PostSection from "../../components/sections/PostSection";
 import Provider from "../../components/atoms/Provider";
-import { getPage, getAllPostNames } from "../../services/postService";
+import { getPage, getAllPostFileNames } from "../../services/postService";
 import POST from "../../configs/post";
 import MainLayout from "../../components/atoms/MainLayout";
 
-const maxPage = Math.ceil(getAllPostNames().length / POST.DEFAULT_NUMBER_OF_POSTS);
+const maxPage = Math.ceil(getAllPostFileNames().length / POST.DEFAULT_NUMBER_OF_POSTS);
 
 export async function getStaticPaths() {
   return {
