@@ -35,16 +35,16 @@ function PostSection({ posts, hasPrevPage, hasNextPage }) {
 const PostSectionContainer = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 3rem;
+  gap: 2rem;
   width: 40vw;
-  padding: 2rem 3rem;
+  padding: 1rem 3rem;
 `;
 
 const PostList = styled.ul`
   padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 3rem 0;
+  gap: 2.3rem;
 `;
 
 export default PostSection;
