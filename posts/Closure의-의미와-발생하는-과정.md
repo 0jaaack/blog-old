@@ -1,10 +1,10 @@
 ---
-title: Closure의 의미, 발생하는 과정, 가비지 컬렉션(GC)
+title: Closure의 의미와 발생하는 과정
 tags:
   - javascript
 published: true
 date: "2022-04-06"
-description: (이전 블로그 글) 클로저에 대한 개념 정리 1편
+description: 클로저에 대한 개념 정리 1편
 ---
 
 ## Clousure란?
@@ -222,7 +222,7 @@ Closure를 알든 아니면 그렇지 않든 간에, 지금도 자바스크립�
 마찬가지로 각각의 클로저가 생겨 0 ~ 5까지 출력된다.
 
 ### 3. eventListener
-`eventLister의` 경우에도, `setTimeout`/`setInterval`과 마찬가지로 내부의 함수가 지역변수를 참조하면서 클로저를 생성한다.
+`eventLister`의 경우에도, `setTimeout`/`setInterval`과 마찬가지로 내부의 함수가 지역변수를 참조하면서 클로저를 생성한다.
 
 사실 `setTimeout`/`setInterval`의 경우와 비슷하다.
 
