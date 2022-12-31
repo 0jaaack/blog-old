@@ -5,7 +5,14 @@ import Description from "../atoms/Description";
 import PostCellDate from "../atoms/PostCellDate";
 import TagLabel from "../atoms/TagLabel";
 
+const spaceRegExp = new RegExp(/\s/g);
+const specialSymbolsRegExp = new RegExp(/[\{\}\[\]\/.,;:|\)*~`!^\_+<>@\#$%&\\\=\(\'\"]/gi);
+
 function PostCell({ title, description, tags, published }) {
+  const postPath = title
+    .replaceAll(spaceRegExp, "-")
+    .replaceAll(specialSymbolsRegExp, "");
+
   return (
     <PostCellContainer>
       <InfoLayout>
@@ -23,7 +30,7 @@ function PostCell({ title, description, tags, published }) {
       <HeadLayout>
         <PostTitle
           size={14}
-          href={`/${title.replaceAll(" ", "-")}`}
+          href={`/${postPath}`}
         >
           {title}
         </PostTitle>
