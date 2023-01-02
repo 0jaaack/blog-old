@@ -4,7 +4,7 @@ const Markdown = styled.div`
   color: #D1D5DB;
   font-size: 0.85rem;
   line-height: 1.6rem;
-  padding: 1rem;
+  padding: 1rem 0;
   -webkit-user-select: text;
   -moz-user-select: text;
   -ms-user-select: text;

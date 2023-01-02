@@ -63,7 +63,7 @@ function Post({ title, date, tags, markdown }) {
 }
 
 const PostContainer = styled.div`
-  width: 60rem;
+  width: 50rem;
   min-width: 30rem;
   margin: 0 auto;
   padding: 3rem;
