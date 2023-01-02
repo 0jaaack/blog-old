@@ -3,7 +3,7 @@ import TagLabel from "../atoms/TagLabel";
 import PostTitle from "../atoms/PostTitle";
 import Description from "../atoms/Description";
 
-function PostInfo({ title, published, tags }) {
+function PostInfo({ title, published, tags = [] }) {
   return (
     <PostInfoContainer>
       <PostTitle size={25}>
