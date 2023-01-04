@@ -1,6 +1,7 @@
 .vscode/*
 .editorconfig
 .next
+.env
 
 .yarn/*
 !.yarn/patches
