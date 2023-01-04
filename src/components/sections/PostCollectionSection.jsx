@@ -5,7 +5,7 @@ import SectionHeader from "../atoms/SectionHeader";
 import PostCell from "../modules/PostCell";
 import PagenationConsole from "../modules/PagenationConsole";
 
-function PostSection({ posts, hasPrevPage, hasNextPage }) {
+function PostCollectionSection({ posts, hasPrevPage, hasNextPage }) {
   const { query: { pageIndex } } = useRouter();
 
   return (
@@ -47,4 +47,4 @@ const PostList = styled.ul`
   gap: 2.3rem;
 `;
 
-export default PostSection;
+export default PostCollectionSection;

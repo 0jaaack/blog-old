@@ -5,18 +5,21 @@ import fm from "front-matter";
 import POST from "../configs/post";
 
 export function getPostDetails(postTitle) {
-  const result = {};
   const file = fs.readFileSync(
     path.join(process.cwd(), "posts", postTitle),
     { encoding: "utf8" },
   );
   const { attributes } = fm(file);
 
-  Object.keys(attributes).forEach((attr) => {
-    result[attr] = attributes[attr];
-  });
-
-  return result;
+  return Object.entries(attributes)
+    .map((attr) => {
+      return attr[1] instanceof Date
+        ? [attr[0], attr[1].toISOString().slice(0, 10)]
+        : attr;
+    })
+    .reduce((result, [key, value]) => {
+      return Object.assign(result, { [key]: value });
+    }, {});
 }
 
 export function getPostContent(postTitle) {
