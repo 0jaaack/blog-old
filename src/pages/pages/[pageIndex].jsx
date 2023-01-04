@@ -1,23 +1,13 @@
 import BlogInfoSection from "../../components/sections/BlogInfoSection";
-import PostSection from "../../components/sections/PostSection";
+import PostCollectionSection from "../../components/sections/PostCollectionSection";
 import Provider from "../../components/atoms/Provider";
-import { getPage, getAllPostFileNames } from "../../services/postService";
+import { getPage, getAllPostFileNames } from "../../services/postCollectionService";
 import POST from "../../configs/post";
 import MainLayout from "../../components/atoms/MainLayout";
 
 const maxPage = Math.ceil(getAllPostFileNames().length / POST.DEFAULT_NUMBER_OF_POSTS);
 
-export async function getStaticPaths() {
-  return {
-    paths: Array.from(
-      new Array(maxPage),
-      (v, i) => ({ params: { pageIndex: `${i + 1}` }})
-    ),
-    fallback: false,
-  };
-}
-
-export async function getStaticProps({ params }) {
+export async function getServerSideProps({ params }) {
   try {
     const posts = getPage(Number(params.pageIndex));
 
@@ -49,7 +39,7 @@ function Page({ posts, hasPrevPage, hasNextPage }) {
     <MainLayout>
       <BlogInfoSection />
       <Provider type="vertical"/>
-      <PostSection
+      <PostCollectionSection
         posts={posts}
         hasPrevPage={hasPrevPage}
         hasNextPage={hasNextPage}

@@ -1,10 +1,10 @@
 import BlogInfoSection from "../components/sections/BlogInfoSection";
-import PostSection from "../components/sections/PostSection";
+import PostCollectionSection from "../components/sections/PostCollectionSection";
 import Provider from "../components/atoms/Provider";
 import MainLayout from "../components/atoms/MainLayout";
-import { getPage, getAllPostFileNames } from "../services/postService";
+import { getPage, getAllPostFileNames } from "../services/postCollectionService";
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   try {
     const latestPosts = getPage(1);
     const hasNextPage = getAllPostFileNames().length > 4;
@@ -27,7 +27,7 @@ function Home({ latestPosts, hasNextPage }) {
     <MainLayout>
       <BlogInfoSection />
       <Provider type="vertical"/>
-      <PostSection
+      <PostCollectionSection
         posts={latestPosts}
         hasPrevPage={false}
         hasNextPage={hasNextPage}
