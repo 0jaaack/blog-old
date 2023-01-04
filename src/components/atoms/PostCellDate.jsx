@@ -16,7 +16,7 @@ const textMonth = {
 };
 
 function PostCellDate({ children }) {
-  if (new Date(children) === "Invalid Date") {
+  if (new Date(children).toString() === "Invalid Date") {
     return new Error("invalid date");
   }
 
