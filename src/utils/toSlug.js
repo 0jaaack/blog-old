@@ -3,8 +3,8 @@ const symbolsRegExp = new RegExp(/[\{\}\[\]\/.,;:|\)*~`!^\_+<>@\#$%&\\\=\(\'\"]/
 
 function toSlug(text) {
   return text
-    .replaceAll(spaceRegExp, "-")
-    .replaceAll(symbolsRegExp, "");
+    .replace(spaceRegExp, "-")
+    .replace(symbolsRegExp, "");
 }
 
 export default toSlug;
