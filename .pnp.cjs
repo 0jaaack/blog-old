@@ -31,6 +31,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@mapbox/rehype-prism", "npm:0.8.0"],\
             ["@mdx-js/react", "virtual:0e6ad1f9e472124cf107242f302f8f279fc9f663e755eb8710d4c8bd840303ed24a2c005a8631067865a0f53692f561920de43a68a6aa75bc6ac9826dbb9924e#npm:2.2.1"],\
             ["front-matter", "npm:4.0.2"],\
+            ["js-base64", "npm:3.7.3"],\
             ["next", "virtual:0e6ad1f9e472124cf107242f302f8f279fc9f663e755eb8710d4c8bd840303ed24a2c005a8631067865a0f53692f561920de43a68a6aa75bc6ac9826dbb9924e#npm:13.1.0"],\
             ["next-mdx-remote", "virtual:0e6ad1f9e472124cf107242f302f8f279fc9f663e755eb8710d4c8bd840303ed24a2c005a8631067865a0f53692f561920de43a68a6aa75bc6ac9826dbb9924e#npm:4.2.0"],\
             ["react", "npm:18.2.0"],\
@@ -2530,6 +2531,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["js-base64", [\
+        ["npm:3.7.3", {\
+          "packageLocation": "./.yarn/cache/js-base64-npm-3.7.3-168e1af42e-ee19bed9ba.zip/node_modules/js-base64/",\
+          "packageDependencies": [\
+            ["js-base64", "npm:3.7.3"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["js-tokens", [\
         ["npm:3.0.2", {\
           "packageLocation": "./.yarn/cache/js-tokens-npm-3.0.2-fe6fb334bd-ff24cf90e6.zip/node_modules/js-tokens/",\
@@ -4031,6 +4041,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@mapbox/rehype-prism", "npm:0.8.0"],\
             ["@mdx-js/react", "virtual:0e6ad1f9e472124cf107242f302f8f279fc9f663e755eb8710d4c8bd840303ed24a2c005a8631067865a0f53692f561920de43a68a6aa75bc6ac9826dbb9924e#npm:2.2.1"],\
             ["front-matter", "npm:4.0.2"],\
+            ["js-base64", "npm:3.7.3"],\
             ["next", "virtual:0e6ad1f9e472124cf107242f302f8f279fc9f663e755eb8710d4c8bd840303ed24a2c005a8631067865a0f53692f561920de43a68a6aa75bc6ac9826dbb9924e#npm:13.1.0"],\
             ["next-mdx-remote", "virtual:0e6ad1f9e472124cf107242f302f8f279fc9f663e755eb8710d4c8bd840303ed24a2c005a8631067865a0f53692f561920de43a68a6aa75bc6ac9826dbb9924e#npm:4.2.0"],\
             ["react", "npm:18.2.0"],\
