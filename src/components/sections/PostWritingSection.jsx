@@ -5,6 +5,7 @@ import PostInfoEditingSection from "../modules/PostInfoEditingSection";
 import MarkdownViewer from "../atoms/MarkdownViewer";
 import MarkdownEditor from "../atoms/MarkdownEditor";
 import Button from "../atoms/Button";
+import { publishPost } from "../../utils/publishPost";
 
 function PostWritingSection() {
   const [isViewMode, setIsViewMode] = useState(false);
@@ -22,11 +23,14 @@ function PostWritingSection() {
     ) {
       return;
     }
-
     const tagsArray = postConfig.tags
       ?.split("#")
       .slice(1)
       .map((tag) => tag.trim()) ?? [];
+
+    const result = publishPost(Object.assign(postConfig, { tags: tagsArray }));
+
+    alert(result);
   };
 
   const handleChange = (target, value) => {
