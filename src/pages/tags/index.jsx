@@ -4,6 +4,18 @@ import Provider from "../../components/atoms/Provider";
 import { getPostTags } from "../../services/postCollectionService";
 import MainLayout from "../../components/atoms/MainLayout";
 
+function Tags({ tagData }) {
+  return (
+    <MainLayout>
+      <BlogInfoSection />
+      <Provider type="vertical" />
+      <TagSection
+        tags={tagData}
+      />
+    </MainLayout>
+  );
+}
+
 export async function getStaticProps() {
   try {
     const tagData = getPostTags();
@@ -18,18 +30,6 @@ export async function getStaticProps() {
       notFound: true,
     };
   }
-}
-
-function Tags({ tagData }) {
-  return (
-    <MainLayout>
-      <BlogInfoSection />
-      <Provider type="vertical" />
-      <TagSection
-        tags={tagData}
-      />
-    </MainLayout>
-  );
 }
 
 export default Tags;

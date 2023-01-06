@@ -1,6 +1,6 @@
 import { useState } from "react";
-import ConfirmPasswored from "../components/sections/ConfirmPassword";
-import PostWritingSection from "../components/sections/PostWritingSection";
+import ConfirmPasswored from "../../components/sections/ConfirmPassword";
+import PostWritingSection from "../../components/sections/PostWritingSection";
 
 function Write() {
   const [authenticated, setAuthenticated] = useState(false);

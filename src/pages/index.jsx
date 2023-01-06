@@ -4,7 +4,21 @@ import Provider from "../components/atoms/Provider";
 import MainLayout from "../components/atoms/MainLayout";
 import { getPage, getAllPostFileNames } from "../services/postCollectionService";
 
-export async function getServerSideProps() {
+function Home({ latestPosts, hasNextPage }) {
+  return (
+    <MainLayout>
+      <BlogInfoSection />
+      <Provider type="vertical"/>
+      <PostCollectionSection
+        posts={latestPosts}
+        hasPrevPage={false}
+        hasNextPage={hasNextPage}
+      />
+    </MainLayout>
+  );
+}
+
+export async function getStaticProps() {
   try {
     const latestPosts = getPage(1);
     const hasNextPage = getAllPostFileNames().length > 4;
@@ -20,20 +34,6 @@ export async function getServerSideProps() {
       notFound: true,
     };
   }
-}
-
-function Home({ latestPosts, hasNextPage }) {
-  return (
-    <MainLayout>
-      <BlogInfoSection />
-      <Provider type="vertical"/>
-      <PostCollectionSection
-        posts={latestPosts}
-        hasPrevPage={false}
-        hasNextPage={hasNextPage}
-      />
-    </MainLayout>
-  );
 }
 
 export default Home;
