@@ -4,7 +4,7 @@ import fm from "front-matter";
 
 import POST from "../configs/post";
 
-export function getPostDetails(postTitle) {
+function getPostDetail(postTitle) {
   const file = fs.readFileSync(
     path.join(process.cwd(), "posts", postTitle),
     { encoding: "utf8" },
@@ -45,7 +45,7 @@ export function getPage(pageIndex) {
   }
 
   return getAllPostFileNames()
-    .map((post) => getPostDetails(post))
+    .map((post) => getPostDetail(post))
     .sort((a, b) => new Date(b.date) - new Date(a.date))
     .slice((pageIndex - 1) * POST.DEFAULT_NUMBER_OF_POSTS, pageIndex * POST.DEFAULT_NUMBER_OF_POSTS);
 }
@@ -53,7 +53,7 @@ export function getPage(pageIndex) {
 export function getPostTags() {
   const tagData = getAllPostFileNames()
     .map((post) => {
-      const { tags } = getPostDetails(post);
+      const { tags } = getPostDetail(post);
       return tags;
     })
     .reduce((acc, cur) => acc.concat(cur), [])
