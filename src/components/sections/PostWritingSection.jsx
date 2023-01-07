@@ -5,7 +5,7 @@ import PostInfoEditingSection from "../modules/PostInfoEditingSection";
 import MarkdownViewer from "../atoms/MarkdownViewer";
 import MarkdownEditor from "../atoms/MarkdownEditor";
 import Button from "../atoms/Button";
-import { publishPost } from "../../utils/publishPost";
+import { editPost, publishPost } from "../../utils/publishPost";
 
 function PostWritingSection({ post }) {
   const { isPublish, ...postValues } = post ?? {};
@@ -29,14 +29,19 @@ function PostWritingSection({ post }) {
     ) {
       return;
     }
-    const tagsArray = postConfig.tags
-      ?.split("#")
-      .slice(1)
-      .map((tag) => tag.trim()) ?? [];
+    const postUploadConfig = Object.assign(postConfig, {
+      published: isPublished,
+      tags: postConfig.tags
+        ?.split("#")
+        .slice(1)
+        .map((tag) => tag.trim()) ?? [],
+    });
 
-      const result = await publishPost(Object.assign(postConfig, { tags: tagsArray }));
+    const result = !!post
+      ? await editPost(postUploadConfig)
+      : await publishPost(postUploadConfig);
 
-      alert(JSON.stringify(result));
+    alert(JSON.stringify(result));
   };
 
   const handleChange = (target, value) => {
