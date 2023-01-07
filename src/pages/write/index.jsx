@@ -8,7 +8,7 @@ function Write() {
   return (
     <>
       {authenticated ? (
-        <PostWritingSection />
+        <PostWritingSection/>
       ) : (
         <ConfirmPasswored
           onConfirm={() => setAuthenticated(true)}
