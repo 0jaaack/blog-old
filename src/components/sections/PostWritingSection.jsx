@@ -8,9 +8,9 @@ import Button from "../atoms/Button";
 import { editPost, publishPost } from "../../utils/publishPost";
 
 function PostWritingSection({ post }) {
-  const { isPublish, ...postValues } = post ?? {};
+  const { published, ...postValues } = post ?? {};
   const [isViewMode, setIsViewMode] = useState(false);
-  const [isPublished, setIsPublished] = useState(isPublish ?? false);
+  const [isPublished, setIsPublished] = useState(published ?? false);
   const [postConfig, setPostConfig] = useState(!!Object.keys(postValues).length ? postValues : {});
   const infoValues = {
     title: postConfig.title ?? "",
@@ -29,19 +29,20 @@ function PostWritingSection({ post }) {
     ) {
       return;
     }
-    const postUploadConfig = Object.assign(postConfig, {
+
+    const postUploadConfig = {
+      ...postConfig,
       published: isPublished,
       tags: postConfig.tags
         ?.split("#")
         .slice(1)
         .map((tag) => tag.trim()) ?? [],
-    });
-
+    };
     const result = !!post
       ? await editPost(postUploadConfig)
       : await publishPost(postUploadConfig);
 
-    alert(JSON.stringify(result));
+    alert(result);
   };
 
   const handleChange = (target, value) => {

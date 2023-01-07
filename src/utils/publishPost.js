@@ -31,9 +31,9 @@ export async function publishPost({ body, ...config }) {
         content: encode(frontMatter + "\r\n\r\n" + body),
       }),
     });
-    const result = await upload.json();
+    const { commit } = await upload.json();
 
-    return result;
+    return `upload complete! (commit: ${commit.sha})`;
   } catch (error) {
     return new Error(error);
   }
@@ -60,9 +60,9 @@ export async function editPost({ body, ...config }) {
         sha,
       }),
     });
-    const result = await upload.json();
+    const { commit } = await upload.json();
 
-    return result;
+    return `upload complete! (commit: ${commit.sha})`;
   } catch (error) {
     return new Error(error);
   }

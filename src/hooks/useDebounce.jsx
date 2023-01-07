@@ -3,9 +3,9 @@ import { useCallback } from "react";
 const debounce = function (func, wait) {
   let reserveInvoke = null;
 
-  return function (event) {
+  return function (...agrs) {
     clearTimeout(reserveInvoke);
-    reserveInvoke = setTimeout(func.bind(this, event), wait);
+    reserveInvoke = setTimeout(func.bind(this, ...agrs), wait);
   }
 }
 
