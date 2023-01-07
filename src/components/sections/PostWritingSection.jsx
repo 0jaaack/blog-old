@@ -34,9 +34,9 @@ function PostWritingSection({ post }) {
       .slice(1)
       .map((tag) => tag.trim()) ?? [];
 
-    const result = publishPost(Object.assign(postConfig, { tags: tagsArray }));
+      const result = await publishPost(Object.assign(postConfig, { tags: tagsArray }));
 
-    alert(result);
+      alert(JSON.stringify(result));
   };
 
   const handleChange = (target, value) => {
