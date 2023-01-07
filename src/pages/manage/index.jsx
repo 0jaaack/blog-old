@@ -1,14 +1,25 @@
+import { useState } from "react";
+
+import ConfirmPasswored from "../../components/sections/ConfirmPassword";
 import MainLayout from "../../components/atoms/MainLayout";
 import PostManageSection from "../../components/sections/PostManageSection";
 import { getAllPostFileNames, getPostDetail } from "../../services/postCollectionService";
 
 function Manage({ posts }) {
+  const [authenticated, setAuthenticated] = useState(false);
+
   return (
-    <MainLayout>
-      <PostManageSection
-        posts={posts}
-      />
-    </MainLayout>
+    <>
+      {authenticated ? (
+        <MainLayout>
+          <PostManageSection posts={posts} />
+        </MainLayout>
+      ) : (
+        <ConfirmPasswored
+          onConfirm={() => setAuthenticated(true)}
+        />
+      )}
+    </>
   );
 }
 
