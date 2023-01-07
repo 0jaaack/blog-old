@@ -23,9 +23,10 @@ const maxPage = Math.ceil(getAllPostFileNames().length / POST.DEFAULT_NUMBER_OF_
 
 export async function getStaticPaths() {
   return {
-    paths: getAllPostFileNames().map((post) => (
-      { params: { postTitle: post.split(".")[0] } }
-    )),
+    paths: Array.from(
+      new Array(maxPage),
+      (v, i) => ({ params: { pageIndex: `${i + 1}` }})
+    ),
     fallback: false,
   };
 }
