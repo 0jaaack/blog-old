@@ -3,7 +3,7 @@ title: useEffect는 필요하지 않을 수도 있어요!
 description: 리액트 베타 문서 번역
 tags:
   - 리액트
-date: 2023-01-05
+date: 2023-01-07
 ---
 
 원문: [You Might Not Need an Effect](https://beta.reactjs.org/learn/you-might-not-need-an-effect)
