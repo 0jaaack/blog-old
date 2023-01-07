@@ -1,14 +1,10 @@
 import styled from "styled-components";
-import useDebounce from "../../hooks/useDebounce";
 
-function TextInput({ size, onChange, ...props }) {
-  const handleChange = useDebounce(onChange, 500);
-
+function TextInput({ size, ...props }) {
   return (
     <Input
       type="text"
       size={size}
-      onChange={handleChange}
       {...props}
     />
   );
