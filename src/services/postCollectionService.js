@@ -33,15 +33,9 @@ export function getPostContent(postTitle) {
 }
 
 export function getPost(postTitle) {
-  const file = fs.readFileSync(
-    path.join(process.cwd(), "posts", postTitle),
-    { encoding: "utf8" },
-  );
-  const { body, attributes } = fm(file);
-
   return {
-    body,
-    ...attributes,
+    ...getPostDetail(postTitle),
+    ...getPostContent(postTitle),
   };
 }
 
