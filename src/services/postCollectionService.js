@@ -35,7 +35,7 @@ export function getPostContent(postTitle) {
 export function getPost(postTitle) {
   return {
     ...getPostDetail(postTitle),
-    ...getPostContent(postTitle),
+    body: getPostContent(postTitle),
   };
 }
 
