@@ -27,7 +27,7 @@ export async function publishPost({ body, ...config }) {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        message: "Post: update post - ",
+        message: `Post: update ${config.title}`,
         content: encode(frontMatter + "\r\n\r\n" + body),
       }),
     });
