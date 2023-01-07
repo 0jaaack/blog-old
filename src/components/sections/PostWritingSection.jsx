@@ -7,10 +7,16 @@ import MarkdownEditor from "../atoms/MarkdownEditor";
 import Button from "../atoms/Button";
 import { publishPost } from "../../utils/publishPost";
 
-function PostWritingSection() {
+function PostWritingSection({ post }) {
+  const { isPublish, ...postValues } = post ?? {};
   const [isViewMode, setIsViewMode] = useState(false);
-  const [isPublished, setIsPublished] = useState(false);
-  const [postConfig, setPostConfig] = useState({});
+  const [isPublished, setIsPublished] = useState(isPublish ?? false);
+  const [postConfig, setPostConfig] = useState(!!Object.keys(postValues).length ? postValues : {});
+  const infoValues = {
+    title: postConfig.title ?? "",
+    description: postConfig.description ?? "",
+    tags: postConfig.tags ?? "",
+  };
 
   const handleRegister = async () => {
     const isPublish = confirm("포스트를 등록하시겠습니까?");
@@ -53,7 +59,10 @@ function PostWritingSection() {
           등록하기
         </Button>
       </ConsoleSection>
-      <PostInfoEditingSection onInfoChange={handleChange}/>
+      <PostInfoEditingSection
+        onInfoChange={handleChange}
+        infoValues={infoValues}
+      />
       <ContentEditingSection>
         {isViewMode ? (
           <MarkdownViewer

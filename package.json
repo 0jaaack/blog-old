@@ -1,7 +1,7 @@
 {
   "name": "ponjaehyeok-blog",
   "packageManager": "yarn@3.3.0",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "description": "항상 프로그래밍만 생각하는 코딩 바보 공재혁의 우당탕탕 블로그!",
   "homepage": "ponjaehyeok-blog.vercel.app",
   "repository": "https://github.com/ponjaehyeok/ponjaehyeok-blog",

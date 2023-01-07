@@ -5,9 +5,33 @@ import { getPage, getAllPostFileNames } from "../../services/postCollectionServi
 import POST from "../../configs/post";
 import MainLayout from "../../components/atoms/MainLayout";
 
+function Page({ posts, hasPrevPage, hasNextPage }) {
+  return (
+    <MainLayout>
+      <BlogInfoSection />
+      <Provider type="vertical"/>
+      <PostCollectionSection
+        posts={posts}
+        hasPrevPage={hasPrevPage}
+        hasNextPage={hasNextPage}
+      />
+    </MainLayout>
+  );
+}
+
 const maxPage = Math.ceil(getAllPostFileNames().length / POST.DEFAULT_NUMBER_OF_POSTS);
 
-export async function getServerSideProps({ params }) {
+export async function getStaticPaths() {
+  return {
+    paths: Array.from(
+      new Array(maxPage),
+      (v, i) => ({ params: { pageIndex: `${i + 1}` }})
+    ),
+    fallback: false,
+  };
+}
+
+export async function getStaticProps({ params }) {
   try {
     const posts = getPage(Number(params.pageIndex));
 
@@ -32,20 +56,6 @@ export async function getServerSideProps({ params }) {
       notFound: true,
     };
   }
-}
-
-function Page({ posts, hasPrevPage, hasNextPage }) {
-  return (
-    <MainLayout>
-      <BlogInfoSection />
-      <Provider type="vertical"/>
-      <PostCollectionSection
-        posts={posts}
-        hasPrevPage={hasPrevPage}
-        hasNextPage={hasNextPage}
-      />
-    </MainLayout>
-  );
 }
 
 export default Page;
