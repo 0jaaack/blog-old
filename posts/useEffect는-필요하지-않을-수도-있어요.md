@@ -2,6 +2,7 @@
 title: useEffect는 필요하지 않을 수도 있어요!
 description: 리액트 베타 문서 번역
 tags:
+  - react
 date: 2023-01-07
 published: false
 ---
