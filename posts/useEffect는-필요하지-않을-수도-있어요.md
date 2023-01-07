@@ -4,7 +4,7 @@ description: 리액트 베타 문서 번역
 tags:
   - react
 date: 2023-01-07
-published: false
+published: true
 ---
 
 원문: [You Might Not Need an Effect](https://beta.reactjs.org/learn/you-might-not-need-an-effect)
