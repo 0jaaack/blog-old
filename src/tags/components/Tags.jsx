@@ -1,6 +1,5 @@
 import styled from "styled-components";
-import SectionHeader from "../atoms/SectionHeader";
-import TagLabel from "../atoms/TagLabel";
+import SectionHeader from "../../shared/components/SectionHeader";
 
 function TagSection({ tags }) {
   return (
@@ -10,11 +9,13 @@ function TagSection({ tags }) {
       </SectionHeader>
       <TagList>
         {tags.map(([tagName, postCount]) => (
-          <TagCountLabel
+          <TagLabel
             key={tagName}
             size={8}
             count={postCount}
-          >{tagName}&nbsp;</TagCountLabel>
+          >
+            {tagName}&nbsp;
+          </TagLabel>
         ))}
       </TagList>
     </TagSectionContainer>
@@ -34,7 +35,12 @@ const TagList = styled.div`
   line-height: 2.3rem;
 `;
 
-const TagCountLabel = styled(TagLabel)`
+const TagLabel = styled.span`
+  color: ${(({ theme }) => theme.colors.orange)};
+  font-size: ${({ size }) => `${size * 0.1}rem`};
+  font-weight: 500;
+  text-transform: uppercase;
+
   &::after {
     content: "${({ count }) => count} ";
     margin-left: 0.2rem;

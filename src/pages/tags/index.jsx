@@ -1,18 +1,18 @@
-import BlogInfoSection from "../../components/sections/BlogInfoSection";
-import TagSection from "../../components/sections/TagSection";
-import Provider from "../../components/atoms/Provider";
-import { getPostTags } from "../../services/postCollectionService";
-import MainLayout from "../../components/atoms/MainLayout";
+import SideBar from "../../main/components/SideBar";
+import Tags from "../../tags/components/Tags";
+import Provider from "../../shared/components/Provider";
+import { getPostTags } from "../../shared/services/post";
+import Layout from "../../main/components/Layout";
 
-function Tags({ tagData }) {
+function TagPage({ tagData }) {
   return (
-    <MainLayout>
-      <BlogInfoSection />
+    <Layout>
+      <SideBar />
       <Provider type="vertical" />
-      <TagSection
+      <Tags
         tags={tagData}
       />
-    </MainLayout>
+    </Layout>
   );
 }
 
@@ -32,4 +32,4 @@ export async function getStaticProps() {
   }
 }
 
-export default Tags;
+export default TagPage;
