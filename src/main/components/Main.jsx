@@ -1,6 +1,7 @@
 import { useRouter } from "next/router";
 import styled from "styled-components";
 
+import SectionHeader from "../../shared/components/SectionHeader";
 import PostCell from "./PostCell";
 import PageConsole from "./PageConsole";
 
@@ -9,9 +10,9 @@ function Main({ posts, hasPrevPage, hasNextPage }) {
 
   return (
     <MainContainer>
-      <MainHeader>
+      <SectionHeader>
         {pageIndex ? `page ${pageIndex}` : "latest"}
-      </MainHeader>
+      </SectionHeader>
       <PostList>
         {posts.map(({ title, description, tags, date }) => (
           <PostCell
@@ -37,13 +38,6 @@ const MainContainer = styled.div`
   gap: 2rem;
   width: 40vw;
   padding: 1rem 3rem;
-`;
-
-const MainHeader = styled.span`
-  text-transform: capitalize;
-  font-weight: 700;
-  font-size: ${({ size }) => size ? `${size * 0.1}rem` : "1.8rem"};
-  color: ${({ theme }) => theme.colors.lightgrey};
 `;
 
 const PostList = styled.ul`
