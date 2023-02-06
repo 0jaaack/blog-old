@@ -1,6 +1,6 @@
 import { createContext, useState } from "react";
 import { ThemeProvider } from "styled-components";
-import THEME from "../configs/theme";
+import THEME from "../../configs/theme";
 
 const commonTheme = {
   colors: {

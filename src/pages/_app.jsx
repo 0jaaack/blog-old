@@ -1,6 +1,6 @@
-import GlobalStyles from "../styles/GlobalStyles";
-import GlobalFonts from "../styles/GlobalFonts";
-import GlobalThemes from "../styles/GlobalThemes";
+import GlobalStyles from "../shared/styles/GlobalStyles";
+import GlobalFonts from "../shared/styles/GlobalFonts";
+import GlobalThemes from "../shared/styles/GlobalThemes";
 
 function App({ Component, pageProps }) {
   return (
