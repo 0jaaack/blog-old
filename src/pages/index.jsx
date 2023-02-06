@@ -1,5 +1,5 @@
-import MainLayout from "../components/atoms/MainLayout";
-import { getPage, getAllPostFileNames } from "../services/postCollectionService";
+import { getPage, getAllPostFileNames } from "../shared/services/post";
+import MainLayout from "../main/components/Layout";
 import Main from "../main/components/Main";
 import SideBar from "../main/components/SideBar";
 import Provider from "../shared/components/Provider";
