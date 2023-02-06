@@ -1,7 +1,7 @@
 import { useRouter } from "next/router";
 import styled from "styled-components";
 
-import SectionHeader from "../../shared/components/SectionHeader";
+import SectionHeader from "../../@shared/components/SectionHeader";
 import PostCell from "./PostCell";
 import PageConsole from "./PageConsole";
 

@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
-import PostTitle from "./PostTitle";
 import PostCellDate from "./PostCellDate";
-import toSlug from "../../utils/toSlug";
+import PostTitle from "./PostTitle";
+import toSlug from "../../@shared/utils/toSlug";
 
 function PostCell({ title, description, tags, published }) {
   return (
