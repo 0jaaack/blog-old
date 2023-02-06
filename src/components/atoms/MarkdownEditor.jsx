@@ -30,13 +30,14 @@ const Editor = styled.textarea`
   padding: 2rem;
   border-radius: 0.5rem;
   outline: none;
-  width: 50rem;
+  width: 100%;
   resize: none;
   height: 100%;
   border: 0;
   overflow: visible;
   font: inherit;
   font-size: 0.85rem;
+  letter-spacing: 0.04rem;
 `;
 
 export default MarkdownEditor;
