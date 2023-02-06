@@ -1,6 +1,6 @@
-import BlogInfoSection from "../../components/sections/BlogInfoSection";
-import PostCollectionSection from "../../components/sections/PostCollectionSection";
-import Provider from "../../components/atoms/Provider";
+import SideBar from "../../main/components/SideBar";
+import Provider from "../../shared/components/Provider";
+import Main from "../../main/components/Main";
 import { getPage, getAllPostFileNames } from "../../services/postCollectionService";
 import POST from "../../configs/post";
 import MainLayout from "../../components/atoms/MainLayout";
@@ -8,9 +8,9 @@ import MainLayout from "../../components/atoms/MainLayout";
 function Page({ posts, hasPrevPage, hasNextPage }) {
   return (
     <MainLayout>
-      <BlogInfoSection />
+      <SideBar />
       <Provider type="vertical"/>
-      <PostCollectionSection
+      <Main
         posts={posts}
         hasPrevPage={hasPrevPage}
         hasNextPage={hasNextPage}
