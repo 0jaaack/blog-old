@@ -1,7 +1,7 @@
 import SideBar from "../../main/components/SideBar";
 import Provider from "../../shared/components/Provider";
 import Main from "../../main/components/Main";
-import { getPage, getAllPostFileNames } from "../../services/postCollectionService";
+import { getPage, getAllPostFileNames } from "../../shared/services/post";
 import POST from "../../configs/post";
 import MainLayout from "../../components/atoms/MainLayout";
 

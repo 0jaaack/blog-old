@@ -2,7 +2,7 @@ import fs from "fs";
 import path from "path";
 import fm from "front-matter";
 
-import POST from "../configs/post";
+import POST from "../../configs/post";
 
 export function getPostDetail(postTitle) {
   const file = fs.readFileSync(

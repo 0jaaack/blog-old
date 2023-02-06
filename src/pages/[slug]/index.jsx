@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import PostInfo from "../../components/modules/PostInfo";
 import Provider from "../../components/atoms/Provider";
-import { getAllPostFileNames, getPostDetail, getPostContent } from "../../services/postCollectionService.js";
+import { getAllPostFileNames, getPostDetail, getPostContent } from "../../shared/services/post";
 import { serialize } from "next-mdx-remote/serialize";
 import { MDXRemote } from "next-mdx-remote";
 import prism from "@mapbox/rehype-prism";
