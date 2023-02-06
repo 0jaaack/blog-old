@@ -1,12 +1,12 @@
 import { useRouter } from "next/router";
 import styled from "styled-components";
-import LinkButton from "../atoms/LinkButton";
+import LinkButton from "./LinkButton";
 
-function PagenationConsole({ hasPrevPage, hasNextPage }) {
+function PageConsole({ hasPrevPage, hasNextPage }) {
   const { query: { pageIndex = 1 } } = useRouter();
 
   return (
-    <PagenationConsoleContainer>
+    <PageConsoleContainer>
       {hasPrevPage && (
         <PageLinkButton
           href={`/pages/${Number(pageIndex) - 1}`}
@@ -27,11 +27,11 @@ function PagenationConsole({ hasPrevPage, hasNextPage }) {
           Page {Number(pageIndex) + 1} &rarr;
         </PageLinkButton>
       )}
-    </PagenationConsoleContainer>
+    </PageConsoleContainer>
   );
 }
 
-const PagenationConsoleContainer = styled.div`
+const PageConsoleContainer = styled.div`
   display: flex;
 `;
 
@@ -40,4 +40,4 @@ const PageLinkButton = styled(LinkButton)`
   margin-right: ${({ float }) => float === "left" ? "auto" : 0};
 `;
 
-export default PagenationConsole;
+export default PageConsole;

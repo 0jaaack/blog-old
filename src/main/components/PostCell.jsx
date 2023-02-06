@@ -1,9 +1,7 @@
 import styled from "styled-components";
 
-import PostTitle from "../atoms/PostTitle";
-import Description from "../atoms/Description";
-import PostCellDate from "../atoms/PostCellDate";
-import TagLabel from "../atoms/TagLabel";
+import PostTitle from "./PostTitle";
+import PostCellDate from "./PostCellDate";
 import toSlug from "../../utils/toSlug";
 
 function PostCell({ title, description, tags, published }) {
@@ -44,10 +42,22 @@ const PostCellContainer = styled.div`
   gap: 0.5rem;
 `;
 
+const TagLabel = styled.span`
+  color: ${(({ theme }) => theme.colors.orange)};
+  font-size: ${({ size }) => `${size * 0.1}rem`};
+  font-weight: 500;
+  text-transform: uppercase;
+`;
+
 const HeadLayout = styled.div``;
 
 const BodyLayout = styled.div`
   margin: 0.5rem 0;
+`;
+
+const Description = styled.p`
+  font-size: ${({ size }) => `${size * 0.1}rem`};
+  color: ${({ theme }) => theme.colors.grey};
 `;
 
 const PostDescription = styled(Description)`

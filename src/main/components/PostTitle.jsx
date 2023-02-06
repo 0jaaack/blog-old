@@ -4,9 +4,7 @@ import styled from "styled-components";
 function PostTitle({ children, href, size }) {
   if (!href) {
     return (
-      <PostTextTitle
-        size={size}
-      >
+      <PostTextTitle size={size}>
         {children}
       </PostTextTitle>
     );

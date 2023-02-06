@@ -1,17 +1,17 @@
-import BlogInfoSection from "../components/sections/BlogInfoSection";
-import PostCollectionSection from "../components/sections/PostCollectionSection";
-import Provider from "../components/atoms/Provider";
+import Provider from "../shared/components/Provider";
 import MainLayout from "../components/atoms/MainLayout";
 import { getPage, getAllPostFileNames } from "../services/postCollectionService";
+
+import Main from "../main/components/Main";
+import SideBar from "../main/components/SideBar";
 
 function Home({ latestPosts, hasNextPage }) {
   return (
     <MainLayout>
-      <BlogInfoSection />
+      <SideBar />
       <Provider type="vertical"/>
-      <PostCollectionSection
+      <Main
         posts={latestPosts}
-        hasPrevPage={false}
         hasNextPage={hasNextPage}
       />
     </MainLayout>
