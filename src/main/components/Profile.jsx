@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import Image from "next/image";
+import USER from "../constants/user";
 
 function Profile() {
   return (
@@ -8,14 +9,13 @@ function Profile() {
         src="/images/profile.PNG"
         width={84}
         height={84}
-        alt="ponjaehyeok-profile"
+        alt={`${USER.NAME}-profile-image`}
       />
       <ProfileName>
-        ponjaehyeok
+        {USER.NAME}
       </ProfileName>
       <ProfileDescription>
-        {`최대한 깊게 개념을 탐구해보고, 기록하기 위한 블로그
-        파고 또 파고..`}
+        {USER.DESCRIPTION}
       </ProfileDescription>
     </ProfileContainer>
   );
