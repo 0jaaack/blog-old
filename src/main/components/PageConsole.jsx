@@ -1,6 +1,6 @@
 import { useRouter } from "next/router";
 import styled from "styled-components";
-import LinkButton from "./LinkButton";
+import LinkButton from "../../shared/components/LinkButton";
 
 function PageConsole({ hasPrevPage, hasNextPage }) {
   const { query: { pageIndex = 1 } } = useRouter();

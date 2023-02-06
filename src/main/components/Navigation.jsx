@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import LinkButton from "./LinkButton";
+import LinkButton from "../../shared/components/LinkButton";
 import { useRouter } from "next/router";
 
 function Navigation() {
