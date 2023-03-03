@@ -1,3 +1,4 @@
+import Head from "next/head";
 import styled from "styled-components";
 import prism from "@mapbox/rehype-prism";
 import { serialize } from "next-mdx-remote/serialize";
@@ -14,17 +15,23 @@ const components = {
 
 function Post({ title, date, tags, markdown }) {
   return (
-    <PostContainer>
-      <PostInfo
-        title={title}
-        published={date}
-        tags={tags}
-      />
-      <Provider type="horizon"/>
-      <Markdown>
-        <MDXRemote components={components} {...markdown} />
-      </Markdown>
-    </PostContainer>
+    <>
+      <Head>
+        <title>{title}</title>
+        <link rel="shortcut icon" href="/images/profile.PNG" type="image/x-icon" />
+      </Head>
+      <PostContainer>
+        <PostInfo
+          title={title}
+          published={date}
+          tags={tags}
+        />
+        <Provider type="horizon"/>
+        <Markdown>
+          <MDXRemote components={components} {...markdown} />
+        </Markdown>
+        </PostContainer>
+      </>
   );
 }
 

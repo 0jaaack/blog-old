@@ -10,7 +10,7 @@ function HomePage({ latestPosts, hasNextPage }) {
   return (
     <>
       <Head>
-        <title>Ponjaehyeok</title>
+        <title>ponjaehyeok blog</title>
         <meta name="description" content="ponjaehyeok blog" />
         <link rel="shortcut icon" href="/images/profile.PNG" type="image/x-icon" />
       </Head>
