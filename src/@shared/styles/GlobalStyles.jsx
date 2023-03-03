@@ -9,6 +9,10 @@ const GlobalStyles = createGlobalStyle`
     margin: 0;
     font: 300 18px "Spoqa Han Sans Neo", sans-serif;
     user-select: none;
+
+    @media screen and (max-width: 56rem) {
+      font-size: 13px;
+    }
   }
 
   a {

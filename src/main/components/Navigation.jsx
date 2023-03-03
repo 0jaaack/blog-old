@@ -39,6 +39,10 @@ const NavigationContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 0.9rem;
+
+  @media screen and (max-width: 56rem) {
+    flex-direction: row;
+  }
 `;
 
 export default Navigation;
