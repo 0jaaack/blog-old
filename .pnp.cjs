@@ -30,6 +30,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [\
             ["@mapbox/rehype-prism", "npm:0.8.0"],\
             ["@mdx-js/react", "virtual:0e6ad1f9e472124cf107242f302f8f279fc9f663e755eb8710d4c8bd840303ed24a2c005a8631067865a0f53692f561920de43a68a6aa75bc6ac9826dbb9924e#npm:2.2.1"],\
+            ["@vercel/analytics", "virtual:0e6ad1f9e472124cf107242f302f8f279fc9f663e755eb8710d4c8bd840303ed24a2c005a8631067865a0f53692f561920de43a68a6aa75bc6ac9826dbb9924e#npm:0.1.11"],\
             ["front-matter", "npm:4.0.2"],\
             ["js-base64", "npm:3.7.3"],\
             ["next", "virtual:0e6ad1f9e472124cf107242f302f8f279fc9f663e755eb8710d4c8bd840303ed24a2c005a8631067865a0f53692f561920de43a68a6aa75bc6ac9826dbb9924e#npm:13.1.0"],\
@@ -672,6 +673,28 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/@types-unist-npm-2.0.6-82641b4aa5-25cb860ff1.zip/node_modules/@types/unist/",\
           "packageDependencies": [\
             ["@types/unist", "npm:2.0.6"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["@vercel/analytics", [\
+        ["npm:0.1.11", {\
+          "packageLocation": "./.yarn/cache/@vercel-analytics-npm-0.1.11-9aba632258-05b8180ac6.zip/node_modules/@vercel/analytics/",\
+          "packageDependencies": [\
+            ["@vercel/analytics", "npm:0.1.11"]\
+          ],\
+          "linkType": "SOFT"\
+        }],\
+        ["virtual:0e6ad1f9e472124cf107242f302f8f279fc9f663e755eb8710d4c8bd840303ed24a2c005a8631067865a0f53692f561920de43a68a6aa75bc6ac9826dbb9924e#npm:0.1.11", {\
+          "packageLocation": "./.yarn/__virtual__/@vercel-analytics-virtual-503b302a07/0/cache/@vercel-analytics-npm-0.1.11-9aba632258-05b8180ac6.zip/node_modules/@vercel/analytics/",\
+          "packageDependencies": [\
+            ["@vercel/analytics", "virtual:0e6ad1f9e472124cf107242f302f8f279fc9f663e755eb8710d4c8bd840303ed24a2c005a8631067865a0f53692f561920de43a68a6aa75bc6ac9826dbb9924e#npm:0.1.11"],\
+            ["@types/react", null],\
+            ["react", "npm:18.2.0"]\
+          ],\
+          "packagePeers": [\
+            "@types/react",\
+            "react"\
           ],\
           "linkType": "HARD"\
         }]\
@@ -4040,6 +4063,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["ponjaehyeok-blog", "workspace:."],\
             ["@mapbox/rehype-prism", "npm:0.8.0"],\
             ["@mdx-js/react", "virtual:0e6ad1f9e472124cf107242f302f8f279fc9f663e755eb8710d4c8bd840303ed24a2c005a8631067865a0f53692f561920de43a68a6aa75bc6ac9826dbb9924e#npm:2.2.1"],\
+            ["@vercel/analytics", "virtual:0e6ad1f9e472124cf107242f302f8f279fc9f663e755eb8710d4c8bd840303ed24a2c005a8631067865a0f53692f561920de43a68a6aa75bc6ac9826dbb9924e#npm:0.1.11"],\
             ["front-matter", "npm:4.0.2"],\
             ["js-base64", "npm:3.7.3"],\
             ["next", "virtual:0e6ad1f9e472124cf107242f302f8f279fc9f663e755eb8710d4c8bd840303ed24a2c005a8631067865a0f53692f561920de43a68a6aa75bc6ac9826dbb9924e#npm:13.1.0"],\
