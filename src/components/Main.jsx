@@ -6,7 +6,9 @@ import PostCell from "./PostCell";
 import PageConsole from "./PageConsole";
 
 function Main({ posts, hasPrevPage, hasNextPage }) {
-  const { query: { pageIndex } } = useRouter();
+  const {
+    query: { pageIndex },
+  } = useRouter();
 
   return (
     <MainContainer>
@@ -24,10 +26,7 @@ function Main({ posts, hasPrevPage, hasNextPage }) {
           />
         ))}
       </PostList>
-      <PageConsole
-        hasPrevPage={hasPrevPage}
-        hasNextPage={hasNextPage}
-      />
+      <PageConsole hasPrevPage={hasPrevPage} hasNextPage={hasNextPage} />
     </MainContainer>
   );
 }

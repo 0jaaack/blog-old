@@ -5,10 +5,9 @@ import fm from "front-matter";
 import POST from "../constants/post";
 
 export function getPostDetail(postTitle) {
-  const file = fs.readFileSync(
-    path.join(process.cwd(), "posts", postTitle),
-    { encoding: "utf8" },
-  );
+  const file = fs.readFileSync(path.join(process.cwd(), "posts", postTitle), {
+    encoding: "utf8",
+  });
   const { attributes } = fm(file);
 
   return Object.entries(attributes)
@@ -23,10 +22,9 @@ export function getPostDetail(postTitle) {
 }
 
 export function getPostContent(postTitle) {
-  const file = fs.readFileSync(
-    path.join(process.cwd(), "posts", postTitle),
-    { encoding: "utf8" },
-  );
+  const file = fs.readFileSync(path.join(process.cwd(), "posts", postTitle), {
+    encoding: "utf8",
+  });
   const { body } = fm(file);
 
   return body;
@@ -40,10 +38,7 @@ export function getPost(postTitle) {
 }
 
 export function getAllPostFileNames() {
-  return fs.readdirSync(
-    path.join(process.cwd(), "posts"),
-    { recursive: true },
-  );
+  return fs.readdirSync(path.join(process.cwd(), "posts"), { recursive: true });
 }
 
 export function getPage(pageIndex) {
@@ -55,7 +50,10 @@ export function getPage(pageIndex) {
     .map((post) => getPostDetail(post))
     .filter((post) => post.published)
     .sort((a, b) => new Date(b.date) - new Date(a.date))
-    .slice((pageIndex - 1) * POST.DEFAULT_NUMBER_OF_POSTS, pageIndex * POST.DEFAULT_NUMBER_OF_POSTS);
+    .slice(
+      (pageIndex - 1) * POST.DEFAULT_NUMBER_OF_POSTS,
+      pageIndex * POST.DEFAULT_NUMBER_OF_POSTS
+    );
 }
 
 export function getPostTags() {

@@ -2,15 +2,13 @@ import styled from "styled-components";
 
 import PostCellDate from "./PostCellDate";
 import PostTitle from "./PostTitle";
-import toSlug from "../../@shared/utils/toSlug";
+import toSlug from "../utils/toSlug";
 
 function PostCell({ title, description, tags, published }) {
   return (
     <PostCellContainer>
       <InfoLayout>
-        <PostCellDate>
-          {published}
-        </PostCellDate>
+        <PostCellDate>{published}</PostCellDate>
         <TagList>
           {tags.map((tag, idx) => (
             <TagLabel key={tag + idx} size={8}>
@@ -20,17 +18,12 @@ function PostCell({ title, description, tags, published }) {
         </TagList>
       </InfoLayout>
       <HeadLayout>
-        <PostTitle
-          size={14}
-          href={`/${toSlug(title)}`}
-        >
+        <PostTitle size={14} href={`/${toSlug(title)}`}>
           {title}
         </PostTitle>
       </HeadLayout>
       <BodyLayout>
-        <PostDescription size={9}>
-          {description}
-        </PostDescription>
+        <PostDescription size={9}>{description}</PostDescription>
       </BodyLayout>
     </PostCellContainer>
   );
@@ -43,7 +36,7 @@ const PostCellContainer = styled.div`
 `;
 
 const TagLabel = styled.span`
-  color: ${(({ theme }) => theme.colors.orange)};
+  color: ${({ theme }) => theme.colors.orange};
   font-size: ${({ size }) => `${size * 0.1}rem`};
   font-weight: 500;
   text-transform: uppercase;

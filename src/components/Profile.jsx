@@ -11,12 +11,8 @@ function Profile() {
         height={84}
         alt={`${USER.NAME}-profile-image`}
       />
-      <ProfileName>
-        {USER.NAME}
-      </ProfileName>
-      <ProfileDescription>
-        {USER.DESCRIPTION}
-      </ProfileDescription>
+      <ProfileName>{USER.NAME}</ProfileName>
+      <ProfileDescription>{USER.DESCRIPTION}</ProfileDescription>
     </ProfileContainer>
   );
 }

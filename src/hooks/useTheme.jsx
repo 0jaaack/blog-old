@@ -6,7 +6,9 @@ function useToggleTheme() {
   const setTheme = useContext(ThemeActionContext);
 
   return useCallback(() => {
-    setTheme(prevTheme => prevTheme === THEME.DARK ? THEME.LIGHT : THEME.DARK);
+    setTheme((prevTheme) =>
+      prevTheme === THEME.DARK ? THEME.LIGHT : THEME.DARK
+    );
   }, [setTheme]);
 }
 
