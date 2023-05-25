@@ -3,7 +3,7 @@ import styled from "styled-components";
 const Markdown = styled.div`
   color: #D1D5DB;
   font-size: 0.85rem;
-  line-height: 1.6rem;
+  line-height: 2rem;
   padding: 1rem 0;
   -webkit-user-select: text;
   -moz-user-select: text;
@@ -12,9 +12,9 @@ const Markdown = styled.div`
 
   h1 {
     position: relative;
-    font-size: 1.8rem;
+    font-size: 2rem;
     line-height: 5rem;
-    margin-top: 1rem;
+    margin-top: 2rem;
 
     &::before {
       content: "";
@@ -29,16 +29,16 @@ const Markdown = styled.div`
   }
 
   h2 {
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     line-height: 3rem;
-    margin-top: 1rem;
+    margin-top: 2rem;
   }
 
   h3 {
-    font-size: 1rem;
+    font-size: 1.2rem;
     font-weight: 500;
     line-height: 2.5rem;
-    margin-top: 1rem;
+    margin-top: 2rem;
   }
 
   a {
@@ -74,7 +74,7 @@ const Markdown = styled.div`
     border-radius: 0.3em;
     white-space: normal;
     color: #eb5757;
-    font-size: 0.8rem;
+    font-size: 0.85rem;
     background: #202937;
   }
 

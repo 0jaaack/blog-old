@@ -28,6 +28,11 @@ const TagsContainer = styled.div`
   gap: 2rem;
   width: 40vw;
   padding: 2rem 3rem;
+
+  @media screen and (max-width: 56rem) {
+    width: 100%;
+    padding: 0;
+  }
 `;
 
 const TagList = styled.div`

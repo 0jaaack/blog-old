@@ -4,15 +4,15 @@ import TagLabel from "../../@shared/components/TagLabel";
 function PostInfo({ title, published, tags = [] }) {
   return (
     <PostInfoContainer>
-      <PostTitle size={25}>
+      <PostTitle size={18}>
         {title}
       </PostTitle>
-      <Description size={9}>
+      <Description size={8}>
         {published}
       </Description>
       <TagList>
         {tags.map((tag) => (
-          <TagLabel key={tag} size={10}>
+          <TagLabel key={tag} size={8}>
             {tag}
           </TagLabel>
         ))}

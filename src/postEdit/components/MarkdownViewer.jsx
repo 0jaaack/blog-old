@@ -24,7 +24,6 @@ function MarkdownViewer({ markdown }) {
 }
 
 const ViewerContainer = styled(Markdown)`
-  width: 50rem;
   -ms-overflow-style: none;
   scrollbar-width: none;
   height: 100%;
