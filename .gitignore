@@ -3,11 +3,4 @@
 .next
 .env
 
-.yarn/*
-!.yarn/patches
-!.yarn/plugins
-!.yarn/releases
-!.yarn/sdks
-!.yarn/versions
-# Zero-Install
-!.yarn/cache
+node_modules
