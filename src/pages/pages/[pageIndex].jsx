@@ -1,40 +1,45 @@
 import Head from "next/head";
 
-import POST from "../../src/@shared/constants/post";
-import MainLayout from "../../src/@shared/components/Layout";
-import SideBar from "../../src/main/components/SideBar";
-import Provider from "../../src/@shared/components/Provider";
-import Main from "../../src/main/components/Main";
-import { getPage, getAllPostFileNames } from "../../src/@shared/services/post";
+import POST from "../../@shared/constants/post";
+import MainLayout from "../../@shared/components/Layout";
+import SideBar from "../../main/components/SideBar";
+import Provider from "../../@shared/components/Provider";
+import Main from "../../main/components/Main";
+import { getPage, getAllPostFileNames } from "../../@shared/services/post";
 
 function Page({ page, posts, hasPrevPage, hasNextPage }) {
   return (
     <>
       <Head>
         <title>page {page}</title>
-        <link rel="shortcut icon" href="/images/profile.PNG" type="image/x-icon" />
+        <link
+          rel="shortcut icon"
+          href="/images/profile.PNG"
+          type="image/x-icon"
+        />
       </Head>
       <MainLayout>
         <SideBar />
-        <Provider type="vertical"/>
+        <Provider type="vertical" />
         <Main
           posts={posts}
           hasPrevPage={hasPrevPage}
           hasNextPage={hasNextPage}
         />
-        </MainLayout>
+      </MainLayout>
     </>
   );
 }
 
-const maxPage = Math.ceil(getAllPostFileNames().length / POST.DEFAULT_NUMBER_OF_POSTS);
+const maxPage = Math.ceil(
+  getAllPostFileNames().length / POST.DEFAULT_NUMBER_OF_POSTS
+);
 
 export async function getStaticPaths() {
   return {
-    paths: Array.from(
-      new Array(maxPage),
-      (v, i) => ({ params: { pageIndex: `${i + 1}` }})
-    ),
+    paths: Array.from(new Array(maxPage), (v, i) => ({
+      params: { pageIndex: `${i + 1}` },
+    })),
     fallback: false,
   };
 }

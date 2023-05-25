@@ -1,14 +1,14 @@
 import Head from "next/head";
 import styled from "styled-components";
 
-import PostInfo from "../../src/postView/components/PostInfo";
-import Provider from "../../src/@shared/components/Provider";
-import MarkdownViewer from "../../src/postEdit/components/MarkdownViewer";
+import PostInfo from "../../postView/components/PostInfo";
+import Provider from "../../@shared/components/Provider";
+import MarkdownViewer from "../../postEdit/components/MarkdownViewer";
 import {
   getAllPostFileNames,
   getPostDetail,
   getPostContent,
-} from "../../src/@shared/services/post";
+} from "../../@shared/services/post";
 
 const components = {
   a: (props) => <a target="_blank" {...props} />,
