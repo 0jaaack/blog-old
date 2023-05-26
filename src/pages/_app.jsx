@@ -1,18 +1,13 @@
 import { Analytics } from "@vercel/analytics/react";
 
-import GlobalStyles from "../@shared/styles/GlobalStyles";
-import GlobalFonts from "../@shared/styles/GlobalFonts";
-import GlobalThemes from "../@shared/styles/GlobalThemes";
+import { CONFIG } from "../constants/config";
+import { s } from "../styles";
 
 function App({ Component, pageProps }) {
   return (
     <>
-      <GlobalThemes>
-        <GlobalFonts />
-        <GlobalStyles />
-        <Component {...pageProps} />
-      </GlobalThemes>
-      <Analytics />
+      <Component {...pageProps} />
+      <Analytics mode={CONFIG.MODE} />
     </>
   );
 }

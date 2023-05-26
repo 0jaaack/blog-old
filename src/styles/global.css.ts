@@ -7,6 +7,7 @@ globalStyle("html, body", {
   font: `300 18px ${spoqaHanSansNeo}, sans-serif`,
   boxSizing: "border-box",
   backgroundColor: "#111827",
+  color: "#F2F4F6",
   userSelect: "none",
 });
 
