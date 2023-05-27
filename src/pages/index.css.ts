@@ -1,16 +1,16 @@
 import { style } from "@vanilla-extract/css";
 import { s } from "../styles";
 
-export const laylout = style([
+export const layout = style([
   s.flex,
   s.justifyContentCenter,
   {
     width: "100vw",
     height: "100vh",
-    padding: "5rem 0",
+    padding: "2rem 0",
+    position: "fixed",
   },
 ]);
-
 // @media screen and (max-width: 56rem) {
 //   flex-direction: column;
 //   align-items: flex-start;
@@ -19,47 +19,28 @@ export const laylout = style([
 //   padding: 2.5rem 2rem;
 // }
 
-export const sideBar = style([
-  s.flexColumn,
-  {
-    gap: "2rem",
-    width: "16rem",
-    padding: "2rem",
-  },
-]);
-
-// @media screen and (max-width: 56rem) {
-//   flex-direction: row;
-//   align-items: center;
-//   padding: 0;
-//   gap: 1.5rem;
-// }
-
 export const provider = style([
   s.fullHeight,
   {
     width: "0.5px",
-    backgroundColor: "#999999",
+    backgroundColor: "#808080",
   },
 ]);
 
-export const sectionTitle = style([
-  {
-    textTransform: "capitalize",
-    fontWeight: 700,
-    fontSize: "2rem",
-  },
-]);
+export const sectionTitle = style({
+  textTransform: "capitalize",
+  fontWeight: 700,
+  fontSize: "2rem",
+});
 
 export const mainSection = style([
   s.flexColumn,
   {
-    gap: "3rem",
     width: "50rem",
-    padding: "1rem 3rem",
+    padding: "2rem 3rem",
+    gap: "3rem",
   },
 ]);
-
 // @media screen and (max-width: 56rem) {
 //   gap: 3rem;
 //   width: 100%;
@@ -70,34 +51,9 @@ export const postList = style([
   s.flexColumn,
   {
     padding: 0,
-    gap: "2.3rem",
+    gap: "1.8rem",
   },
 ]);
-
 //  @media screen and (max-width: 56rem) {
 //   gap: 3.4rem;
 // }
-
-export const pageConsole = style([
-  s.flex,
-  s.justifyContentSpaceBetween,
-  s.alignItemsCenter,
-  {
-    width: "30rem",
-  },
-]);
-
-export const pageButton = style([
-  {
-    color: "#D3D3D3",
-    fontWeight: 500,
-    fontSize: "0.9rem",
-    textTransform: "uppercase",
-  },
-]);
-
-export const pageIndex = style([
-  {
-    fontSize: "0.9rem",
-  },
-]);
