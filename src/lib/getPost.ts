@@ -15,6 +15,10 @@ export type Post = {
   body: string;
 };
 
+function slugToPostFileName(slug: string) {
+  return `${slug}.md`;
+}
+
 function readFile(filePath: string): string {
   return fs.readFileSync(filePath, {
     encoding: "utf-8",
@@ -30,7 +34,8 @@ export function getPostMetadata(postSlug: string): PostMetadata {
     description: string;
   };
 
-  const postPath = path.join(process.cwd(), "posts", postSlug);
+  const postFlieName = slugToPostFileName(postSlug);
+  const postPath = path.join(process.cwd(), "posts", postFlieName);
   const file = readFile(postPath);
   const { attributes: metadata } = fm<FrontMatterAttributes>(file);
 
@@ -44,7 +49,8 @@ export function getPostMetadata(postSlug: string): PostMetadata {
 }
 
 export function getPostContent(postSlug: string): string {
-  const postPath = path.join(process.cwd(), "posts", postSlug);
+  const postFlieName = slugToPostFileName(postSlug);
+  const postPath = path.join(process.cwd(), "posts", postFlieName);
   const file = readFile(postPath);
   const { body } = fm(file);
 

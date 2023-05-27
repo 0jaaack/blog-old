@@ -11,11 +11,15 @@ function getAllDirent(path: string): Dirent[] {
   });
 }
 
+function postFileNameToSlug(fileName: string) {
+  return fileName.replace(".md", "");
+}
+
 export function getAllPostSlug(): string[] {
   const postsPath = path.join(process.cwd(), "posts");
 
   return getAllDirent(postsPath)
     .filter((dirent) => dirent.isFile())
     .filter((dirent) => path.extname(dirent.name) === ".md")
-    .map((dirent) => dirent.name);
+    .map((dirent) => postFileNameToSlug(dirent.name));
 }
