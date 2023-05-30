@@ -41,6 +41,7 @@ export const rounded = style({
 
 export const scroll = style({
   overflow: "scroll",
+  scrollBehavior: "smooth",
   scrollbarWidth: "none",
   msOverflowStyle: "none",
   "::-webkit-scrollbar": {

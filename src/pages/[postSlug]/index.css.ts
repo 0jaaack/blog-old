@@ -2,7 +2,17 @@ import { style } from "@vanilla-extract/css";
 
 import { s } from "../../styles";
 
-export const layout = style({
+export const layout = style([
+  s.flex,
+  s.justifyContentCenter,
+  s.scroll,
+  {
+    height: "100vh",
+    width: "100vw",
+  },
+]);
+
+export const postTab = style({
   position: "relative",
   maxWidth: "40rem",
   padding: "3rem 2rem",
@@ -81,14 +91,15 @@ export const provider = style({
   width: "100%",
 });
 
-export const postContent = style({});
+export const postContent = style({
+  paddingBottom: "2rem",
+});
 
-export const postNav = style({
-  position: "fixed",
-  top: 0,
-  right: "12rem",
+export const sideTab = style({
+  position: "sticky",
+  top: "10rem",
   width: "20rem",
-  marginTop: "20rem",
+  marginTop: "25rem",
 });
 
 export const toc = style({
@@ -97,12 +108,11 @@ export const toc = style({
   listStyle: "none",
 });
 
-export const aa = style([
-  s.flex,
-  s.justifyContentCenter,
-  s.fullWidth,
-  {
-    height: "100rem",
-    overflow: "visible",
-  },
-]);
+export const highlited = style({
+  fontWeight: 500,
+});
+
+export const topNavTop = style({
+  fontSize: "0.75rem",
+  lineHeight: "1.6rem",
+});

@@ -1,8 +1,11 @@
+import { useEffect, useRef, useState } from "react";
 import Head from "next/head";
 import Image from "next/image";
 
 import { PostViewer } from "../../components/PostViewer";
-import { getAllPostSlug, getPost } from "../../lib";
+import { getAllPostSlug, getPostBySlug } from "../../lib";
+import { textToSlug } from "../../lib/textToSlug";
+import { createTOC } from "../../utils";
 import { USER } from "../../constants/user";
 import { NAVIGATION_ROUTES } from "../../components/SideBar";
 import * as css from "./index.css";
@@ -16,19 +19,57 @@ type PostPageProps = {
 
 function PostPage({ post }: PostPageProps) {
   const { title, date, tags } = post.metadata;
-  const tableOfContents = post.body
-    .split(`\n`)
-    .filter((line) => line[0] === "#");
+  const toc = createTOC(post.body);
+  const [currentTitle, setCurrentTitle] = useState<string | null>(null);
+  const scrollArea = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const currentTitle = entries.find((entry) => entry.isIntersecting)
+          ?.target.id;
+
+        if (!currentTitle) {
+          return;
+        }
+
+        setCurrentTitle(currentTitle);
+      },
+      {
+        root: scrollArea.current,
+        threshold: 1.0,
+      }
+    );
+    const postTitles = toc.map((header) => header.title);
+    const unobservers: (() => void)[] = [];
+
+    for (const title of postTitles) {
+      const titleElement = document.getElementById(textToSlug(title));
+
+      if (!titleElement) {
+        continue;
+      }
+
+      observer.observe(titleElement);
+      unobservers.push(() => observer.unobserve(titleElement));
+    }
+
+    return () => {
+      for (const unobserver of unobservers) {
+        unobserver();
+      }
+    };
+  }, []);
 
   return (
     <>
       <Head>
         <title>{title}</title>
       </Head>
-      <div className={css.aa}>
-        <div className={css.postNav} />
+      <div className={css.layout} ref={scrollArea}>
+        <section className={css.sideTab} />
 
-        <div className={css.layout}>
+        <div className={css.postTab}>
           <nav className={css.navSection}>
             <a href="/">
               <Image
@@ -42,7 +83,7 @@ function PostPage({ post }: PostPageProps) {
 
             <ul className={css.routeLinks}>
               {NAVIGATION_ROUTES.map((route) => (
-                <li>
+                <li key={route.page}>
                   <a href={route.href} className={css.route}>
                     {route.page}
                   </a>
@@ -57,7 +98,7 @@ function PostPage({ post }: PostPageProps) {
             </ul>
           </nav>
 
-          <section className={css.postInfo}>
+          <div className={css.postInfo}>
             <p className={css.postTitle}>{title}</p>
             <p className={css.date}>{date}</p>
             <p className={css.tagList}>
@@ -67,22 +108,33 @@ function PostPage({ post }: PostPageProps) {
                 </span>
               ))}
             </p>
-          </section>
+          </div>
 
           <div className={css.provider} />
 
-          <section className={css.postContent}>
+          <div className={css.postContent}>
             <PostViewer markdown={post.body} />
-          </section>
+          </div>
         </div>
 
-        <nav className={css.postNav}>
-          <ul className={css.toc}>
-            {tableOfContents.map((title) => (
-              <li>{title}</li>
-            ))}
-          </ul>
-        </nav>
+        <section className={css.sideTab}>
+          <nav>
+            <ul className={css.toc}>
+              {toc.map((header) => (
+                <li
+                  className={
+                    currentTitle === textToSlug(header.title)
+                      ? css.highlited
+                      : ""
+                  }
+                >
+                  <a href={`#${textToSlug(header.title)}`}>{header.title}</a>
+                </li>
+              ))}
+            </ul>
+            <div className={css.provider} />
+          </nav>
+        </section>
       </div>
     </>
   );
@@ -107,7 +159,7 @@ export const getStaticProps: GetStaticProps<PostPageProps> = async ({
       throw new Error();
     }
 
-    const post = getPost(params.postSlug);
+    const post = getPostBySlug(params.postSlug);
 
     return {
       props: {
