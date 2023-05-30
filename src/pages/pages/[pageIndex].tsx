@@ -1,6 +1,6 @@
 import { POST } from "../../constants/post";
 
-import { getPage, getAllPostSlug } from "../../lib";
+import { getPosts, getAllPostSlug } from "../../lib";
 import PostListPage from "../index";
 
 import type { GetStaticPaths, GetStaticProps } from "next";
@@ -32,7 +32,7 @@ export const getStaticProps: GetStaticProps<PostListPageProps> = async ({
       getAllPostSlug().length / POST.DEFAULT_NUMBER_OF_POSTS
     );
     const page = Number(params?.pageIndex ?? "1");
-    const posts = getPage({ pageIndex: page });
+    const posts = getPosts({ pageIndex: page });
 
     if (posts.length === 0) {
       return {

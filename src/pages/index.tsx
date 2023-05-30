@@ -1,7 +1,7 @@
 import { SideBar } from "../components/SideBar";
 import { PostCell } from "../components/PostCell";
 import { PageConsole } from "../components/PageConsole";
-import { getPage, getAllPostSlug, PostMetadata } from "../lib";
+import { getAllPostSlug, getPosts, PostMetadata } from "../lib";
 
 import * as css from "./index.css";
 
@@ -40,7 +40,7 @@ function PostListPage({
 
 export const getStaticProps: GetStaticProps<PostListPageProps> = async () => {
   try {
-    const latestPosts = getPage({ pageIndex: 1 });
+    const latestPosts = getPosts({ pageIndex: 1 });
     const hasNextPage = getAllPostSlug().length > 4;
 
     return {

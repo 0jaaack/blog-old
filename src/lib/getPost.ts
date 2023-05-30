@@ -2,6 +2,9 @@ import fs from "fs";
 import path from "path";
 import fm from "front-matter";
 
+import { POST } from "../constants/post";
+import { getAllPostSlug } from "./getAllPostSlug";
+
 export type PostMetadata = {
   title: string;
   tags: string[];
@@ -57,9 +60,27 @@ export function getPostContent(postSlug: string): string {
   return body;
 }
 
-export function getPost(postSlug: string): Post {
+export function getPostBySlug(postSlug: string): Post {
   return {
     metadata: getPostMetadata(postSlug),
     body: getPostContent(postSlug),
   };
+}
+
+export function getPosts({
+  pageIndex = 1,
+  tagName,
+}: {
+  pageIndex?: number;
+  tagName?: string;
+}): PostMetadata[] {
+  return getAllPostSlug()
+    .map((post) => getPostMetadata(post))
+    .filter((post) => post.published)
+    .filter((post) => (!!tagName ? post.tags.includes(tagName) : true))
+    .sort((a, b) => new Date(b.date).valueOf() - new Date(a.date).valueOf())
+    .slice(
+      (pageIndex - 1) * POST.DEFAULT_NUMBER_OF_POSTS,
+      pageIndex * POST.DEFAULT_NUMBER_OF_POSTS
+    );
 }
