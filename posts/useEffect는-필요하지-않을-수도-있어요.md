@@ -9,11 +9,9 @@ published: true
 
 원문: [You Might Not Need an Effect](https://beta.reactjs.org/learn/you-might-not-need-an-effect)
 
-Effect는 **React의 탈출구**라고도 할 수 있는데요.
+Effect는 **React의 탈출구**라고도 할 수 있는데요. 
 
-React에서 한 발짝 나가 외부의 시스템들, 예를 들어 위젯, 네트워크, DOM API 등에 접근할 수 있게 해줍니다.
-
-만약에 외부 시스템들과 관련되지 않은 경우라면은 **useEffect는 필요하지 않을 수도 있어요**. 필요하지 않은 Effect들을 제거해주면 이해하기 쉽고, 빠르고, 오류도 적게 발생하는 코드가 될 수 있습니다.
+React에서 한 발짝 나가 외부의 시스템들, 예를 들어 위젯, 네트워크, DOM API 등에 접근할 수 있게 해줍니다. 만약에 외부 시스템들과 관련되지 않은 경우라면은 **useEffect는 필요하지 않을 수도 있어요**. 필요하지 않은 Effect들을 제거해주면 이해하기 쉽고, 빠르고, 오류도 적게 발생하는 코드가 될 수 있습니다.
 
 ### 어떻게 불필요한 Effect인지 알 수 있을까요
 

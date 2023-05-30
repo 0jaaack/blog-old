@@ -4,7 +4,7 @@ tags:
   - javascript
 published: true
 date: "2022-04-15"
-description: prototype, instance와 __proto__의 오묘한 삼각관계 (이미지 이전 필요)
+description: prototype, instance와 __proto__의 오묘한 삼각관계
 ---
 
 > 자바스크립트는 프로토타입 기반 언어이다.
