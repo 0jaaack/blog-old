@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import Head from "next/head";
 import Image from "next/image";
 
@@ -19,9 +19,11 @@ type PostPageProps = {
 
 function PostPage({ post }: PostPageProps) {
   const { title, date, tags } = post.metadata;
-  const toc = createTOC(post.body);
   const [currentTitle, setCurrentTitle] = useState<string | null>(null);
   const scrollArea = useRef<HTMLDivElement>(null);
+  const toc = useMemo(() => {
+    return createTOC(post.body);
+  }, [post.body]);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -120,17 +122,20 @@ function PostPage({ post }: PostPageProps) {
         <section className={css.sideTab}>
           <nav>
             <ul className={css.toc}>
-              {toc.map((header) => (
-                <li
-                  className={
-                    currentTitle === textToSlug(header.title)
-                      ? css.highlited
-                      : ""
-                  }
-                >
-                  <a href={`#${textToSlug(header.title)}`}>{header.title}</a>
-                </li>
-              ))}
+              {toc.map((header) => {
+                const step = header.step.toString();
+                return (
+                  <li
+                    className={`${
+                      currentTitle === textToSlug(header.title)
+                        ? css.highlited
+                        : ""
+                    } ${css.step[step]}`}
+                  >
+                    <a href={`#${textToSlug(header.title)}`}>{header.title}</a>
+                  </li>
+                );
+              })}
             </ul>
             <div className={css.provider} />
           </nav>

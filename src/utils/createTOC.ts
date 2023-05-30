@@ -1,4 +1,4 @@
-export type TOC = { step: number; title: string }[];
+export type TOC = { step: number; title: string; head: number }[];
 
 export function createTOC(markdown: string): TOC {
   const toc: TOC = [];
@@ -27,6 +27,7 @@ export function createTOC(markdown: string): TOC {
     toc.push({
       step: titleStep,
       title: titleContent,
+      head: currentHeading,
     });
   }
 
