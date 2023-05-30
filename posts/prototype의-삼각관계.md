@@ -21,6 +21,8 @@ description: prototype, instance와 __proto__의 오묘한 삼각관계 (이미�
 ## prototype
 모든 함수에는 `prototype`이라고 하는 프로퍼티가 있다. 
 
+![prototype property image](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbovuBH%2FbtrzjctHy87%2FpTqVmGghPKX8GJ7dRkkp60%2Fimg.png)
+
 `anyFunc`라는 함수를 하나 만들고, 함수의 `prototype` 프로퍼티를 출력했더니 어떤 객체 하나를  출력했다.
 <br />
 
@@ -97,6 +99,8 @@ const anyObject = new Object();
 이 셋의 관계를 그려보면 다음과 같다.
 <br />
 
+<img width="500" alt="prototype, 생성자 함수, 인스턴스와의 관계" src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FcUzM0S%2Fbtrzlde6O6i%2FjzsM9gG5XKbsvduM9WLzyk%2Fimg.png" />
+
 위의 `Cup` 생성자 함수를 사용한 예제를 시각화 한 것이다.
 
 `Cup에는` `Cup.prototype`이라는 프로토타입이 있고, 그 밑에 `beerCup`이라는 인스턴스가 있다.
@@ -129,6 +133,8 @@ console.log(beerCup.__proto__.material); // 'glass'
 
 위에서 본 그림에서 조금 더 추가해보자.
 <br />
+
+<img width="500" alt="prototype, 생성자 함수, 인스턴스와의 관계" src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FFEbvg%2Fbtrzrb7gjlI%2FRjpSCdEvrSTVpCJfFds24K%2Fimg.png" />
 
 이제 이런 삼각 구도가 되었다.
 
@@ -224,6 +230,8 @@ MDN에 `push` 메소드를 검색해보자. 타이틀에 이렇게 뜬다.
 
 이를 바탕으로 위에서 봤던 그림을 다시 한 번 수정해보자.
 <br />
+
+<img width="500" alt="prototype, 생성자 함수, 인스턴스와의 관계" src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FZA9dB%2FbtrzpXaYEvb%2FsaAPslvAAS1nLkdEkBBgvk%2Fimg.png" />
 
 이렇게 접근할 수가 있는 게 된다. 인스턴스에서도 `constructor`에 접근하게 되면 `__proto__`는 생략 가능하므로 마찬가지로 생성자 함수를 불러올 수가 있다.
 <br />

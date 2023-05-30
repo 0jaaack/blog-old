@@ -63,7 +63,8 @@ description: 자료구조에서의 스타팅 포켓몬들
 여기서 자료를 추가하는 것을 **push**라고 하며, 반대로 자료를 제거하는 것을 **pop**이라고 한다.
 
 자바스크립트에서 배열 메소드 중 `.push()`, `.pop()`이라는 메소드가 바로 이를 표현한 메소드인 것이다.
-<br />
+
+<img alt="stack image" width="600" src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbHVg81%2FbtrzyX9n8V8%2FpxojDkbyuwPAww4tx9ccQ1%2Fimg.jpg" />
 
 프로그래밍에서도 스택의 자료구조가 이따금씩 쓰이곤 한다.
 
@@ -101,6 +102,8 @@ description: 자료구조에서의 스타팅 포켓몬들
 큐에서 자료를 추가하는 것을 **Enqueue**, 자료를 삭제하는 것을 **Dequeue**라고 한다.
 <br />
 
+<img alt="queue image" width="600" src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbPJKpT%2Fbtrzx8pRiqd%2FQcJdzNWjs4l5Z5N0DfuoF0%2Fimg.png" />
+
 큐가 프로그래밍에서 쓰이는 예는, 우선순위가 같은 작업을 처리할 때 보통 먼저 예약된 작업이 먼저 실행된다.
 
 프린터가 먼저 예약된 프린트를 하는 것과 같다. 이 때 큐가 쓰이게 된다.
@@ -128,6 +131,8 @@ description: 자료구조에서의 스타팅 포켓몬들
 
 연결리스트에서 가장 앞의 노드를 **head**, 가장 마지막 node를 **tail**이라고 한다. tail의 next(다음 노드)는 null을 가리키게 될 것이다.
 <br />
+
+<img alt="linked list image" width="600" src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fb5VOkG%2Fbtrzxaoa0lY%2F4opMKBCW2SRxBwOVOyx3L0%2Fimg.png" />
 
 연결 리스트의 대표적인 예시로는, 웹 브라우저의 방문 기록을 들 수가 있다.
 
@@ -161,12 +166,17 @@ Big O 표기법은 시간 복잡도를 표현하는 다양한 방법 중에 하�
 
 예를 들어, 어떠한 환경에서도 일정하게 진행하는 동작은 Big O 표기법으로 O(1)이다.
 
+
+<img alt="big-o notation O(1) image" width="600" src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FVkirs%2Fbtrzwlw1rO1%2FzQYdFEluh37UWG76ERJovK%2Fimg.png" />
+
 예를 들어, 배열에 값을 `.push()`를 이용해서 넣는다고 생각해보자.
 
 배열의 길이가 10이든 1000이든 상관없이, `.push()`는 항상 같은 속도의 연산을 실행할 것이다.
 <br />
 
 O(n)의 경우도 있다.
+
+<img alt="big-o notation O(n) image" width="600" src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FONzTo%2FbtrzvTUuoQ0%2FEkMS5vN4XZUfPkKiaxNgo0%2Fimg.png" />
 
 O(n)이 되는 경우는 보통 반복문을 사용할 때 이다.
 
@@ -179,6 +189,7 @@ O(n)이 되는 경우는 보통 반복문을 사용할 때 이다.
 이렇듯 n의 크기가 증가할 수록, 일정하게 연산시간이 증가하는 경우 O(n)으로 표기한다.
 <br />
 
+<img alt="big-o notation O(n^2) image" width="600" src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbCUwWO%2FbtrzwmJu40a%2FhWuhOBKvbD6xRoCd3u0qE1%2Fimg.png" />
 
 O(n^2)도 있을 수 있다. 가장 쉽게 만나볼 수 있는 경우는 이중 반복문을 사용할 때다.
 
@@ -218,6 +229,8 @@ timesTable(3);
 
 그래서 코드를 작성할 때 주의해서 작성해야 한다.
 <br />
+
+<img alt="time complexity chart image" width="600" src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fve2jU%2Fbtrzx93sUDL%2FUnv0ankzNvks3rZThz1uKk%2Fimg.jpg" />
 
 그렇다고 해서 O(1)의 시간 복잡도를 가지는게 무조건 좋을까?
 
@@ -260,6 +273,8 @@ timesTable(3);
 
 ### Linked List의 경우
 
+<img alt="linked list time complexity image" width="600" src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FmwBue%2FbtrzyXaG8m6%2FHOoAFPZY4srbSDVT4Njsh0%2Fimg.png" />
+
 연결 리스트에서 데이터를 삽입할 때는(위 그림처럼 E 노드를 삽입할 경우), B 노드의 다음 노드가 E노드를 가리키도록 한다. 그리고 E노드의 다음 노드는, B노드의 다음 노드였던 C노드를 가리킨다. 
 
 예시는 중간에 삽입하는 경우가 나왔지만, 사실 head에 삽입하는 것도 동일하다. 기존의 관계를 끊고, 새로운 데이터와의 관계를 추가해준다. 항상 동일하게 O(1)의 시간 복잡도를 가질 것이다.
@@ -269,6 +284,8 @@ timesTable(3);
 
 항상 동일하게 O(1)의 시간 복잡도를 가질 것이다.
 <br />
+
+<img alt="linked list time complexity image" width="600" src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FS36Bq%2FbtrzweRFsME%2FG7T3EUzcM22gol8fG5wyzk%2Fimg.png" />
 
 검색하는 경우는 어떨까? 우선 head의 데이터와 비교해보고, 일치하지 않으면 다음 노드. 그 다음 노드도 일치하지 않으면 그 다음 노드.
 

@@ -47,7 +47,7 @@ beerCup.__proto__.getUse.call(beerCup); // "this cup is for beer."
 
 이를 시각화해보면 다음과 같다.
 
-(이미지 삽입 예정)
+<img width="600" alt="prototype, 생성자 함수, 인스턴스와의 관계" src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fba2c6n%2FbtrzuVEQ806%2FbpMokNcIoF0kbeS1vJRmGK%2Fimg.png" />
 
 위에서, 인스턴스는 `__proto__`를 생략해 `prototype`의 프로퍼티에 접근할 수 있다고 했다.
 
@@ -62,7 +62,6 @@ beerCup.__proto__.getUse.call(beerCup); // "this cup is for beer."
 그리고 여러 익숙한 메소드들이 보인다. 저 메소드들을 쓸 수가 있는 지 알아보자.
 
 간단하게 `.toString()`부터 써보자.
-
  
 ```js
 const Cup = function (use) {
@@ -84,11 +83,16 @@ const arr = [1, 2, 3];
 
 console.log(arr.toString()); // "1,2,3"
 ```
+
+<img width="600" alt="prototype, 생성자 함수, 인스턴스와의 관계" src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbOoFfq%2FbtrzthVqVzq%2F33cKi7RfN7FrdY9waksyvk%2Fimg.png" />
+
 배열 `arr`의 프로토타입을 살펴봐도 그렇다. `arr`는 배열인데도 `Object.prototype`의 메소드를 자연스럽게 쓸 수가 있다.
 
 `Object.prototype`은 어떤 타입의 값이든 쉽게 접근할 수가 있다. 그래서 객체 전용 메소드들은 `Object.prototype`이 아닌, `Object` 생성자 함수에 들어있는 경우가 많다.
 
 mdn에서 캡처한 `Object` 관련 메소드들이다. 대부분 `Object` 생성자 함수의 프로퍼티로 있는 경우가 많다.
+
+<img width="300" alt="prototype, 생성자 함수, 인스턴스와의 관계" src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbkeKlb%2FbtrzvxP3X1p%2Fa11W4kFKTpkbZXK0tAjte0%2Fimg.png" />
 
 반대로, `Object.prototype`의 메소드들은 모두 어떤 데이터 타입도 활용할 수 있는 범용적인 메소드라는 얘기가 된다.
 
@@ -191,11 +195,7 @@ console.log(illy.switch); // false
 
 이렇게 해주면 서로 공유 중인 동일 프로퍼티(`switch`)를 그대로 쓸 수가 있다.
 
- 
-
 실제로 `CoffeeMachine` 생성자 함수를 사용한 `illy` 객체에서, `switch` 프로퍼티를 호출했을 때 정상적으로 동작한다.
-
- 
 
 두 번째로, `CoffeeMachine`의 메소드를 지우고 `Machine`의 `prototype` 메소드와 연결시켜주면 된다.
 ```js
@@ -227,6 +227,7 @@ CoffeeMachine.prototype.extractCoffee = function () {
 
 그러면 이런 관계가 된다.
 
+<img width="600" alt="prototype, 생성자 함수, 인스턴스와의 관계" src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FcGxdxU%2FbtrzvT0kpVs%2FHXRmszrVRqBEWovXS3Bi90%2Fimg.png" />
 
 `Object.create`가 생성한 빈 객체가 `CoffeeMachine.prototype`의 자리를 차지한다.
 
@@ -243,6 +244,8 @@ CoffeeMachine.prototype = Object.create(Machine.prototype);
 CoffeeMachine.prototype.constructor = CoffeeMachine;
 ```
 그리고 이 작업 이 후에는, `constructor`를 이어주어야 한다.
+
+<img width="600" alt="prototype, 생성자 함수, 인스턴스와의 관계" src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FlEPXz%2FbtrzuXJnFAF%2FVY6qhKbb4glgMVdz0kHkok%2Fimg.png" />
 
 ```js
 const Machine = function () {

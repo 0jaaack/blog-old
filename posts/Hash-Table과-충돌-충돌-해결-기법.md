@@ -9,6 +9,8 @@ description: 해쉬 브라운과 해쉬 테이블의 상관 관계
 
 ## 해싱(Hashing)
 
+<img alt="hash brown image" width="600" src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbUNoQv%2FbtrAwEoyrwR%2FRkkX0BmxpvdEYZSuGO3UxK%2Fimg.jpg" />
+
 해쉬 브라운(Hash Brown)이라는 음식이 있다. 감자를 잘게 다져서 모양을 잡아 튀긴 음식이다.
 
 맥도날드의 맥모닝 세트에도 있는 음식이다.
@@ -17,8 +19,8 @@ description: 해쉬 브라운과 해쉬 테이블의 상관 관계
 어쨌든 이 해쉬 브라운은, 감자를 해쉬(hash)하여 만들어졌다.
 
 기존의 감자의 형체를 알아볼 수 없도록 다져놓은 것이다.
-<br />
 
+<img alt="programming hashing image" width="600" src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbBYLIF%2FbtrAxHSELel%2F7R14UOrGqj45y3tr94uDLK%2Fimg.jpg" />
 
 마찬가지로 프로그래밍에서 해싱(hashing)이란, 어떤 특정 값을 받아서 고정된 길이의 새로운 값을 도출해 주는 것이다.
 
@@ -28,6 +30,7 @@ description: 해쉬 브라운과 해쉬 테이블의 상관 관계
 그리고 해쉬 함수를 이용해 자료를 저장하는 자료구조를 바로 해쉬 테이블이라고 한다.
 
 ## 해쉬 테이블(Hash Table)
+<img alt="hash table image" width="600" src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FdbjUZu%2FbtrAxOKJiTK%2FJhqtLFeyvEe7RN10Gd41wk%2Fimg.png" />
 
 해쉬 테이블은 해쉬 함수로 변환 된 값을 인덱스(index)로 사용하여, 그 값을 저장하는 자료구조이다.
 
@@ -74,7 +77,7 @@ O(1)의 시간 복잡도를 갖게 되는 것이다.
 
 충돌이란, 해싱을 거친 각각의 키 값이 같은 인덱스를 가지게 되는 경우를 말한다.
 
-<br />
+<img alt="hash table collision image" width="600" src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbmVD9Q%2FbtrAxl9Tr4V%2FMaBNOZ4a96JyqZq4xbPQq0%2Fimg.png" />
 
 위에서 인덱스 152를 살펴보면, John Smith라는 키와 Sandra Dee라는 키가 같은 인덱스를 가지는 것을 볼 수가 있다.
 
@@ -98,6 +101,8 @@ O(1)의 시간 복잡도를 갖게 되는 것이다.
 
 ### Chaining
 
+<img alt="hash table chaining image" width="600" src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FkDNUL%2FbtrAx7cCN6v%2FUwT0Eqfku6FhJuhTuyIr3k%2Fimg.png" />
+
 Chaining이란, 쉽게 말해 데이터를 연결 리스트로 저장하는 것을 말한다.
 
 위와 같은 상황에서, Chaining 방식은 Sandra Dee는 인덱스 152의 John Smith 다음에 값을 저장한다.
@@ -106,6 +111,8 @@ Chaining이란, 쉽게 말해 데이터를 연결 리스트로 저장하는 것�
 이 때 탐색과 삭제의 시간 복잡도는 최악의 경우 O(n)이 될 수 있다. 하지만 정말 극단적인 최악의 경우를 상정하였을 때의 이야기이고, 보통 평균으로 표현하는 것이 일반적이다.
 
 ### Open Adressing
+
+<img alt="hash table open address image" width="600" src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FcxKaPv%2FbtrAyM66oar%2FA6qMnBRHnysBbr6XSOysD1%2Fimg.png" />
 
 Open Adressing은 해시값에 저장된 주소가 아닌, 다른 주소로 저장하는 방법이다.
 
@@ -126,8 +133,8 @@ Open Adressing은 해시값에 저장된 주소가 아닌, 다른 주소로 저�
 <br />
 
 탐색을 할 때는 해시 값으로 나온 인덱스부터 하나씩 검사해가면서 탐사해나간다.
-<br />
 
+<img alt="hash table collision time complexity table image" width="600" src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbNeb37%2FbtrAxM7dOKf%2FrHBV1pInw8yAUkDgHao4Ok%2Fimg.png" />
 
 각 충돌 해결 기법의 시간 복잡도를 나타낸 그래프이다. 적재율(α)이 높아질수록 각 기법의 시간 복잡도는 위 그래프와 같이 증가하게 된다.
 

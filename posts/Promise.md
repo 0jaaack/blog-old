@@ -231,7 +231,8 @@ promise();
 `resolve`가 실행되면 `<Fulfilled>`, `reject`가 실행되면 `<Rejected>` 상태가 된다.
 
 만약 둘 다 실행하지 않는다면, `state`는 계속 `Pending` 상태로 있을 것이다.
-<br />
+
+<img width="600" alt="promise flow chart image" src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FcnoIMu%2FbtrHdJqir68%2FnQGavdRzJOjbxms4wf3jTK%2Fimg.png" />
 
 `state`는 위의 콜백 함수를 이용한 처리의 문제점에서 지적된,
 
@@ -251,6 +252,7 @@ promise();
 
 결과값을 반환해주는 효과를 낼 수 있다.
 
+<img width="600" alt="promise result image" src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FdVOlwT%2FbtrHcLhbDK1%2Fq1cs7v4tVIbKefj04NnUnK%2Fimg.png" />
 
 다음은 `Promise` 객체 `promise`를 생성해, `resolve(10)`을 실행한 코드다.
 
