@@ -76,7 +76,8 @@ const customComponents: Components = {
       />
     </a>
   ),
-  ul: (props) => <ul {...props} className={css.ulMarkdown} />,
+  ul: (props) => <ul {...props} className={css.listMarkdown} />,
+  ol: (props) => <ol {...props} className={css.listMarkdown} />,
   li: (props) => <li {...props} className={css.liMarkdown} />,
   img: (props) => (
     <img
@@ -109,6 +110,7 @@ const customComponents: Components = {
       </code>
     );
   },
+  p: (props) => <p {...props} className={css.paragraphMardown} />,
 };
 
 export function PostViewer({ markdown }: { markdown: string }) {

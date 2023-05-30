@@ -82,11 +82,21 @@ export const inlineCodeMarkdown = markdownStyle({
   font: "14px monaco",
 });
 
-export const ulMarkdown = markdownStyle({
+export const listMarkdown = markdownStyle({
   whiteSpace: "normal",
 });
 
 export const liMarkdown = markdownStyle({
-  paddingTop: 0,
+  paddingLeft: "0.2rem",
   marginLeft: "1rem",
+  marginBottom: "1.5rem",
+  whiteSpace: "normal",
+});
+
+export const paragraphMardown = style({
+  selectors: {
+    [`${liMarkdown} &`]: {
+      marginBottom: "0.8rem",
+    },
+  },
 });
