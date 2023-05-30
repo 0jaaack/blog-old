@@ -16,8 +16,9 @@ export const markdown = style([
   s.fullHeight,
   {
     fontSize: "0.85rem",
-    lineHeight: "1.7rem",
+    lineHeight: "1.5rem",
     userSelect: "text",
+    whiteSpace: "pre-wrap",
   },
 ]);
 

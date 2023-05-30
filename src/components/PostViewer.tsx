@@ -73,12 +73,10 @@ const customComponents: Components = {
   ),
   li: (props) => <li {...props} className={css.liMarkdown} />,
   img: (props) => (
-    <Image
+    <img
       {...props}
       src={props?.src ?? ""}
       alt={props?.alt ?? ""}
-      width={Number(props?.height ?? 0)}
-      height={Number(props?.height ?? 0)}
       placeholder={
         props.placeholder === "empty" || props.placeholder === "blur"
           ? props.placeholder
