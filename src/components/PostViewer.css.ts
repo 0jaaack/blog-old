@@ -59,14 +59,34 @@ export const anchorMarkdown = markdownStyle({
   },
 });
 
+export const blockquoteMarkdown = markdownStyle({
+  fontStyle: "italic",
+  fontSize: "0.9rem",
+  color: "#7C848F",
+  marginInline: 0,
+});
+
 export const preMarkdown = markdownStyle({
-  margin: important("1.3rem 0 0.5rem"),
   padding: important("1.2rem"),
   backgroundColor: important("#0E1117"),
   borderRadius: important("0.5rem"),
   overflow: important("scroll"),
 });
 
+export const inlineCodeMarkdown = markdownStyle({
+  backgroundColor: important("#0E1117"),
+  padding: important("0.2rem 0.4rem"),
+  borderRadius: important("0.4rem"),
+  lineHeight: important("1.2rem"),
+  color: important("#DCDCAA"),
+  font: "14px monaco",
+});
+
+export const ulMarkdown = markdownStyle({
+  whiteSpace: "normal",
+});
+
 export const liMarkdown = markdownStyle({
+  paddingTop: 0,
   marginLeft: "1rem",
 });

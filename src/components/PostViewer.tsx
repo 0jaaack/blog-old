@@ -26,6 +26,11 @@ SyntaxHighlighter.registerLanguage("json", json);
 const customComponents: Components = {
   a: (props) => <a {...props} className={css.anchorMarkdown} target="_blank" />,
   br: () => <div style={{}} />,
+  blockquote: (props) => (
+    <blockquote {...props} className={css.blockquoteMarkdown}>
+      {props.children}
+    </blockquote>
+  ),
   h1: (props) => (
     <a href={`#${textToSlug(props.children.toString())}`}>
       <h1
@@ -71,6 +76,7 @@ const customComponents: Components = {
       />
     </a>
   ),
+  ul: (props) => <ul {...props} className={css.ulMarkdown} />,
   li: (props) => <li {...props} className={css.liMarkdown} />,
   img: (props) => (
     <img
@@ -98,7 +104,7 @@ const customComponents: Components = {
         {children as string}
       </SyntaxHighlighter>
     ) : (
-      <code {...props} className={className}>
+      <code {...props} className={css.inlineCodeMarkdown}>
         {children}
       </code>
     );

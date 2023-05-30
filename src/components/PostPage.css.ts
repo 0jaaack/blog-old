@@ -1,4 +1,4 @@
-import { style } from "@vanilla-extract/css";
+import { style, styleVariants } from "@vanilla-extract/css";
 
 import { s } from "../styles";
 
@@ -110,6 +110,18 @@ export const toc = style({
 
 export const highlited = style({
   fontWeight: 500,
+});
+
+export const step: Record<string, string> = styleVariants({
+  "1": {
+    marginLeft: "1rem",
+  },
+  "2": {
+    marginLeft: "2rem",
+  },
+  "3": {
+    marginLeft: "3rem",
+  },
 });
 
 export const topNavTop = style({
