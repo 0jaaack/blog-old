@@ -8,7 +8,7 @@ import { textToSlug } from "../../lib/textToSlug";
 import { createTOC } from "../../utils";
 import { USER } from "../../constants/user";
 import { NAVIGATION_ROUTES } from "../../components/SideBar";
-import * as css from "./index.css";
+import * as css from "../../components/PostPage.css";
 
 import type { GetStaticPaths, GetStaticProps } from "next";
 import type { Post } from "../../lib";

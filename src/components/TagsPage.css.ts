@@ -1,6 +1,6 @@
 import { style } from "@vanilla-extract/css";
 
-import { s } from "../../styles";
+import { s } from "../styles";
 
 export const layout = style([
   s.flex,

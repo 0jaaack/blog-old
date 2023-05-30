@@ -1,6 +1,6 @@
 import { SideBar } from "../../components/SideBar";
 import { getPostTags } from "../../lib";
-import * as css from "./index.css";
+import * as css from "../../components/TagsPage.css";
 
 import type { GetStaticProps } from "next";
 import type { TagPair } from "../../lib";

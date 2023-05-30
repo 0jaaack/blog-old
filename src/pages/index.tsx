@@ -3,7 +3,7 @@ import { PostCell } from "../components/PostCell";
 import { PageConsole } from "../components/PageConsole";
 import { getAllPostSlug, getPosts, PostMetadata } from "../lib";
 
-import * as css from "./index.css";
+import * as css from "../components/PostListPage.css";
 
 import type { GetStaticProps } from "next";
 
