@@ -3,7 +3,6 @@ import ReactMarkdown from "react-markdown";
 import { PrismLight as SyntaxHighlighter } from "react-syntax-highlighter";
 import remarkGfm from "remark-gfm";
 import rehypeRaw from "rehype-raw";
-import rangeParser from "parse-numeric-range";
 import { vscDarkPlus } from "react-syntax-highlighter/dist/cjs/styles/prism";
 import tsx from "react-syntax-highlighter/dist/cjs/languages/prism/tsx";
 import typescript from "react-syntax-highlighter/dist/cjs/languages/prism/typescript";
@@ -26,16 +25,46 @@ SyntaxHighlighter.registerLanguage("json", json);
 
 const customComponents: Components = {
   a: (props) => <a {...props} className={css.anchorMarkdown} target="_blank" />,
-  br: () => <div style={{ marginBottom: "1rem" }} />,
+  br: () => <div style={{}} />,
+  h1: (props) => (
+    <a href={`#${textToSlug(props.children.toString())}`}>
+      <h1
+        {...props}
+        className={css.h1Markdown}
+        id={textToSlug(props.children.toString())}
+        children={
+          <span>
+            <i>#&nbsp;&nbsp;</i>
+            {props.children.toString()}
+          </span>
+        }
+      />
+    </a>
+  ),
+  h2: (props) => (
+    <a href={`#${textToSlug(props.children.toString())}`}>
+      <h2
+        {...props}
+        className={css.h2Markdown}
+        id={textToSlug(props.children.toString())}
+        children={
+          <span>
+            <i>#&nbsp;&nbsp;</i>
+            {props.children.toString()}
+          </span>
+        }
+      />
+    </a>
+  ),
   h3: (props) => (
-    <a href={`#${props.children.toString()}`}>
+    <a href={`#${textToSlug(props.children.toString())}`}>
       <h3
         {...props}
         className={css.h3Markdown}
         id={textToSlug(props.children.toString())}
         children={
           <span>
-            <i>###&nbsp;&nbsp;</i>
+            <i>#&nbsp;&nbsp;</i>
             {props.children.toString()}
           </span>
         }
@@ -59,34 +88,14 @@ const customComponents: Components = {
   ),
   code: ({ node, inline, className, children, ...props }) => {
     const hasLang = /language-(\w+)/.exec(className || "");
-    const hasMeta = node?.data?.meta;
-    const applyHighlights: object = (applyHighlights: number) => {
-      if (hasMeta) {
-        const RE = /{([\d,-]+)}/;
-        const metadata = node.data?.meta?.replace(/\s/g, "");
-        const strlineNumbers = RE.test(metadata)
-          ? RE.exec(metadata)?.[1] ?? "0"
-          : "0";
-        const highlight = rangeParser(strlineNumbers);
-        const data: string = highlight.includes(applyHighlights)
-          ? "highlight"
-          : null;
 
-        return { data };
-      } else {
-        return {};
-      }
-    };
-
-    return !inline ? (
+    return !inline && hasLang ? (
       <SyntaxHighlighter
         style={vscDarkPlus}
         language={hasLang[1]}
         PreTag="pre"
         className={css.preMarkdown}
-        wrapLines={hasMeta}
         useInlineStyles={true}
-        lineProps={applyHighlights}
       >
         {children as string}
       </SyntaxHighlighter>

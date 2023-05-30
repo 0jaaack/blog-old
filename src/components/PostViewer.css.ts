@@ -33,6 +33,16 @@ function important(property: string): string {
   return `${property} !important`;
 }
 
+export const h1Markdown = markdownStyle({
+  margin: "1.8rem 0 0.5rem",
+  fontSize: "1.4rem",
+});
+
+export const h2Markdown = markdownStyle({
+  margin: "1.6rem 0 0.5rem",
+  fontSize: "1.2rem",
+});
+
 export const h3Markdown = markdownStyle({
   margin: "1.5rem 0 0.5rem",
   fontSize: "1.05rem",
