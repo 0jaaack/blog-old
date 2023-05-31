@@ -61,7 +61,10 @@ export const mainSection = style([
       desktop: 125,
     },
     height: "full",
-    justifyContent: "space-between",
+    justifyContent: {
+      mobile: "flex-start",
+      desktop: "space-between",
+    },
     paddingX: {
       mobile: 0,
       desktop: 5,
@@ -69,6 +72,10 @@ export const mainSection = style([
     paddingY: {
       mobile: 0,
       desktop: 5,
+    },
+    marginBottom: {
+      mobile: 5,
+      desktop: 0,
     },
     gap: {
       mobile: 5,
