@@ -19,7 +19,9 @@ export const layout = style([
       desktop: 0,
     },
     width: "maxWidth",
-    height: "maxHeight",
+    height: {
+      desktop: "maxHeight",
+    },
     paddingX: {
       mobile: 3,
       desktop: 0,
@@ -61,7 +63,7 @@ export const mainSection = style([
       desktop: 125,
     },
     height: {
-      desktop: "maxHeight",
+      desktop: "full",
     },
     justifyContent: {
       mobile: "flex-start",
@@ -81,7 +83,7 @@ export const mainSection = style([
     },
     gap: {
       mobile: 5,
-      desktop: 8,
+      desktop: 5,
     },
   }),
 ]);
