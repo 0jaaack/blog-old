@@ -10,6 +10,15 @@ export default function Document() {
           href={USER.PROFILE_IMAGE_PATH}
           type="image/x-icon"
         />
+        <meta property="og:site_name" content="ponjaehyeok.dev" />
+        <meta property="og:title" content="ponjaehyeok.dev" />
+        <meta property="og:description" content="ponjaehyeok's dev blog" />
+        <meta property="og:image" content={USER.PROFILE_IMAGE_PATH} />
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="ponjaehyeok.dev" />
+        <meta name="twitter:title" content="ponjaehyeok.dev" />
+        <meta name="twitter:description" content="ponjaehyeok's dev blog" />
+        <meta name="twitter:image" content={USER.PROFILE_IMAGE_PATH} />
       </Head>
       <body>
         <Main />

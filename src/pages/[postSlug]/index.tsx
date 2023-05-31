@@ -18,7 +18,7 @@ type PostPageProps = {
 };
 
 function PostPage({ post }: PostPageProps) {
-  const { title, date, tags } = post.metadata;
+  const { title, description, date, tags } = post.metadata;
   const [currentTitle, setCurrentTitle] = useState<string | null>(null);
   const scrollArea = useRef<HTMLDivElement>(null);
   const toc = useMemo(() => {
@@ -67,6 +67,11 @@ function PostPage({ post }: PostPageProps) {
     <>
       <Head>
         <title>{title}</title>
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:title" content={title} />
+        <meta name="twitter:description" content={description} />
       </Head>
       <div className={css.layout} ref={scrollArea}>
         <section className={css.sideTab} />
