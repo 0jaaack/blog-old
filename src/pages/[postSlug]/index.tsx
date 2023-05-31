@@ -91,13 +91,15 @@ function PostPage({ post }: PostPageProps) {
                   </a>
                 </li>
               ))}
-              <Image
-                src="/images/sun.svg"
-                alt="toggle dark mode"
-                width="30"
-                height="30"
-              />
             </ul>
+
+            <Image
+              src="/images/sun.svg"
+              alt="toggle dark mode"
+              width="30"
+              height="30"
+              className={css.colorModeIcon}
+            />
           </nav>
 
           <div className={css.postInfo}>

@@ -1,14 +1,35 @@
 import { style } from "@vanilla-extract/css";
 
 import { s } from "../styles";
+import { sprinkles } from "../styles/sprinkles.css";
 
 export const layout = style([
   s.flex,
-  s.justifyContentCenter,
+  sprinkles({
+    flexDirection: {
+      mobile: "column",
+      desktop: "row",
+    },
+    justifyContent: {
+      mobile: "flex-start",
+      desktop: "center",
+    },
+    paddingX: {
+      mobile: 3,
+      desktop: 0,
+    },
+    paddingY: {
+      mobile: 4,
+      desktop: 5,
+    },
+    gap: {
+      mobile: 5,
+      desktop: 0,
+    },
+  }),
   {
     width: "100vw",
     height: "100vh",
-    padding: "2rem 0",
     position: "fixed",
   },
 ]);
@@ -23,25 +44,40 @@ export const provider = style([
 
 export const tagsLayout = style([
   s.flexColumn,
+  sprinkles({
+    paddingX: {
+      mobile: 0,
+      desktop: 5,
+    },
+    paddingY: {
+      mobile: 0,
+      desktop: 5,
+    },
+    width: {
+      mobile: "full",
+      desktop: 125,
+    },
+    gap: 5,
+  }),
+]);
+
+export const sectionTitle = style([
+  sprinkles({
+    display: {
+      mobile: "none",
+      desktop: "block",
+    },
+  }),
   {
-    gap: "2rem",
-    width: "50rem",
-    padding: "2rem 3rem",
+    textTransform: "capitalize",
+    fontWeight: 700,
+    fontSize: "2rem",
   },
 ]);
-/* @media screen and (max-width: 56rem) {
-    width: 100%;
-    padding: 0;
-  } */
-
-export const sectionTitle = style({
-  textTransform: "capitalize",
-  fontWeight: 700,
-  fontSize: "2rem",
-});
 
 export const tagList = style({
   whiteSpace: "pre-line",
+  wordBreak: "break-all",
   lineHeight: "2.3rem",
   listStyle: "none",
 });

@@ -93,6 +93,10 @@ export const liMarkdown = markdownStyle({
   whiteSpace: "normal",
 });
 
+export const imageMarkdown = markdownStyle({
+  width: "100%",
+});
+
 export const paragraphMardown = style({
   selectors: {
     [`${liMarkdown} &`]: {

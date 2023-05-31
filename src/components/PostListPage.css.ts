@@ -1,23 +1,35 @@
 import { style } from "@vanilla-extract/css";
+
+import { sprinkles } from "../styles/sprinkles.css";
 import { s } from "../styles";
 
 export const layout = style([
   s.flex,
-  s.justifyContentCenter,
-  {
-    width: "100vw",
-    height: "100vh",
-    padding: "2rem 0",
-    position: "fixed",
-  },
+  s.scroll,
+  sprinkles({
+    flexDirection: {
+      mobile: "column",
+      desktop: "row",
+    },
+    justifyContent: {
+      desktop: "center",
+    },
+    gap: {
+      mobile: 8,
+      desktop: 0,
+    },
+    width: "maxWidth",
+    height: "maxHeight",
+    paddingX: {
+      mobile: 3,
+      desktop: 0,
+    },
+    paddingY: {
+      mobile: 4,
+      desktop: 5,
+    },
+  }),
 ]);
-// @media screen and (max-width: 56rem) {
-//   flex-direction: column;
-//   align-items: flex-start;
-//   gap: 2rem;
-//   height: auto;
-//   padding: 2.5rem 2rem;
-// }
 
 export const provider = style([
   s.fullHeight,
@@ -27,33 +39,53 @@ export const provider = style([
   },
 ]);
 
-export const sectionTitle = style({
-  textTransform: "capitalize",
-  fontWeight: 700,
-  fontSize: "2rem",
-});
+export const sectionTitle = style([
+  sprinkles({
+    display: {
+      mobile: "none",
+      desktop: "block",
+    },
+  }),
+  {
+    textTransform: "capitalize",
+    fontWeight: 700,
+    fontSize: "2rem",
+  },
+]);
 
 export const mainSection = style([
   s.flexColumn,
-  {
-    width: "50rem",
-    padding: "2rem 3rem",
-    gap: "3rem",
-  },
+  sprinkles({
+    width: {
+      mobile: "full",
+      desktop: 125,
+    },
+    height: "full",
+    justifyContent: "space-between",
+    paddingX: {
+      mobile: 0,
+      desktop: 5,
+    },
+    paddingY: {
+      mobile: 0,
+      desktop: 5,
+    },
+    gap: {
+      mobile: 5,
+      desktop: 8,
+    },
+  }),
 ]);
-// @media screen and (max-width: 56rem) {
-//   gap: 3rem;
-//   width: 100%;
-//   padding: 0;
-// }
 
 export const postList = style([
+  sprinkles({
+    gap: {
+      mobile: 5,
+      desktop: 4,
+    },
+  }),
   s.flexColumn,
   {
     padding: 0,
-    gap: "1.8rem",
   },
 ]);
-//  @media screen and (max-width: 56rem) {
-//   gap: 3.4rem;
-// }

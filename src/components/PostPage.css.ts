@@ -1,52 +1,122 @@
 import { style, styleVariants } from "@vanilla-extract/css";
 
 import { s } from "../styles";
+import { sprinkles } from "../styles/sprinkles.css";
 
 export const layout = style([
-  s.flex,
-  s.justifyContentCenter,
   s.scroll,
+  sprinkles({
+    display: {
+      mobile: "block",
+      desktop: "flex",
+    },
+    justifyContent: {
+      mobile: "stretch",
+      desktop: "center",
+    },
+  }),
   {
     height: "100vh",
     width: "100vw",
   },
 ]);
 
-export const postTab = style({
-  position: "relative",
-  maxWidth: "40rem",
-  padding: "3rem 2rem",
-});
+export const sideTab = style([
+  sprinkles({
+    display: {
+      mobile: "none",
+      desktop: "block",
+    },
+  }),
+  {
+    position: "sticky",
+    top: "10rem",
+    width: "20rem",
+    marginTop: "25rem",
+  },
+]);
+
+export const postTab = style([
+  sprinkles({
+    paddingX: {
+      mobile: 3,
+      desktop: 5,
+    },
+    paddingY: {
+      mobile: 4,
+      desktop: 8,
+    },
+  }),
+  {
+    position: "relative",
+    maxWidth: "40rem",
+  },
+]);
 
 export const navSection = style([
   s.flex,
   s.justifyContentSpaceBetween,
   s.alignItemsCenter,
-  {
-    marginBottom: "4rem",
-  },
+  sprinkles({
+    marginBottom: {
+      mobile: 7,
+      desktop: 10,
+    },
+  }),
 ]);
 
 export const routeLinks = style([
   s.flex,
   s.alignItemsCenter,
+  sprinkles({
+    gap: {
+      mobile: 2,
+      desktop: 4,
+    },
+    fontWeight: {
+      mobile: 300,
+      desktop: 400,
+    },
+  }),
   {
-    gap: "1.5rem",
     fontSize: "0.9rem",
-    fontWeight: 400,
     textTransform: "capitalize",
     listStyle: "none",
   },
 ]);
 
-export const route = style({
-  lineHeight: "2rem",
-  ":hover": {
-    textDecoration: "underline",
+export const route = style([
+  s.link,
+  {
+    ":hover": {
+      textDecoration: "underline",
+    },
+  },
+]);
+
+export const profileImage = style([
+  sprinkles({
+    width: {
+      mobile: 8,
+    },
+    height: {
+      mobile: 8,
+    },
+  }),
+  s.rounded,
+  {
+    marginBottom: "-5px",
+  },
+]);
+
+export const colorModeIcon = sprinkles({
+  width: {
+    mobile: 4,
+  },
+  height: {
+    mobile: 4,
   },
 });
-
-export const profileImage = style([s.rounded]);
 
 export const postInfo = style([
   s.flexColumn,
@@ -56,12 +126,19 @@ export const postInfo = style([
   },
 ]);
 
-export const postTitle = style({
-  fontWeight: 700,
-  fontSize: "2.3rem",
-  textAlign: "center",
-  wordBreak: "keep-all",
-});
+export const postTitle = style([
+  sprinkles({
+    fontSize: {
+      mobile: 4,
+      desktop: 6,
+    },
+  }),
+  {
+    fontWeight: 700,
+    textAlign: "center",
+    wordBreak: "keep-all",
+  },
+]);
 
 export const date = style({
   marginTop: "0.5rem",
@@ -93,13 +170,6 @@ export const provider = style({
 
 export const postContent = style({
   paddingBottom: "2rem",
-});
-
-export const sideTab = style({
-  position: "sticky",
-  top: "10rem",
-  width: "20rem",
-  marginTop: "25rem",
 });
 
 export const toc = style({

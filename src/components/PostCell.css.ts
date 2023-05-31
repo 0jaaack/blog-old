@@ -1,5 +1,6 @@
 import { style } from "@vanilla-extract/css";
 import { s } from "../styles";
+import { sprinkles } from "../styles/sprinkles.css";
 
 export const layout = style([
   s.flexColumn,
@@ -21,13 +22,23 @@ export const postDate = style({
   color: "lightgrey",
 });
 
-export const postTitle = style({
-  fontWeight: 700,
-  fontSize: "1.4rem",
-  overflow: "hidden",
-  whiteSpace: "nowrap",
-  textOverflow: "ellipsis",
-});
+export const postTitle = style([
+  sprinkles({
+    fontSize: {
+      mobile: 3,
+      desktop: 3.5,
+    },
+    whiteSpace: {
+      mobile: "normal",
+      desktop: "nowrap",
+    },
+  }),
+  {
+    fontWeight: 700,
+    overflow: "hidden",
+    textOverflow: "ellipsis",
+  },
+]);
 
 export const bodyLayout = style({
   margin: "0.3rem 0 0.7rem",

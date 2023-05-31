@@ -79,18 +79,7 @@ const customComponents: Components = {
   ul: (props) => <ul {...props} className={css.listMarkdown} />,
   ol: (props) => <ol {...props} className={css.listMarkdown} />,
   li: (props) => <li {...props} className={css.liMarkdown} />,
-  img: (props) => (
-    <img
-      {...props}
-      src={props?.src ?? ""}
-      alt={props?.alt ?? ""}
-      placeholder={
-        props.placeholder === "empty" || props.placeholder === "blur"
-          ? props.placeholder
-          : "empty"
-      }
-    />
-  ),
+  img: (props) => <img {...props} className={css.imageMarkdown} />,
   code: ({ node, inline, className, children, ...props }) => {
     const hasLang = /language-(\w+)/.exec(className || "");
 

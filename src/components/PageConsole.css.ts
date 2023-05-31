@@ -1,21 +1,23 @@
 import { style } from "@vanilla-extract/css";
 
+import { sprinkles } from "../styles/sprinkles.css";
 import { s } from "../styles";
 
 export const pageConsole = style([
   s.flex,
   s.justifyContentSpaceBetween,
   s.alignItemsCenter,
-  {
-    width: "30rem",
-  },
+  sprinkles({
+    width: {
+      mobile: "full",
+      desktop: 75,
+    },
+  }),
 ]);
 
-export const pageButton = style([
-  {
-    color: "#D3D3D3",
-    fontWeight: 500,
-    fontSize: "0.9rem",
-    textTransform: "uppercase",
-  },
-]);
+export const pageButton = style({
+  color: "#D3D3D3",
+  fontSize: "0.9rem",
+  fontWeight: 500,
+  textTransform: "uppercase",
+});

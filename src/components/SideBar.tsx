@@ -61,7 +61,7 @@ export function SideBar() {
               alt="github link"
               width="24"
               height="24"
-              className={css.icon}
+              className={`${css.icon} ${css.contractIcon}`}
             />
           </a>
         </li>
@@ -72,7 +72,7 @@ export function SideBar() {
               alt="mail link"
               width="24"
               height="24"
-              className={css.icon}
+              className={`${css.icon} ${css.contractIcon}`}
             />
           </a>
         </li>
