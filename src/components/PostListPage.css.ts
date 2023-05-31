@@ -60,7 +60,9 @@ export const mainSection = style([
       mobile: "full",
       desktop: 125,
     },
-    height: "full",
+    height: {
+      desktop: "maxHeight",
+    },
     justifyContent: {
       mobile: "flex-start",
       desktop: "space-between",

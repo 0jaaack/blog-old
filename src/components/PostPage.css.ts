@@ -14,9 +14,11 @@ export const layout = style([
       mobile: "stretch",
       desktop: "center",
     },
+    height: {
+      desktop: "maxHeight",
+    },
   }),
   {
-    height: "100vh",
     width: "100vw",
   },
 ]);
