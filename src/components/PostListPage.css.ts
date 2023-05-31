@@ -5,7 +5,6 @@ import { s } from "../styles";
 
 export const layout = style([
   s.flex,
-  s.scroll,
   sprinkles({
     flexDirection: {
       mobile: "column",
@@ -31,6 +30,11 @@ export const layout = style([
       desktop: 5,
     },
   }),
+  {
+    overflowY: "scroll",
+    overflowX: "hidden",
+    WebkitOverflowScrolling: "touch",
+  },
 ]);
 
 export const provider = style([

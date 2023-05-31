@@ -4,7 +4,6 @@ import { s } from "../styles";
 import { sprinkles } from "../styles/sprinkles.css";
 
 export const layout = style([
-  s.scroll,
   sprinkles({
     display: {
       mobile: "block",
@@ -20,6 +19,9 @@ export const layout = style([
   }),
   {
     width: "100vw",
+    overflowY: "scroll",
+    overflowX: "hidden",
+    WebkitOverflowScrolling: "touch",
   },
 ]);
 
