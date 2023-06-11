@@ -3,7 +3,7 @@ title: Async와 Generator
 tags:
   - javascript
 published: true
-date: "2022-06-01"
+date: "2023-06-11"
 description: await 안쓰고 coroutine으로 await 구현해보기
 ---
 
