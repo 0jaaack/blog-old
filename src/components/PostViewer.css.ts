@@ -70,7 +70,6 @@ export const preMarkdown = markdownStyle({
   padding: important("1.2rem"),
   backgroundColor: important("#0E1117"),
   borderRadius: important("0.5rem"),
-  overflow: important("scroll"),
 });
 
 export const inlineCodeMarkdown = markdownStyle({

@@ -70,70 +70,71 @@ function PostPage({ post }: PostPageProps) {
         <meta name="twitter:title" content={title} />
         <meta name="twitter:description" content={description} />
       </Head>
+
       <div className={css.layout} ref={scrollArea}>
-        <section className={css.sideTab} />
+        <nav className={css.navSection}>
+          <a href="/">
+            <Image
+              src={USER.PROFILE_IMAGE_PATH}
+              width="40"
+              height="40"
+              alt={`${USER.NAME} profile image`}
+              className={css.profileImage}
+            />
+          </a>
+
+          <Image
+            src="/images/sun.svg"
+            alt="toggle dark mode"
+            width="30"
+            height="30"
+            className={css.colorModeIcon}
+          />
+        </nav>
+
+        <div className={css.postInfo}>
+          <p className={css.postTitle}>{title}</p>
+          <p className={css.date}>{date}</p>
+          <p className={css.tagList}>
+            {tags.map((tag) => (
+              <span key={tag} className={css.tagLabel}>
+                {tag}
+              </span>
+            ))}
+          </p>
+        </div>
 
         <div className={css.postTab}>
-          <nav className={css.navSection}>
-            <a href="/">
-              <Image
-                src={USER.PROFILE_IMAGE_PATH}
-                width={60}
-                height={60}
-                alt={`${USER.NAME} profile image`}
-                className={css.profileImage}
-              />
-            </a>
-
-            <Image
-              src="/images/sun.svg"
-              alt="toggle dark mode"
-              width="30"
-              height="30"
-              className={css.colorModeIcon}
-            />
-          </nav>
-
-          <div className={css.postInfo}>
-            <p className={css.postTitle}>{title}</p>
-            <p className={css.date}>{date}</p>
-            <p className={css.tagList}>
-              {tags.map((tag) => (
-                <span key={tag} className={css.tagLabel}>
-                  {tag}
-                </span>
-              ))}
-            </p>
-          </div>
-
-          <div className={css.provider} />
+          {/* <div className={css.provider} /> */}
 
           <div className={css.postContent}>
             <PostViewer markdown={post.body} />
           </div>
-        </div>
 
-        <section className={css.sideTab}>
-          <nav>
-            <ul className={css.toc}>
-              {toc.map((header) => {
-                const step = header.step.toString();
-                return (
-                  <li
-                    className={`${
-                      currentTitle === textToSlug(header.title)
-                        ? css.highlited
-                        : ""
-                    } ${css.step[step]}`}
-                  >
-                    <a href={`#${textToSlug(header.title)}`}>{header.title}</a>
-                  </li>
-                );
-              })}
-            </ul>
-            <div className={css.provider} />
-          </nav>
-        </section>
+          <section className={css.sideTab}>
+            <nav>
+              <ul className={css.toc}>
+                {toc.map((header) => {
+                  const step = header.step.toString();
+                  return (
+                    <li
+                      className={`${
+                        currentTitle === textToSlug(header.title)
+                          ? css.highlited
+                          : ""
+                      } ${css.step[step]}`}
+                    >
+                      <a href={`#${textToSlug(header.title)}`}>
+                        {header.title}
+                      </a>
+                    </li>
+                  );
+                })}
+              </ul>
+              <div className={css.provider} />
+            </nav>
+          </section>
+        </div>
       </div>
     </>
   );

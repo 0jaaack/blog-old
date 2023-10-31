@@ -5,10 +5,6 @@ import { sprinkles } from "../styles/sprinkles.css";
 
 export const layout = style([
   sprinkles({
-    display: {
-      mobile: "block",
-      desktop: "flex",
-    },
     justifyContent: {
       mobile: "stretch",
       desktop: "center",
@@ -18,9 +14,10 @@ export const layout = style([
     },
   }),
   {
-    width: "100vw",
-    overflowY: "scroll",
-    overflowX: "hidden",
+    width: "100%",
+    maxWidth: "50rem",
+    margin: "0 auto",
+    padding: "3rem 0",
     WebkitOverflowScrolling: "touch",
   },
 ]);
@@ -35,25 +32,15 @@ export const sideTab = style([
   {
     position: "sticky",
     top: "10rem",
-    width: "20rem",
+    width: "10rem",
     marginTop: "25rem",
   },
 ]);
 
 export const postTab = style([
-  sprinkles({
-    paddingX: {
-      mobile: 3,
-      desktop: 5,
-    },
-    paddingY: {
-      mobile: 4,
-      desktop: 8,
-    },
-  }),
   {
     position: "relative",
-    maxWidth: "40rem",
+    display: "flex",
   },
 ]);
 
@@ -61,12 +48,9 @@ export const navSection = style([
   s.flex,
   s.justifyContentSpaceBetween,
   s.alignItemsCenter,
-  sprinkles({
-    marginBottom: {
-      mobile: 7,
-      desktop: 10,
-    },
-  }),
+  {
+    marginBottom: "3rem",
+  },
 ]);
 
 export const routeLinks = style([
@@ -101,10 +85,10 @@ export const route = style([
 export const profileImage = style([
   sprinkles({
     width: {
-      mobile: 8,
+      mobile: 6,
     },
     height: {
-      mobile: 8,
+      mobile: 6,
     },
   }),
   s.rounded,
@@ -139,7 +123,6 @@ export const postTitle = style([
   }),
   {
     fontWeight: 700,
-    textAlign: "center",
     wordBreak: "keep-all",
   },
 ]);
@@ -148,12 +131,10 @@ export const date = style({
   marginTop: "0.5rem",
   color: "grey",
   fontSize: "0.9rem",
-  textAlign: "center",
 });
 
 export const tagList = style([
   s.flex,
-  s.justifyContentCenter,
   {
     gap: "0.4rem",
     padding: 0,
