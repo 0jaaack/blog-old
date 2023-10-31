@@ -10,7 +10,7 @@ export const layout = style([
 ]);
 
 export const tagLabel = style({
-  color: "orange",
+  color: "#FE8646",
   fontSize: "0.8rem",
   fontWeight: 500,
   textTransform: "uppercase",

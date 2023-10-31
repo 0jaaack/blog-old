@@ -30,11 +30,6 @@ export const layout = style([
       desktop: 5,
     },
   }),
-  {
-    overflowY: "scroll",
-    overflowX: "hidden",
-    WebkitOverflowScrolling: "touch",
-  },
 ]);
 
 export const provider = style([
@@ -101,6 +96,7 @@ export const postList = style([
   }),
   s.flexColumn,
   {
+    height: "100%",
     padding: 0,
   },
 ]);

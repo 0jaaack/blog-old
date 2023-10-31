@@ -21,7 +21,7 @@ export const layout = style([
     },
     gap: {
       mobile: 0,
-      desktop: 8,
+      desktop: 4,
     },
     padding: {
       mobile: 0,
@@ -56,11 +56,11 @@ export const profileImage = style([
   sprinkles({
     width: {
       mobile: 8,
-      desktop: 12,
+      desktop: 10,
     },
     height: {
       mobile: 8,
-      desktop: 12,
+      desktop: 10,
     },
   }),
   s.rounded,
@@ -76,6 +76,7 @@ export const profileName = style([
   {
     fontSize: "0.9rem",
     fontWeight: 500,
+    color: "#bdc1c6",
   },
 ]);
 
@@ -94,19 +95,6 @@ export const description = style([
   },
 ]);
 
-export const navBar = style([
-  s.flex,
-  sprinkles({
-    flexDirection: {
-      mobile: "row",
-      desktop: "column",
-    },
-    gap: 2,
-  }),
-]);
-
-export const navLink = style([s.link]);
-
 export const underline = style({
   borderBottom: `1px solid ${LIGHT_THEME.FONT}`,
 });
@@ -116,7 +104,7 @@ export const iconList = style([
   sprinkles({
     gap: {
       mobile: 0,
-      desktop: 4,
+      desktop: 3,
     },
   }),
   {
@@ -127,10 +115,10 @@ export const iconList = style([
 
 export const icon = sprinkles({
   width: {
-    mobile: 4,
+    mobile: 3,
   },
   height: {
-    mobile: 4,
+    mobile: 3,
   },
 });
 
