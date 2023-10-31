@@ -7,7 +7,6 @@ import { getAllPostSlug, getPostBySlug } from "../../lib";
 import { textToSlug } from "../../lib/textToSlug";
 import { createTOC } from "../../utils";
 import { USER } from "../../constants/user";
-import { NAVIGATION_ROUTES } from "../../components/SideBar";
 import * as css from "../../components/PostPage.css";
 
 import type { GetStaticPaths, GetStaticProps } from "next";
@@ -21,9 +20,7 @@ function PostPage({ post }: PostPageProps) {
   const { title, description, date, tags } = post.metadata;
   const [currentTitle, setCurrentTitle] = useState<string | null>(null);
   const scrollArea = useRef<HTMLDivElement>(null);
-  const toc = useMemo(() => {
-    return createTOC(post.body);
-  }, [post.body]);
+  const toc = useMemo(() => createTOC(post.body), [post.body]);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -87,16 +84,6 @@ function PostPage({ post }: PostPageProps) {
                 className={css.profileImage}
               />
             </a>
-
-            <ul className={css.routeLinks}>
-              {NAVIGATION_ROUTES.map((route) => (
-                <li key={route.page}>
-                  <a href={route.href} className={css.route}>
-                    {route.page}
-                  </a>
-                </li>
-              ))}
-            </ul>
 
             <Image
               src="/images/sun.svg"
