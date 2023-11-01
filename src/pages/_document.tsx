@@ -1,5 +1,14 @@
 import { Html, Head, Main, NextScript } from "next/document";
-import { USER } from "../constants/user";
+import { DEFAULT_THEME, USER } from "../constants";
+
+const ThemeInsertionScript = () => {
+  const insertTheme = () => {
+    const theme = localStorage.getItem("theme") ?? DEFAULT_THEME;
+    document.body.classList.add(theme);
+  };
+  const insertThemeScript = `(${insertTheme.toString()})()`;
+  return <script dangerouslySetInnerHTML={{ __html: insertThemeScript }} />;
+};
 
 export default function Document() {
   return (
@@ -21,6 +30,7 @@ export default function Document() {
         <meta name="twitter:image" content={USER.PROFILE_IMAGE_PATH} />
       </Head>
       <body>
+        <ThemeInsertionScript />
         <Main />
         <NextScript />
       </body>

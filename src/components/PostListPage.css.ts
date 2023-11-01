@@ -2,6 +2,7 @@ import { style } from "@vanilla-extract/css";
 
 import { sprinkles } from "../styles/sprinkles.css";
 import { s } from "../styles";
+import { mainColor } from "../styles/global.css";
 
 export const layout = style([
   s.flex,
@@ -36,7 +37,6 @@ export const provider = style([
   s.fullHeight,
   {
     width: "0.5px",
-    backgroundColor: "#808080",
   },
 ]);
 
@@ -48,6 +48,7 @@ export const sectionTitle = style([
     },
   }),
   {
+    color: mainColor,
     textTransform: "capitalize",
     fontWeight: 700,
     fontSize: "2rem",

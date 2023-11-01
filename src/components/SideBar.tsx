@@ -1,9 +1,28 @@
 import Image from "next/image";
 
-import { USER } from "../constants/user";
+import { DEFAULT_THEME, Theme, USER } from "../constants";
 import * as css from "./SideBar.css";
+import { useCallback, useMemo } from "react";
 
 export function SideBar() {
+  const theme = useMemo((): Theme => {
+    if (typeof window === "undefined") {
+      return DEFAULT_THEME;
+    }
+    const theme = localStorage.getItem("theme") ?? DEFAULT_THEME;
+
+    return theme === "dark" || theme === "light" ? theme : DEFAULT_THEME;
+  }, []);
+  const toggleTheme = useCallback(() => {
+    const currentTheme = localStorage.getItem("theme") ?? DEFAULT_THEME;
+    const theme = currentTheme === "light" ? "dark" : "light";
+
+    localStorage.setItem("theme", theme);
+
+    document.body.classList.remove(currentTheme);
+    document.body.classList.add(theme);
+  }, []);
+
   return (
     <section className={css.layout}>
       <div className={css.profile}>
@@ -48,6 +67,7 @@ export function SideBar() {
             width="24"
             height="24"
             className={css.icon}
+            onClick={toggleTheme}
           />
         </li>
       </ul>

@@ -1,6 +1,12 @@
 import { style } from "@vanilla-extract/css";
 import { s } from "../styles";
 import { sprinkles } from "../styles/sprinkles.css";
+import {
+  accentColor,
+  mainColor,
+  secondaryColor,
+  tertiaryColor,
+} from "../styles/global.css";
 
 export const layout = style([
   s.flexColumn,
@@ -10,17 +16,19 @@ export const layout = style([
 ]);
 
 export const tagLabel = style({
-  color: "#FE8646",
+  color: accentColor,
   fontSize: "0.8rem",
   fontWeight: 500,
   textTransform: "uppercase",
 });
 
-export const postDate = style({
-  fontSize: "0.8rem",
-  fontWeight: 500,
-  color: "lightgrey",
-});
+export const postDate = style([
+  {
+    color: secondaryColor,
+    fontSize: "0.8rem",
+    fontWeight: 500,
+  },
+]);
 
 export const postTitle = style([
   sprinkles({
@@ -34,6 +42,7 @@ export const postTitle = style([
     },
   }),
   {
+    color: mainColor,
     fontWeight: 700,
     overflow: "hidden",
     textOverflow: "ellipsis",
@@ -46,7 +55,7 @@ export const bodyLayout = style({
 
 export const description = style({
   fontSize: "0.9rem",
-  color: "grey",
+  color: tertiaryColor,
   overflow: "hidden",
   textOverflow: "ellipsis",
   whiteSpace: "nowrap",

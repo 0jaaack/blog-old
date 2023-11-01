@@ -2,7 +2,7 @@ import { style } from "@vanilla-extract/css";
 
 import { sprinkles } from "../styles/sprinkles.css";
 import { s } from "../styles";
-import { LIGHT_THEME } from "../constants/theme";
+import { mainColor, secondaryColor, tertiaryColor } from "../styles/global.css";
 
 export const layout = style([
   s.flex,
@@ -74,9 +74,9 @@ export const profileName = style([
     },
   }),
   {
+    color: mainColor,
     fontSize: "0.9rem",
     fontWeight: 500,
-    color: "#bdc1c6",
   },
 ]);
 
@@ -89,14 +89,14 @@ export const description = style([
   }),
   {
     fontSize: "0.8rem",
-    color: "grey",
+    color: secondaryColor,
     lineHeight: "1.3rem",
     whiteSpace: "pre-line",
   },
 ]);
 
 export const underline = style({
-  borderBottom: `1px solid ${LIGHT_THEME.FONT}`,
+  borderBottom: `1px solid #F2F4F6`,
 });
 
 export const iconList = style([
@@ -113,14 +113,19 @@ export const iconList = style([
   },
 ]);
 
-export const icon = sprinkles({
-  width: {
-    mobile: 3,
+export const icon = style([
+  sprinkles({
+    width: {
+      mobile: 3,
+    },
+    height: {
+      mobile: 3,
+    },
+  }),
+  {
+    cursor: "pointer",
   },
-  height: {
-    mobile: 3,
-  },
-});
+]);
 
 export const contractIcon = sprinkles({
   display: {
