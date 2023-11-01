@@ -2,17 +2,19 @@ import Image from "next/image";
 
 import { DEFAULT_THEME, Theme, USER } from "../constants";
 import * as css from "./SideBar.css";
-import { useCallback, useMemo } from "react";
+import { useCallback, useMemo, useState } from "react";
 
 export function SideBar() {
-  const theme = useMemo((): Theme => {
-    if (typeof window === "undefined") {
-      return DEFAULT_THEME;
-    }
-    const theme = localStorage.getItem("theme") ?? DEFAULT_THEME;
+  const [theme, setTheme] = useState<Theme>(
+    ((): Theme => {
+      if (typeof window === "undefined") {
+        return DEFAULT_THEME;
+      }
+      const theme = localStorage.getItem("theme") ?? DEFAULT_THEME;
 
-    return theme === "dark" || theme === "light" ? theme : DEFAULT_THEME;
-  }, []);
+      return theme === "dark" || theme === "light" ? theme : DEFAULT_THEME;
+    })()
+  );
   const toggleTheme = useCallback(() => {
     const currentTheme = localStorage.getItem("theme") ?? DEFAULT_THEME;
     const theme = currentTheme === "light" ? "dark" : "light";
@@ -21,6 +23,8 @@ export function SideBar() {
 
     document.body.classList.remove(currentTheme);
     document.body.classList.add(theme);
+
+    setTheme(theme);
   }, []);
 
   return (
@@ -62,7 +66,7 @@ export function SideBar() {
         </li>
         <li>
           <Image
-            src="/images/sun.svg"
+            src={theme === "light" ? "/images/moon.svg" : "/images/sun.svg"}
             alt="toggle dark mode"
             width="24"
             height="24"

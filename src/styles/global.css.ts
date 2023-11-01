@@ -19,7 +19,7 @@ globalStyle("body.dark", {
 
 globalStyle("body.light", {
   vars: {
-    [backgroundColor]: "#EAEAEA",
+    [backgroundColor]: "#F2F4F6",
     [mainColor]: "#333333",
     [secondaryColor]: "#555555",
     [tertiaryColor]: "#808080",

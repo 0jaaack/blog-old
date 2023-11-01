@@ -1,4 +1,4 @@
-import { POST } from "../../constants/post";
+import { POST } from "../../constants";
 
 import { getPosts, getAllPostSlug } from "../../lib";
 import PostListPage from "../index";

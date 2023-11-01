@@ -2,7 +2,7 @@ import fs from "fs";
 import path from "path";
 import fm from "front-matter";
 
-import { POST } from "../constants/post";
+import { POST } from "../constants";
 import { getAllPostSlug } from "./getAllPostSlug";
 
 export type PostMetadata = {

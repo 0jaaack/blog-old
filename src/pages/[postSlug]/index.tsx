@@ -6,7 +6,7 @@ import { PostViewer } from "../../components/PostViewer";
 import { getAllPostSlug, getPostBySlug } from "../../lib";
 import { textToSlug } from "../../lib/textToSlug";
 import { createTOC } from "../../utils";
-import { USER } from "../../constants/user";
+import { USER } from "../../constants";
 import * as css from "../../components/PostPage.css";
 
 import type { GetStaticPaths, GetStaticProps } from "next";
