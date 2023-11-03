@@ -1,12 +1,7 @@
 import { getAllPostSlug, getPostBySlug } from "../../lib";
-import { PostPage } from "../../components/PostPage/PostPage";
+import { PostPage, PostPageProps } from "../../components/PostPage/PostPage";
 
 import type { GetStaticPaths, GetStaticProps } from "next";
-import type { Post } from "../../lib";
-
-type PostPageProps = {
-  post: Post;
-};
 
 export const getStaticPaths: GetStaticPaths = async () => {
   return {

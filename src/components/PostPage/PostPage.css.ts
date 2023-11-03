@@ -2,24 +2,29 @@ import { style, styleVariants } from "@vanilla-extract/css";
 
 import { s } from "../../styles";
 import { sprinkles } from "../../styles/sprinkles.css";
-import { mainColor } from "../../styles/global.css";
+import { accentColor, mainColor } from "../../styles/global.css";
 
-export const layout = style([
+export const scrollArea = style([
   sprinkles({
     justifyContent: {
       mobile: "stretch",
       desktop: "center",
     },
-    height: {
-      desktop: "maxHeight",
-    },
   }),
   {
     width: "100%",
-    maxWidth: "50rem",
-    margin: "0 auto",
+    height: "100vh",
     padding: "3rem 0",
     WebkitOverflowScrolling: "touch",
+    overflow: "auto",
+  },
+]);
+
+export const layout = style([
+  {
+    width: "100%",
+    maxWidth: "60rem",
+    margin: "0 auto",
   },
 ]);
 
@@ -31,12 +36,16 @@ export const sideTab = style([
     },
   }),
   {
-    position: "sticky",
-    top: "10rem",
     width: "10rem",
-    marginTop: "25rem",
+    height: "1px",
   },
 ]);
+
+export const sideNavigation = style({
+  marginTop: "1rem",
+  marginLeft: "1rem",
+  width: "10rem",
+});
 
 export const postTab = style([
   {
@@ -112,6 +121,7 @@ export const postInfo = style([
   s.justifyContentCenter,
   {
     gap: "0.7rem",
+    padding: "1rem 0",
   },
 ]);
 
@@ -156,21 +166,37 @@ export const provider = style({
 });
 
 export const postContent = style({
+  width: "100%",
+  minWidth: "0",
   paddingBottom: "2rem",
 });
 
 export const toc = style({
-  color: mainColor,
+  color: "#9ca3af",
+  display: "flex",
+  flexDirection: "column",
+  gap: "0.4rem",
   fontSize: "0.75rem",
-  lineHeight: "1.6rem",
+  lineHeight: "150%",
   listStyle: "none",
+  textOverflow: "ellipsis",
+  overflow: "hidden",
+  whiteSpace: "nowrap",
+  width: "10rem",
 });
 
 export const highlited = style({
   fontWeight: 500,
 });
 
+export const header = style({
+  ":hover": {
+    backgroundColor: accentColor,
+  },
+});
+
 export const step: Record<string, string> = styleVariants({
+  "0": {},
   "1": {
     marginLeft: "1rem",
   },
