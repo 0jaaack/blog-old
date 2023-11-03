@@ -2,6 +2,7 @@ import { style, styleVariants } from "@vanilla-extract/css";
 
 import { s } from "../styles";
 import { sprinkles } from "../styles/sprinkles.css";
+import { mainColor } from "../styles/global.css";
 
 export const layout = style([
   sprinkles({
@@ -122,6 +123,7 @@ export const postTitle = style([
     },
   }),
   {
+    color: mainColor,
     fontWeight: 700,
     wordBreak: "keep-all",
   },
