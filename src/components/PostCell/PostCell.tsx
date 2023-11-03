@@ -1,9 +1,9 @@
 import Link from "next/link";
 
-import { textToSlug } from "../lib/textToSlug";
+import { textToSlug } from "../../lib/textToSlug";
 import * as css from "./PostCell.css";
 
-import type { PostMetadata } from "../lib";
+import type { PostMetadata } from "../../lib";
 
 const MONTH = {
   "01": "January",

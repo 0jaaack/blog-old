@@ -1,9 +1,9 @@
-import { SideBar } from "../components/SideBar";
-import { PostCell } from "../components/PostCell";
-import { PageConsole } from "../components/PageConsole";
+import { SideBar } from "../components/SideBar/SideBar";
+import { PostCell } from "../components/PostCell/PostCell";
+import { PageConsole } from "../components/PageConsole/PageConsole";
 import { getAllPostSlug, getPosts, PostMetadata } from "../lib";
 
-import * as css from "../components/PostListPage.css";
+import * as css from "../components/PostListPage/PostListPage.css";
 
 import type { GetStaticProps } from "next";
 

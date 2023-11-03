@@ -1,12 +1,12 @@
 import { style } from "@vanilla-extract/css";
-import { s } from "../styles";
-import { sprinkles } from "../styles/sprinkles.css";
+import { s } from "../../styles";
+import { sprinkles } from "../../styles/sprinkles.css";
 import {
   accentColor,
   mainColor,
   secondaryColor,
   tertiaryColor,
-} from "../styles/global.css";
+} from "../../styles/global.css";
 
 export const layout = style([
   s.flexColumn,

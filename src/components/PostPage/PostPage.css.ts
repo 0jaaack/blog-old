@@ -1,8 +1,8 @@
 import { style, styleVariants } from "@vanilla-extract/css";
 
-import { s } from "../styles";
-import { sprinkles } from "../styles/sprinkles.css";
-import { mainColor } from "../styles/global.css";
+import { s } from "../../styles";
+import { sprinkles } from "../../styles/sprinkles.css";
+import { mainColor } from "../../styles/global.css";
 
 export const layout = style([
   sprinkles({
@@ -160,6 +160,7 @@ export const postContent = style({
 });
 
 export const toc = style({
+  color: mainColor,
   fontSize: "0.75rem",
   lineHeight: "1.6rem",
   listStyle: "none",

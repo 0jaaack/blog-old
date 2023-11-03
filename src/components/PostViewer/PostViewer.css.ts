@@ -1,9 +1,9 @@
 import { style } from "@vanilla-extract/css";
 
-import { s } from "../styles";
+import { s } from "../../styles";
 
 import type { StyleRule } from "@vanilla-extract/css";
-import { mainColor } from "../styles/global.css";
+import { mainColor } from "../../styles/global.css";
 
 export const layout = style([
   s.fullHeight,

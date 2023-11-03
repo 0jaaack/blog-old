@@ -11,7 +11,7 @@ import bash from "react-syntax-highlighter/dist/cjs/languages/prism/bash";
 import markdown from "react-syntax-highlighter/dist/cjs/languages/prism/markdown";
 import json from "react-syntax-highlighter/dist/cjs/languages/prism/json";
 
-import { textToSlug } from "../lib/textToSlug";
+import { textToSlug } from "../../lib/textToSlug";
 import * as css from "./PostViewer.css";
 
 import type { Components } from "react-markdown";
