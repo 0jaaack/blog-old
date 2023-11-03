@@ -8,6 +8,7 @@ import { mainColor } from "../../styles/global.css";
 export const layout = style([
   s.fullHeight,
   {
+    fontSize: "16px",
     position: "relative",
     margin: "3rem 0 1rem",
   },
@@ -16,8 +17,7 @@ export const layout = style([
 export const markdown = style([
   s.fullHeight,
   {
-    fontSize: "0.85rem",
-    lineHeight: "1.5rem",
+    lineHeight: "1.8",
     userSelect: "text",
     whiteSpace: "pre-wrap",
     color: mainColor,
@@ -101,7 +101,7 @@ export const imageMarkdown = markdownStyle({
 export const paragraphMardown = style({
   selectors: {
     [`${liMarkdown} &`]: {
-      marginBottom: "0.8rem",
+      marginBottom: "0.1rem",
     },
   },
 });
