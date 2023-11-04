@@ -1,15 +1,14 @@
 {
-  "name": "ponjaehyeok-blog",
+  "name": "gongjaack-blog",
   "packageManager": "yarn@3.3.0",
-  "version": "1.3.0",
-  "description": "항상 프로그래밍만 생각하는 코딩 바보 공재혁의 우당탕탕 블로그!",
-  "homepage": "ponjaehyeok-blog.vercel.app",
-  "repository": "https://github.com/ponjaehyeok/ponjaehyeok-blog",
+  "version": "1.4.0",
+  "description": "Technology isn't hard, just think easy.",
+  "repository": "https://github.com/gongjaack/gongjaack-blog",
   "license": "ISC",
   "author": {
     "name": "gongjaehyeok",
     "email": "ruud091@gmail.com",
-    "url": "https://github.com/ponjaehyeok"
+    "url": "https://github.com/gongjaack"
   },
   "scripts": {
     "dev": "next dev",
