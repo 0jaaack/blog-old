@@ -22,9 +22,10 @@ globalStyle("body.dark", {
 globalStyle("body.light", {
   vars: {
     [backgroundColor]: "#F2F4F6",
+    [secondBackgroundColor]: "#E5E5E5",
     [mainColor]: "#333333",
     [secondaryColor]: "#555555",
-    [tertiaryColor]: "#808080",
+    [tertiaryColor]: "#444444",
     [accentColor]: "#F28646",
   },
 });

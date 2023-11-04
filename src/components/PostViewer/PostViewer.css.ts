@@ -3,7 +3,11 @@ import { style } from "@vanilla-extract/css";
 import { s } from "../../styles";
 
 import type { StyleRule } from "@vanilla-extract/css";
-import { mainColor } from "../../styles/global.css";
+import {
+  accentColor,
+  mainColor,
+  secondBackgroundColor,
+} from "../../styles/global.css";
 
 export const layout = style([
   s.fullHeight,
@@ -76,16 +80,16 @@ export const blockquoteMarkdown = markdownStyle({
 
 export const preMarkdown = markdownStyle({
   padding: important("1.2rem"),
-  backgroundColor: important("#0E1117"),
+  backgroundColor: important("#253237"),
   borderRadius: important("0.5rem"),
 });
 
 export const inlineCodeMarkdown = markdownStyle({
-  backgroundColor: important("#0E1117"),
+  backgroundColor: important(secondBackgroundColor),
   padding: important("0.2rem 0.4rem"),
   borderRadius: important("0.4rem"),
   lineHeight: important("1.2rem"),
-  color: important("#DCDCAA"),
+  color: important(accentColor),
   font: "14px monaco",
 });
 
