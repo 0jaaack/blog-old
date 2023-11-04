@@ -10,6 +10,7 @@ import bash from "react-syntax-highlighter/dist/cjs/languages/prism/bash";
 import markdown from "react-syntax-highlighter/dist/cjs/languages/prism/markdown";
 import json from "react-syntax-highlighter/dist/cjs/languages/prism/json";
 
+import { CopyIcon } from "../CopyIcon/CopyIcon";
 import { textToSlug } from "../../lib/textToSlug";
 import * as css from "./PostViewer.css";
 
@@ -83,15 +84,18 @@ const customComponents: Components = {
     const hasLang = /language-(\w+)/.exec(className || "");
 
     return !inline && hasLang ? (
-      <SyntaxHighlighter
-        style={vscDarkPlus}
-        language={hasLang[1]}
-        PreTag="pre"
-        className={css.preMarkdown}
-        useInlineStyles={true}
-      >
-        {children as string}
-      </SyntaxHighlighter>
+      <div style={{ position: "relative" }}>
+        <SyntaxHighlighter
+          style={vscDarkPlus}
+          language={hasLang[1]}
+          PreTag="pre"
+          className={css.preMarkdown}
+          useInlineStyles
+        >
+          {children as string}
+        </SyntaxHighlighter>
+        <CopyIcon content={children as string} />
+      </div>
     ) : (
       <code {...props} className={css.inlineCodeMarkdown}>
         {children}
