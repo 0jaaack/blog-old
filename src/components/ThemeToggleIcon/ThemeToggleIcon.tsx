@@ -1,6 +1,5 @@
-import Image from "next/image";
-import { DEFAULT_THEME, Theme } from "../../constants";
-import { useCallback, useState } from "react";
+import { DEFAULT_THEME } from "../../constants";
+import { useCallback } from "react";
 
 import * as css from "./ThemeToggleIcon.css";
 
