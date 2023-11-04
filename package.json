@@ -1,9 +1,9 @@
 {
   "name": "gongjaack-blog",
-  "packageManager": "yarn@3.3.0",
   "version": "1.4.0",
   "description": "Technology isn't hard, just think easy.",
-  "repository": "https://github.com/gongjaack/gongjaack-blog",
+  "homepage": "https://gongjaack.com",
+  "repository": "https://github.com/gongjaack/blog",
   "license": "ISC",
   "author": {
     "name": "gongjaehyeok",
