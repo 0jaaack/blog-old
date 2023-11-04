@@ -177,12 +177,13 @@ export const postContent = style({
 
 export const toc = style([
   s.flexColumn,
-  s.ellipsis,
   {
+    gap: "0.5rem",
     width: "10rem",
     color: tertiaryColor,
     fontSize: "14px",
     listStyle: "none",
+    wordBreak: "break-all",
   },
 ]);
 
@@ -193,7 +194,7 @@ export const highlited = style({
 export const header = style({
   display: "inline-block",
   padding: "0 2px",
-  lineHeight: "28px",
+  lineHeight: "23px",
 
   ":hover": {
     backgroundColor: secondBackgroundColor,
