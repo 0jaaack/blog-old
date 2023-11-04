@@ -1,5 +1,5 @@
 import { Html, Head, Main, NextScript } from "next/document";
-import { DEFAULT_THEME, USER } from "../constants";
+import { USER } from "../constants";
 
 const ThemeInsertionScript = () => {
   const insertTheme = () => {
