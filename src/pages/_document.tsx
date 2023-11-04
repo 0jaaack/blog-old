@@ -3,7 +3,7 @@ import { DEFAULT_THEME, USER } from "../constants";
 
 const ThemeInsertionScript = () => {
   const insertTheme = () => {
-    const theme = localStorage.getItem("theme") ?? DEFAULT_THEME;
+    const theme = localStorage.getItem("theme") ?? "dark";
     document.body.classList.add(theme);
   };
   const insertThemeScript = `(${insertTheme.toString()})()`;

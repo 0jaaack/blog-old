@@ -2,7 +2,6 @@ import { useEffect, useRef } from "react";
 
 export function Comments() {
   const ref = useRef<HTMLDivElement>(null);
-  const theme = "dark";
 
   useEffect(() => {
     if (!ref.current || ref.current.hasChildNodes()) return;
