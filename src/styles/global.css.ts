@@ -8,14 +8,17 @@ export const secondaryColor = createVar();
 export const tertiaryColor = createVar();
 export const accentColor = createVar();
 
+export const themeIconSrc = createVar();
+
 globalStyle("body.dark", {
   vars: {
     [backgroundColor]: "#111111",
     [secondBackgroundColor]: "#333333",
     [mainColor]: "#F2F4F6",
     [secondaryColor]: "#E5E5E5",
-    [tertiaryColor]: "#9CA3AF",
+    [tertiaryColor]: "#B0B0B0",
     [accentColor]: "#F28646",
+    [themeIconSrc]: "url('/images/sun.svg')",
   },
 });
 
@@ -27,6 +30,7 @@ globalStyle("body.light", {
     [secondaryColor]: "#555555",
     [tertiaryColor]: "#444444",
     [accentColor]: "#F28646",
+    [themeIconSrc]: "url('/images/moon.svg')",
   },
 });
 

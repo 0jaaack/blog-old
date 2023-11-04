@@ -17,6 +17,7 @@ const space = {
   12: "4.8rem",
   37: "14.8rem",
   75: "30rem",
+  87: "34.8rem",
   125: "50rem",
   auto: "auto",
   full: "100%",

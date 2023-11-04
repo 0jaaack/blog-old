@@ -1,6 +1,6 @@
 import { keyframes, style } from "@vanilla-extract/css";
 
-const pop = keyframes({
+export const pop = keyframes({
   "0%": { transform: "scale(0)" },
   "100%": { transform: "scale(1)" },
 });

@@ -1,5 +1,7 @@
 import { style } from "@vanilla-extract/css";
 import { sprinkles } from "../../styles/sprinkles.css";
+import { pop } from "../CopyIcon/CopyIcon.css";
+import { themeIconSrc } from "../../styles/global.css";
 
 export const icon = style([
   sprinkles({
@@ -12,5 +14,8 @@ export const icon = style([
   }),
   {
     cursor: "pointer",
+    animation: `${pop} 0.2s ease-out`,
+    backgroundImage: themeIconSrc,
+    backgroundSize: "cover",
   },
 ]);

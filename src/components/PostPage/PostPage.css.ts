@@ -2,11 +2,8 @@ import { style, styleVariants } from "@vanilla-extract/css";
 
 import { s } from "../../styles";
 import { sprinkles } from "../../styles/sprinkles.css";
-import {
-  mainColor,
-  secondBackgroundColor,
-  tertiaryColor,
-} from "../../styles/global.css";
+import { mainColor, tertiaryColor } from "../../styles/global.css";
+import { pop } from "../CopyIcon/CopyIcon.css";
 
 export const scrollArea = style([
   sprinkles({
@@ -16,23 +13,31 @@ export const scrollArea = style([
     },
   }),
   {
-    width: "100%",
     height: "100vh",
-    padding: "3rem 0",
+    padding: "8rem 0 3rem",
     WebkitOverflowScrolling: "touch",
     overflow: "auto",
   },
 ]);
 
 export const layout = style([
+  sprinkles({
+    width: {
+      mobile: "full",
+      desktop: 87,
+    },
+    paddingX: {
+      mobile: 6,
+      desktop: 0,
+    },
+  }),
   {
-    width: "100%",
-    maxWidth: "60rem",
+    position: "relative",
     margin: "0 auto",
   },
 ]);
 
-export const sideTab = style([
+export const sideTabLayout = style([
   sprinkles({
     display: {
       mobile: "none",
@@ -40,15 +45,19 @@ export const sideTab = style([
     },
   }),
   {
+    position: "absolute",
+    top: "5rem",
+    right: "calc(100% + 1rem)",
     width: "10rem",
-    height: "1px",
   },
 ]);
 
+export const sideTab = style({
+  position: "fixed",
+});
+
 export const sideNavigation = style({
-  marginTop: "1rem",
-  marginLeft: "1rem",
-  width: "10rem",
+  marginBottom: "2rem",
 });
 
 export const postTab = style([
@@ -60,11 +69,8 @@ export const postTab = style([
 
 export const navSection = style([
   s.flex,
-  s.justifyContentSpaceBetween,
   s.alignItemsCenter,
-  {
-    marginBottom: "3rem",
-  },
+  { gap: "0.7rem" },
 ]);
 
 export const routeLinks = style([
@@ -87,27 +93,18 @@ export const routeLinks = style([
   },
 ]);
 
-export const route = style([
-  s.link,
-  {
-    ":hover": {
-      textDecoration: "underline",
-    },
-  },
-]);
-
 export const profileImage = style([
   sprinkles({
     width: {
-      mobile: 6,
+      mobile: 3,
     },
     height: {
-      mobile: 6,
+      mobile: 3,
     },
   }),
-  s.rounded,
   {
-    marginBottom: "-5px",
+    marginBottom: "-4px",
+    animation: `${pop} 0.2s ease-out`,
   },
 ]);
 
@@ -125,7 +122,6 @@ export const postInfo = style([
   s.justifyContentCenter,
   {
     gap: "0.7rem",
-    padding: "1rem 0",
   },
 ]);
 
@@ -133,7 +129,7 @@ export const postTitle = style([
   sprinkles({
     fontSize: {
       mobile: 4,
-      desktop: 6,
+      desktop: 5,
     },
   }),
   {
@@ -195,10 +191,6 @@ export const header = style({
   display: "inline-block",
   padding: "0 2px",
   lineHeight: "23px",
-
-  ":hover": {
-    backgroundColor: secondBackgroundColor,
-  },
 });
 
 export const step: Record<string, string> = styleVariants({
