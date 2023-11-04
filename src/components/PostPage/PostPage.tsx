@@ -1,10 +1,10 @@
 import Head from "next/head";
 import Image from "next/image";
 import { useEffect, useMemo, useState } from "react";
-import { useFloating } from "@floating-ui/react";
 
 import { USER } from "../../constants";
-import { PostViewer } from "../../components/PostViewer/PostViewer";
+import { PostViewer } from "../PostViewer/PostViewer";
+import { Comments } from "../Comments/Comments";
 import { ThemeToggleIcon } from "../ThemeToggleIcon/ThemeToggleIcon";
 import { textToSlug } from "../../lib/textToSlug";
 import { createTOC } from "../../utils";
@@ -19,11 +19,6 @@ export type PostPageProps = {
 
 export function PostPage({ post }: PostPageProps) {
   const [currentTitle, setCurrentTitle] = useState<string | null>(null);
-  const { refs, floatingStyles } = useFloating({
-    placement: "bottom-start",
-    strategy: "fixed",
-  });
-
   const { title, description, date, tags } = post.metadata;
   const toc = useMemo(() => createTOC(post.body), [post.body]);
 
@@ -80,18 +75,44 @@ export function PostPage({ post }: PostPageProps) {
 
       <div className={css.scrollArea} id="scrollArea">
         <div className={css.layout}>
-          <nav className={css.navSection}>
-            <a href="/">
-              <Image
-                src={USER.PROFILE_IMAGE_PATH}
-                width="40"
-                height="40"
-                alt={`${USER.NAME} profile image`}
-                className={css.profileImage}
-              />
-            </a>
-            <ThemeToggleIcon />
-          </nav>
+          <div className={css.sideTabLayout}>
+            <section className={css.sideTab}>
+              <nav className={css.sideNavigation}>
+                <ul className={css.toc}>
+                  {toc.map((header) => (
+                    <li
+                      key={header.title}
+                      className={`${
+                        currentTitle === textToSlug(header.title)
+                          ? css.highlited
+                          : ""
+                      }`}
+                    >
+                      <a
+                        href={`#${textToSlug(header.title)}`}
+                        className={css.header}
+                      >
+                        {header.title}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+                <div className={css.provider} />
+              </nav>
+              <nav className={css.navSection}>
+                <a href="/">
+                  <Image
+                    src={"images/home.svg"}
+                    width="40"
+                    height="40"
+                    alt={`${USER.NAME} profile image`}
+                    className={css.profileImage}
+                  />
+                </a>
+                <ThemeToggleIcon />
+              </nav>
+            </section>
+          </div>
 
           <div className={css.postInfo}>
             <p className={css.postTitle}>{title}</p>
@@ -109,38 +130,9 @@ export function PostPage({ post }: PostPageProps) {
             <div className={css.postContent}>
               <PostViewer markdown={post.body} />
             </div>
-            <section className={css.sideTab} ref={refs.setReference}>
-              <nav
-                className={css.sideNavigation}
-                ref={refs.setFloating}
-                style={floatingStyles}
-              >
-                <ul className={css.toc}>
-                  {toc.map((header) => {
-                    const step = header.step.toString();
-                    return (
-                      <li
-                        key={header.title}
-                        className={`${
-                          currentTitle === textToSlug(header.title)
-                            ? css.highlited
-                            : ""
-                        } ${css.step[step]}`}
-                      >
-                        <a
-                          href={`#${textToSlug(header.title)}`}
-                          className={css.header}
-                        >
-                          {header.title}
-                        </a>
-                      </li>
-                    );
-                  })}
-                </ul>
-                <div className={css.provider} />
-              </nav>
-            </section>
           </div>
+
+          <Comments />
         </div>
       </div>
     </>
