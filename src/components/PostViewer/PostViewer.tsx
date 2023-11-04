@@ -1,4 +1,3 @@
-import Image from "next/image";
 import ReactMarkdown from "react-markdown";
 import { PrismLight as SyntaxHighlighter } from "react-syntax-highlighter";
 import remarkGfm from "remark-gfm";
@@ -25,7 +24,7 @@ SyntaxHighlighter.registerLanguage("json", json);
 
 const customComponents: Components = {
   a: (props) => <a {...props} className={css.anchorMarkdown} target="_blank" />,
-  br: () => <div style={{}} />,
+  br: () => <span className={css.brMarkdown} />,
   blockquote: (props) => (
     <blockquote {...props} className={css.blockquoteMarkdown}>
       {props.children}

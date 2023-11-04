@@ -2,6 +2,7 @@ import { globalStyle, createVar } from "@vanilla-extract/css";
 import { spoqaHanSansNeo } from "./font.css";
 
 export const backgroundColor = createVar();
+export const secondBackgroundColor = createVar();
 export const mainColor = createVar();
 export const secondaryColor = createVar();
 export const tertiaryColor = createVar();
@@ -10,9 +11,10 @@ export const accentColor = createVar();
 globalStyle("body.dark", {
   vars: {
     [backgroundColor]: "#111111",
+    [secondBackgroundColor]: "#333333",
     [mainColor]: "#F2F4F6",
     [secondaryColor]: "#E5E5E5",
-    [tertiaryColor]: "#808080",
+    [tertiaryColor]: "#9CA3AF",
     [accentColor]: "#F28646",
   },
 });

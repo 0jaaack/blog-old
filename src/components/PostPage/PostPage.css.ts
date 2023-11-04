@@ -2,7 +2,11 @@ import { style, styleVariants } from "@vanilla-extract/css";
 
 import { s } from "../../styles";
 import { sprinkles } from "../../styles/sprinkles.css";
-import { accentColor, mainColor } from "../../styles/global.css";
+import {
+  mainColor,
+  secondBackgroundColor,
+  tertiaryColor,
+} from "../../styles/global.css";
 
 export const scrollArea = style([
   sprinkles({
@@ -171,27 +175,28 @@ export const postContent = style({
   paddingBottom: "2rem",
 });
 
-export const toc = style({
-  color: "#9ca3af",
-  display: "flex",
-  flexDirection: "column",
-  gap: "0.4rem",
-  fontSize: "0.75rem",
-  lineHeight: "150%",
-  listStyle: "none",
-  textOverflow: "ellipsis",
-  overflow: "hidden",
-  whiteSpace: "nowrap",
-  width: "10rem",
-});
+export const toc = style([
+  s.flexColumn,
+  s.ellipsis,
+  {
+    width: "10rem",
+    color: tertiaryColor,
+    fontSize: "14px",
+    listStyle: "none",
+  },
+]);
 
 export const highlited = style({
   fontWeight: 500,
 });
 
 export const header = style({
+  display: "inline-block",
+  padding: "0 2px",
+  lineHeight: "28px",
+
   ":hover": {
-    backgroundColor: accentColor,
+    backgroundColor: secondBackgroundColor,
   },
 });
 

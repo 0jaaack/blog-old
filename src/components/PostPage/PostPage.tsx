@@ -125,9 +125,12 @@ export function PostPage({ post }: PostPageProps) {
                           currentTitle === textToSlug(header.title)
                             ? css.highlited
                             : ""
-                        } ${css.step[step]} ${css.header}`}
+                        } ${css.step[step]}`}
                       >
-                        <a href={`#${textToSlug(header.title)}`}>
+                        <a
+                          href={`#${textToSlug(header.title)}`}
+                          className={css.header}
+                        >
                           {header.title}
                         </a>
                       </li>

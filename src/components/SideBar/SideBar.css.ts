@@ -78,7 +78,7 @@ export const profileName = style([
     },
   }),
   {
-    color: mainColor,
+    color: secondaryColor,
     fontSize: "0.9rem",
     fontWeight: 500,
   },
@@ -93,7 +93,7 @@ export const description = style([
   }),
   {
     fontSize: "0.8rem",
-    color: secondaryColor,
+    color: tertiaryColor,
     lineHeight: "1.3rem",
     whiteSpace: "pre-line",
   },

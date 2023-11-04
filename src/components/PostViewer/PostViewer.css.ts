@@ -61,6 +61,12 @@ export const anchorMarkdown = markdownStyle({
   },
 });
 
+export const brMarkdown = markdownStyle({
+  display: "inline-block",
+  width: "100%",
+  height: "1rem",
+});
+
 export const blockquoteMarkdown = markdownStyle({
   fontStyle: "italic",
   fontSize: "0.9rem",
