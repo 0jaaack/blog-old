@@ -6,7 +6,6 @@ import type { Dirent } from "fs";
 function getAllDirent(path: string): Dirent[] {
   return fs.readdirSync(path, {
     encoding: "utf-8",
-    recursive: true,
     withFileTypes: true,
   });
 }
