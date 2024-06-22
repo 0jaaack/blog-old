@@ -13,7 +13,7 @@ export function Comments() {
     scriptElem.async = true;
     scriptElem.crossOrigin = "anonymous";
 
-    scriptElem.setAttribute("data-repo", "gongjaack/blog");
+    scriptElem.setAttribute("data-repo", "0jaaack/blog-old");
     scriptElem.setAttribute("data-repo-id", "R_kgDOIrW6Yw");
     scriptElem.setAttribute("data-category", "General");
     scriptElem.setAttribute("data-category-id", "DIC_kwDOIrW6Y84Carw9");
